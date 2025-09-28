@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="ro" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TelefoanePro - Recenzii și Comparații Telefoane</title>
+    <meta name="description" content="Recenzii detaliate și comparații telefoane mobile. Găsește cel mai bun telefon pentru tine cu ghiduri complete și recomandări de experți.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8fafc;
+            margin: 0;
+            padding: 0;
+            padding-top: 80px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            height: 80px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            height: 100%;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #6366f1;
+            text-decoration: none;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav a {
+            text-decoration: none;
+            color: #64748b;
+            transition: color 0.3s;
+        }
+        
+        .nav a:hover {
+            color: #6366f1;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #64748b;
+        }
+        
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            padding: 1rem;
+        }
+        
+        .mobile-nav.active {
+            display: block;
+        }
+        
+        .mobile-nav a {
+            display: block;
+            padding: 0.75rem;
+            text-decoration: none;
+            color: #64748b;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .mobile-nav a:hover {
+            background: #f1f5f9;
+            color: #6366f1;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: white;
+            padding: 80px 0 80px;
+            text-align: center;
+            margin-top: 0;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero h2 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: #6366f1;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #4f46e5;
+            transform: translateY(-2px);
+        }
+        
+        .btn-accent {
+            background: #f59e0b;
+            color: white;
+        }
+        
+        .btn-accent:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+        }
+        
+        /* Section */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Products */
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+        
+        .product-layout {
+            display: flex;
+            align-items: stretch;
+        }
+        
+        .product-image {
+            flex: 0 0 25%;
+            background: #f8fafc;
+            padding: 2rem;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .product-content {
+            flex: 1;
+            padding: 2rem;
+        }
+        
+        .product-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+        
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .stars {
+            color: #fbbf24;
+            font-size: 1.2rem;
+        }
+        
+        .rating-text {
+            color: #64748b;
+            font-weight: 500;
+        }
+        
+        .product-description {
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        
+        .product-description p {
+            margin-bottom: 1rem;
+        }
+        
+        .product-description strong {
+            color: #1e293b;
+        }
+        
+        /* Article */
+        .article {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .article h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #6366f1;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .article h2:first-child {
+            margin-top: 0;
+        }
+        
+        .article h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #4f46e5;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .article p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #374151;
+        }
+        
+        .article strong {
+            color: #1e293b;
+        }
+        
+        /* Contact */
+        .contact {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1e293b;
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #6366f1;
+        }
+        
+        .footer p, .footer a {
+            color: #94a3b8;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+        
+        .footer a:hover {
+            color: #6366f1;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #94a3b8;
+        }
+        
+        /* Quick Navigation */
+        .quick-nav {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            border-radius: 25px;
+            padding: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .quick-nav.show {
+            opacity: 1;
+        }
+        
+        .quick-nav a {
+            display: block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            margin: 8px 0;
+            transition: background 0.3s;
+        }
+        
+        .quick-nav a:hover {
+            background: #6366f1;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .header {
+                height: 70px;
+            }
+            
+            .nav {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 60px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+            
+            .product-layout {
+                flex-direction: column;
+            }
+            
+            .product-image {
+                flex: none;
+            }
+            
+            .article {
+                padding: 2rem;
+            }
+            
+            .quick-nav {
+                display: none;
+            }
+            
+            .hero-buttons, .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding-top: 65px;
+            }
+            
+            .header {
+                height: 65px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero {
+                padding: 50px 0 50px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .product-card {
+                margin-bottom: 2rem;
+            }
+            
+            .product-content {
+                padding: 1.5rem;
+            }
+            
+            .article {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#hero" class="logo">📱 TelefoanePro</a>
+                
+                <nav class="nav">
+                    <a href="#hero">Acasă</a>
+                    <a href="#produse">Recenzii</a>
+                    <a href="#ghid">Ghid Cumpărare</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                
+                <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+                
+                <nav class="mobile-nav" id="mobile-nav">
+                    <a href="#hero">Acasă</a>
+                    <a href="#produse">Recenzii</a>
+                    <a href="#ghid">Ghid Cumpărare</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quick Navigation -->
+    <div class="quick-nav" id="quick-nav">
+        <a href="#hero" title="Hero"></a>
+        <a href="#produse" title="Produse"></a>
+        <a href="#ghid" title="Ghid"></a>
+        <a href="#contact" title="Contact"></a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <h1>Găsește Telefonul Perfect</h1>
+            <h2>Recenzii detaliate și comparații pentru cele mai bune telefoane din 2025</h2>
+            <p>Experții noștri testează și analizează fiecare telefon pentru a-ți oferi informațiile de care ai nevoie pentru a lua cea mai bună decizie de cumpărare. De la flagship-uri premium la opțiuni buget-friendly.</p>
+            <div class="hero-buttons">
+                <a href="#produse" class="btn btn-primary">Vezi Recenzii</a>
+                <a href="#ghid" class="btn btn-accent">Ghid de Cumpărare</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="produse" class="section" style="background: white;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Recenzii Telefoane</h2>
+                <p>Analize complete și obiective ale celor mai populare telefoane din 2025</p>
+            </div>
+
+            <!-- Product 1: iPhone 15 Pro Max -->
+            <div class="product-card">
+                <div class="product-layout">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="iPhone 15 Pro Max">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">iPhone 15 Pro Max</h3>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-text">(9.5/10)</span>
+                        </div>
+                        <div class="product-description">
+                            <p><strong>iPhone 15 Pro Max</strong> este cel mai avansat smartphone Apple până în prezent, oferind o experiență premium completă. Cu noul procesor A17 Pro construit pe tehnologie de 3nm, acest telefon oferă performanțe excepționale pentru gaming, fotografie profesională și multitasking intensiv.</p>
+                            <p><strong>Camera principală de 48MP</strong> cu sistem ProRAW îmbunătățit oferă fotografii de calitate profesională, iar noul sistem de zoom optic 5x permite capturi detaliate de la distanță. Ecranul ProMotion de 6.7" cu Always-On Display oferă o experiență vizuală superbă cu culori vibrante și contrast perfect.</p>
+                            <p><strong>Bateria îmbunătățită</strong> oferă până la 29 ore de redare video, iar încărcarea rapidă de 27W și wireless MagSafe de 15W asigură o autonomie excelentă. Designul din titan Grade 5 oferă durabilitate maximă cu greutate redusă.</p>
+                            <p><strong>Avantaje:</strong> Performanțe excepționale, cameră profesională, display superb, construcție premium din titan<br>
+                            <strong>Dezavantaje:</strong> Preț foarte ridicat, încărcare rapidă doar 27W comparativ cu concurența</p>
+                        </div>
+                        <a href="https://example.com/iphone-15-pro-max" target="_blank" rel="nofollow" class="btn btn-accent">🔗 Verifică Prețul</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2: Samsung Galaxy S24 Ultra -->
+            <div class="product-card">
+                <div class="product-layout">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Samsung Galaxy S24 Ultra">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Samsung Galaxy S24 Ultra</h3>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-text">(9.3/10)</span>
+                        </div>
+                        <div class="product-description">
+                            <p><strong>Samsung Galaxy S24 Ultra</strong> redefinește standardele fotografiei mobile cu sistemul său de camere revoluționar. Echipat cu senzorul principal de 200MP și zoom optic până la 10x, acest flagship oferă versatilitate foto-video incomparabilă în segmentul premium.</p>
+                            <p><strong>S Pen integrat</strong> transformă telefonul într-un instrument de productivitate avansat, perfect pentru note, desen și editare precisă. Procesorul Snapdragon 8 Gen 3 optimizat pentru Galaxy oferă performanțe de top cu eficiență energetică îmbunătățită.</p>
+                            <p><strong>Ecranul Dynamic AMOLED 2X de 6.8"</strong> cu rezoluție QHD+ și refresh rate de 120Hz adaptiv oferă o experiență vizuală excepțională. Bateria de 5000mAh cu încărcare rapidă de 45W asigură autonomie de o zi întreagă.</p>
+                            <p><strong>Avantaje:</strong> Cameră 200MP excepțională, S Pen integrat, display superb, baterie mare<br>
+                            <strong>Dezavantaje:</strong> Dimensiuni mari și greutate, preț premium, One UI poate părea încărcat</p>
+                        </div>
+                        <a href="https://example.com/galaxy-s24-ultra" target="_blank" rel="nofollow" class="btn btn-accent">🔗 Verifică Prețul</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3: Google Pixel 8 Pro -->
+            <div class="product-card">
+                <div class="product-layout">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Google Pixel 8 Pro">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Google Pixel 8 Pro</h3>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-text">(9.0/10)</span>
+                        </div>
+                        <div class="product-description">
+                            <p><strong>Google Pixel 8 Pro</strong> excelează în fotografia computațională și inteligența artificială. Cu chipul Tensor G3 dezvoltat de Google, acest telefon oferă funcții AI avansate și procesare foto superioară care rivalizează cu camerele profesionale.</p>
+                            <p><strong>Magic Eraser îmbunătățit</strong> și noile funcții AI permit editarea fotografiilor la nivel profesional direct pe telefon. Modul Night Sight de generația următoare captează imagini incredibile în condiții de lumină redusă, fără flash.</p>
+                            <p><strong>Android 14 pur</strong> cu actualizări garantate pentru 7 ani oferă cea mai curată experiență Android și securitate pe termen lung. Ecranul LTPO OLED de 6.7" cu 120Hz adaptiv optimizează automat consumul bateriei.</p>
+                            <p><strong>Avantaje:</strong> Fotografie AI excepțională, Android pur, 7 ani actualizări, preț competitiv<br>
+                            <strong>Dezavantaje:</strong> Performanțe gaming sub flagship-urile premium, încărcare wireless mai lentă</p>
+                        </div>
+                        <a href="https://example.com/pixel-8-pro" target="_blank" rel="nofollow" class="btn btn-accent">🔗 Verifică Prețul</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Section -->
+    <section id="ghid" class="section">
+        <div class="container">
+            <div class="article">
+                <div class="section-title">
+                    <h2>Ghidul Complet pentru Alegerea Telefonului Perfect în 2025</h2>
+                    <p>Tot ce trebuie să știi pentru a lua cea mai bună decizie de cumpărare</p>
+                </div>
+
+                <h2>Introducere: De ce alegerea telefonului potrivit este crucială</h2>
+                <p>În era digitală actuală, <strong>alegerea telefonului potrivit</strong> poate face diferența între o experiență mobilă excepțională și una frustrată zilnic. Cu sute de modele disponibile pe piață și tehnologii în constantă evoluție, decizia de a cumpăra un nou smartphone poate părea copleșitoare. Acest ghid complet îți va oferi toate informațiile necesare pentru a naviga cu încredere prin labirintul opțiunilor disponibile și a găsi exact telefonul care îți satisface nevoile și bugetul.</p>
+                
+                <p><strong>Telefoanele moderne</strong> nu sunt doar dispozitive de comunicare - sunt centre de control pentru întreaga noastră viață digitală. De la fotografia profesională și gaming de înaltă performanță până la productivitate avansată și divertisment multimedia, smartphone-ul ideal trebuie să exceleze în toate domeniile care îți sunt importante.</p>
+
+                <h2>Capitolul 1: Înțelegerea nevoilor tale personale</h2>
+                
+                <h3>Tehnologiile de încărcare rapidă</h3>
+                <p><strong>Încărcarea rapidă</strong> a evoluat spectaculos, cu puteri de până la 150W la unele telefoane. Însă încărcarea wireless și cea reversă devin din ce în ce mai importante pentru comoditate. MagSafe de la Apple și Qi2 standardizează încărcarea wireless pentru o experiență mai bună.</p>
+
+                <h2>Capitolul 2: Parametrii tehnici esențiali</h2>
+
+                <h3>Procesorul: Inima telefonului</h3>
+                <p><strong>Procesorul (chipset-ul)</strong> determină performanțele generale ale telefonului. În 2025, liderii pieței sunt Snapdragon 8 Gen 3, Apple A17 Pro și Google Tensor G3. Fiecare oferă avantaje specifice: Snapdragon excelează la gaming și eficiență energetică, A17 Pro oferă performanțe brute superioare, iar Tensor G3 se concentrează pe AI și fotografia computațională.</p>
+
+                <h3>Memoria RAM și stocarea</h3>
+                <p><strong>Memoria RAM</strong> influențează direct fluiditatea multitasking-ului. Pentru utilizarea normală, 8GB sunt suficiente, dar power user-ii vor aprecia 12GB sau mai mult. <strong>Stocarea internă</strong> ar trebui să înceapă de la 128GB pentru utilizatorul mediu, dar recomandăm 256GB pentru majoritatea utilizatorilor, considerând dimensiunea crescândă a aplicațiilor și fișierelor media.</p>
+
+                <h3>Ecranul: Fereastra către experiență</h3>
+                <p><strong>Calitatea ecranului</strong> impactează semnificativ experiența zilnică. Tehnologiile OLED oferă contraste perfecte și culori vibrante, în timp ce LCD-urile IPS rămân o opțiune solidă la prețuri mai mici. Refresh rate-ul de 120Hz sau mai mare oferă scrolling fluid și responsivitate sporită, fiind deosebit de important pentru gaming.</p>
+
+                <h2>Capitolul 3: Sistemele de operare - Android vs iOS</h2>
+
+                <h3>Android: Flexibilitatea și personalizarea</h3>
+                <p><strong>Android</strong> oferă libertate de personalizare incomparabilă și acces la un ecosistem deschis de aplicații. Utilizatorii pot modifica aproape orice aspect al interfeței și pot instala aplicații din surse alternative. Fragmentarea rămâne o provocare, cu actualizări inconsistente între producători, dar telefoanele Pixel oferă experiența Android cea mai pură cu actualizări prompte.</p>
+
+                <h3>iOS: Integrarea și securitatea</h3>
+                <p><strong>iOS</strong> excelează prin integrarea perfectă cu ecosistemul Apple și securitatea superioară. Actualizările sunt simultane pe toate dispozitivele compatibile, iar optimizarea software-hardware este exemplară. Restricțiile sunt mai mari, dar majoritatea utilizatorilor apreciază simplitatea și fiabilitatea sistemului.</p>
+
+                <h2>Capitolul 4: Fotografia mobilă în 2025</h2>
+
+                <h3>Megapixelii nu sunt totul</h3>
+                <p>Deși <strong>numărul de megapixeli</strong> atrage atenția în specificații, dimensiunea și calitatea senzorului sunt mult mai importante. Un senzor mare de 50MP poate produce imagini superioare unui senzor mic de 108MP. Stabilizarea optică (OIS) este crucială pentru fotografii clare și video smooth, deosebit de important în condiții de lumină redusă.</p>
+
+                <h3>AI și fotografia computațională</h3>
+                <p><strong>Inteligența artificială</strong> revoluționează fotografia mobilă prin funcții precum: mod noapte avansat, detectarea și optimizarea automată a scenelor, îmbunătățirea portreturilor în timp real și eliminarea obiectelor nedorite din fotografii. Google Pixel și iPhone sunt liderii în acest domeniu.</p>
+
+                <h2>Capitolul 5: Autonomia bateriei și încărcarea</h2>
+
+                <h3>Capacitatea optimă pentru utilizarea zilnică</h3>
+                <p><strong>Capacitatea bateriei</strong> variază între 3000mAh și 5000mAh la telefoanele moderne. Însă autonomia reală depinde de optimizarea software-ului și eficiența procesorului. Un iPhone cu baterie de 3200mAh poate depăși autonomia unui telefon Android cu 4500mAh datorită optimizării superioare iOS.</p>
+
+
+                <h2>Capitolul 6: Gaming mobil și performanțe</h2>
+
+                <h3>Cerințele gaming-ului mobil modern</h3>
+                <p><strong>Gaming-ul mobil</strong> a evoluat dramatic, cu titluri precum Call of Duty Mobile, PUBG Mobile și Genshin Impact necesitând putere de procesare considerabilă. Pentru o experiență optimă, căutați telefoane cu procesoare flagship, sistem de răcire avansat și ecrane cu refresh rate ridicat. GPU-ul integrat în procesor determină performanțele grafice, iar telefoanele gaming specializate oferă butoane tactile adiționale și sisteme de răcire active.</p>
+
+                <h3>Optimizarea termică și sustenabilitatea performanțelor</h3>
+                <p><strong>Managementul termic</strong> este crucial pentru performanțe susținute. Telefoanele moderne folosesc camere de vapori, pad-uri termice și algoritmi de throttling inteligent pentru a menține temperaturi optime. Testele noastre includ sesiuni de gaming extinse pentru a evalua cum se comportă fiecare telefon sub sarcină intensă.</p>
+
+                <h2>Capitolul 7: Conectivitatea și tehnologiile de viitor</h2>
+
+                <h3>5G: Prezentul și viitorul conectivității</h3>
+                <p><strong>Rețelele 5G</strong> oferă viteze de descărcare de până la 1Gbps și latență ultra-redusă, revoluționând streaming-ul, gaming-ul cloud și realitatea augmentată. Toate telefoanele premium din 2025 sunt compatibile 5G, dar verificați disponibilitatea în zona dumneavoastră. mmWave oferă viteze maxime în zone urbane dense, în timp ce sub-6GHz asigură acoperire mai largă.</p>
+
+                <h3>WiFi 6E/7 și Bluetooth 5.3</h3>
+                <p><strong>WiFi 6E și WiFi 7</strong> oferă performanțe wireless superioare cu latență redusă și stabilitate îmbunătățită. Bluetooth 5.3 îmbunătățește conexiunea cu accesoriile wireless, oferind calitate audio superioară și sincronizare perfectă cu căștile true wireless.</p>
+
+                <h2>Capitolul 8: Securitatea și confidențialitatea</h2>
+
+                <h3>Biometria modernă</h3>
+                <p><strong>Senzorul de amprente în ecran</strong> a devenit standard la telefoanele premium, oferind deblocare rapidă și sigură. Recunoașterea facială 3D, pionierată de Face ID de la Apple, oferă securitate superioară față de sistemele bazate pe cameră 2D. Unele telefoane combină ambele metode pentru flexibilitate maximă.</p>
+
+                <h3>Actualizările de securitate</h3>
+                <p><strong>Frecvența actualizărilor de securitate</strong> variază dramatic între producători. Google Pixel și iPhone oferă actualizări prompte și regulate, în timp ce alți producători pot întârzia sau omite complet anumite actualizări. Verificați politica de suport pe termen lung înainte de cumpărare.</p>
+
+                <h2>Capitolul 9: Designul și durabilitatea</h2>
+
+                <h3>Materialele premium: Sticlă, metal și ceramic</h3>
+                <p><strong>Materialele de construcție</strong> influențează atât aspectul, cât și durabilitatea telefonului. Sticla Gorilla Glass Victus oferă rezistență la zgârieturi și căderi, în timp ce cadrele din aluminiu sau titan oferă rigiditate structurală. Finisajurile ceramice sunt rezistente la zgârieturi dar mai fragile la impact.</p>
+
+                <h3>Rezistența la apă și praf</h3>
+                <p><strong>Certificarea IP68</strong> este standard la telefoanele premium, oferind protecție completă împotriva prafului și rezistență la submersie până la 1.5m timp de 30 minute. Unele telefoane oferă protecție și mai avansată pentru utilizare în condiții extreme.</p>
+
+                <h2>Capitolul 10: Recomandări pe categorii de preț</h2>
+
+                <h3>Segmentul premium (4000+ lei)</h3>
+                <p>În <strong>segmentul premium</strong>, recomandăm iPhone 15 Pro Max pentru ecosistemul Apple integrat și performanțe superioare, Samsung Galaxy S24 Ultra pentru versatilitatea S Pen și camera excepțională, sau Google Pixel 8 Pro pentru fotografia AI și Android pur. Aceste telefoane oferă cele mai noi tehnologii și suport pe termen lung.</p>
+
+                <h3>Clasa medie premium (2000-4000 lei)</h3>
+                <p><strong>Clasa medie premium</strong> oferă cel mai bun raport calitate-preț, cu telefoane care oferă 80-90% din performanțele flagship-urilor la jumătate de preț. iPhone 15 standard, Samsung Galaxy S24 și Google Pixel 8 sunt alegerile noastre principale în acest segment.</p>
+
+                <h3>Buget mediu (1000-2000 lei)</h3>
+                <p>Pentru <strong>bugetul mediu</strong>, recomandăm telefoanele care oferă funcționalitate completă fără compromisuri majore. Xiaomi, OnePlus și Samsung seria A oferă opțiuni excelente cu performanțe solide, camere competente și autonomie bună.</p>
+
+                <h2>Concluzie: Alegerea finală</h2>
+                <p><strong>Alegerea telefonului perfect</strong> este o decizie personală care depinde de nevoile, bugetul și preferințele individuale. Acest ghid complet v-a oferit toate informațiile necesare pentru a lua o decizie informată și să găsiți telefonul care vă va satisface pe deplin pentru următorii ani.</p>
+
+                <p>Indiferent dacă optați pentru un flagship premium sau o opțiune de buget, cel mai important este să alegeți un telefon care se potrivește stilului dumneavoastră de viață și să investiți în protecție adecvată pentru a maximiza durata de viață a investiției.</p>
+
+                <p><strong>Rămâneți la curent</strong> cu recenziile noastre pentru cele mai noi lansări și actualizări ale acestui ghid pe măsură ce tehnologia continuă să evolueze rapid în 2025 și beyond.</p>
+                Profilul utilizatorului casual</h3>
+                <p>Pentru <strong>utilizatorul casual</strong>, prioritățile includ de obicei: durabilitate, autonomie bună, interfață simplă și preț rezonabil. Acești utilizatori folosesc telefonul pentru apeluri, mesaje, browsing web, social media și fotografii ocazionale. Recomandările noastre pentru această categorie se concentrează pe telefoane cu raportul calitate-preț excelent, care oferă fiabilitate pe termen lung fără funcții complexe inutile.</p>
+
+                <h3>Power user-ul modern</h3>
+                <p><strong>Power user-ii</strong> au nevoie de performanțe maxime, multitasking avansat, stocare generoasă și cele mai noi funcții. Aceștia folosesc telefonul pentru workflow-uri complexe, editare foto-video, gaming intensiv și aplicații profesionale. Pentru această categorie, recomandăm flagship-urile cu cele mai noi procesoare, RAM abundant și sistem de camere profesionale.</p>
+
+                <h3>Pasionatul de fotografie mobilă</h3>
+                <p>Pentru <strong>iubitorii fotografiei mobile</strong>, calitatea camerei este parametrul crucial. Aceștia caută senzori mari, stabilizare optică, zoom versatil și funcții avansate de editare. Analizăm în detaliu sistemele de camere ale fiecărui telefon recomandat, includând teste practice în diverse condiții de lumină.</p>
+
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2>Ai întrebări? Contactează-ne!</h2>
+            <p>Echipa noastră de experți este gata să te ajute să găsești telefonul perfect pentru nevoile tale.</p>
+            <div class="contact-buttons">
+                <a href="mailto:contact@telefonepro.ro" class="btn btn-accent">📧 contact@telefonepro.ro</a>
+                <a href="tel:+40712345678" class="btn btn-primary">📞 +40 712 345 678</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>📱 TelefoanePro</h3>
+                    <p>Recenzii obiective și ghiduri complete pentru a te ajuta să alegi cel mai bun telefon pentru nevoile tale.</p>
+                </div>
+                <div>
+                    <h3>Link-uri Utile</h3>
+                    <ul class="footer-links">
+                        <li><a href="#hero">Acasă</a></li>
+                        <li><a href="#produse">Recenzii</a></li>
+                        <li><a href="#ghid">Ghid Cumpărare</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Urmărește-ne</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">YouTube</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TelefoanePro. Toate drepturile rezervate.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileNav = document.getElementById('mobile-nav');
+            
+            if (mobileMenuBtn && mobileNav) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileNav.classList.toggle('active');
+                });
+
+                // Close mobile menu when clicking on links
+                const mobileNavLinks = mobileNav.querySelectorAll('a');
+                mobileNavLinks.forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        mobileNav.classList.remove('active');
+                    });
+                });
+
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!mobileMenuBtn.contains(e.target) && !mobileNav.contains(e.target)) {
+                        mobileNav.classList.remove('active');
+                    }
+                });
+            }
+
+            // Quick navigation visibility
+            const quickNav = document.getElementById('quick-nav');
+            
+            if (quickNav) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 300) {
+                        quickNav.classList.add('show');
+                    } else {
+                        quickNav.classList.remove('show');
+                    }
+                });
+            }
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const header = document.querySelector('.header');
+                        const headerHeight = header ? header.offsetHeight : 80;
+                        const targetPosition = target.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Add loading animation for images
+            const images = document.querySelectorAll('img');
+            images.forEach(function(img) {
+                img.addEventListener('load', function() {
+                    this.style.opacity = '1';
+                });
+                
+                img.style.opacity = '0';
+                img.style.transition = 'opacity 0.3s ease';
+                
+                if (img.complete) {
+                    img.style.opacity = '1';
+                }
+            });
+
+            // Performance optimization: Intersection Observer for animations
+            if ('IntersectionObserver' in window) {
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, observerOptions);
+
+                const cards = document.querySelectorAll('.product-card');
+                cards.forEach(function(card) {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(30px)';
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    observer.observe(card);
+                });
+            }
+
+            // Add scroll-to-top functionality
+            const scrollToTopBtn = document.createElement('button');
+            scrollToTopBtn.innerHTML = '↑';
+            scrollToTopBtn.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                left: 20px;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: #6366f1;
+                color: white;
+                border: none;
+                font-size: 20px;
+                cursor: pointer;
+                opacity: 0;
+                transition: opacity 0.3s ease, transform 0.3s ease;
+                z-index: 1000;
+                box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+            `;
+            
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            scrollToTopBtn.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1)';
+            });
+            
+            scrollToTopBtn.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+            
+            document.body.appendChild(scrollToTopBtn);
+
+            // Show/hide scroll-to-top button
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 500) {
+                    scrollToTopBtn.style.opacity = '1';
+                } else {
+                    scrollToTopBtn.style.opacity = '0';
+                }
+            });
+            
+        });
+    </script>
+</body>
+</html>

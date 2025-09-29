@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Servicii profesionale de machiaj în București. Machiaj pentru evenimente, nunți, ședințe foto și cursuri de makeup. Makeup artist cu experiență.">
+    <meta name="keywords" content="makeup bucuresti, machiaj bucuresti, makeup artist, machiaj profesional, machiaj nunta bucuresti">
+    <meta name="author" content="Makeup București">
+    <title>Makeup Bucuresti | Tot ce trebuie sa sti despre makeup in Bucuresti</title>
+    
+    <meta property="og:title" content="Makeup București - Tot ce trebuie sa sti despre makeup in Bucuresti">
+    <meta property="og:description" content="Makeup artist profesionist în București. Machiaj pentru evenimente speciale, nunți și ședințe foto.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://makeupbucuresti.info">
+    
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #D4A5A5;
+            --secondary: #9B7E7E;
+            --accent: #E8C4C4;
+            --dark: #2C2C2C;
+            --light: #FAF5F5;
+            --white: #FFFFFF;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-cta {
+            background: var(--primary);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 25px;
+            transition: background 0.3s;
+        }
+        
+        .nav-cta:hover {
+            background: var(--secondary);
+        }
+        
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--light) 0%, var(--accent) 100%);
+            padding: 120px 20px 80px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--secondary);
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 18px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 165, 165, 0.3);
+        }
+        
+        .cta-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .cta-secondary {
+            background: var(--secondary);
+            color: var(--white);
+        }
+        
+        .cta-dark {
+            background: var(--dark);
+            color: var(--white);
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 20px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .bg-white {
+            background: var(--white);
+        }
+        
+        .bg-light {
+            background: var(--light);
+        }
+        
+        /* Carousel */
+        .carousel-section {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+        }
+        
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+        
+        .carousel-slide img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: var(--white);
+            padding: 40px 30px 30px;
+        }
+        
+        .carousel-caption h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .carousel-caption p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.9);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10;
+            color: var(--dark);
+        }
+        
+        .carousel-btn:hover {
+            background: var(--white);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .carousel-btn-prev {
+            left: 20px;
+        }
+        
+        .carousel-btn-next {
+            right: 20px;
+        }
+        
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 25px;
+        }
+        
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .carousel-dot.active {
+            background: var(--primary);
+            width: 30px;
+            border-radius: 6px;
+        }
+        
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .service-card {
+            background: var(--light);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .service-card p {
+            color: var(--secondary);
+            line-height: 1.6;
+        }
+        
+        /* Articles */
+        article {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        article h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4A4A4A;
+        }
+        
+        .article-content h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .article-content p {
+            margin-bottom: 20px;
+        }
+        
+        .article-content ul,
+        .article-content ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .article-content li {
+            margin-bottom: 10px;
+        }
+        
+        .article-content strong {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        /* FAQ */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 25px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            text-align: left;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .faq-arrow {
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: transform 0.3s;
+        }
+        
+        .faq-arrow.active {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            max-height: 500px;
+            padding-bottom: 25px;
+        }
+        
+        .faq-answer p {
+            color: var(--secondary);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .contact-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .contact-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .contact-card p {
+            color: var(--secondary);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 50px 20px;
+            text-align: center;
+        }
+        
+        footer h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        footer p {
+            color: #999;
+            margin-bottom: 10px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: var(--white);
+                width: 100%;
+                padding: 20px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                transition: left 0.3s;
+                gap: 20px;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .cta-btn {
+                width: 100%;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+            
+            .carousel-slide img {
+                height: 300px;
+            }
+            
+            .carousel-caption {
+                padding: 30px 20px 20px;
+            }
+            
+            .carousel-caption h3 {
+                font-size: 1.3rem;
+            }
+            
+            .carousel-caption p {
+                font-size: 0.95rem;
+            }
+            
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .carousel-btn-prev {
+                left: 10px;
+            }
+            
+            .carousel-btn-next {
+                right: 10px;
+            }
+            
+            article {
+                padding: 30px 20px;
+            }
+            
+            article h2 {
+                font-size: 1.7rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Makeup Bucuresti</div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Acasa</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#articole">Articole</a></li>
+                <li><a href="#faq">Intrebari</a></li>
+                <li><a href="#contact" class="nav-cta">Contact</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle">☰</button>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Makeup Bucuresti</h1>
+            <p class="hero-subtitle">Makeup Bucuresti este unul dintre cele mai cautate servicii din domeniul beauty datorita diversitatii de optiuni disponibile in capitala. Fie ca este vorba despre machiaj profesional pentru evenimente, sedinte foto sau machiaj de zi, utilizatorii pot gasi rapid specialisti pregatiti sa ofere rezultate personalizate.</p>
+            
+            <div class="cta-buttons">
+                <a href="#Makeup București" class="cta-btn cta-primary">Makeup in Bucuresti</a>
+                <a href="#Makeup Artist București" class="cta-btn cta-secondary">Makeup Artist Bucuresti</a>
+                <a href="#Cursuri de Makeup în București" class="cta-btn cta-dark">Cursuri Makeup Bucuresti</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="galerie" class="bg-white">
+        <div class="container">
+            <h2 class="section-title">Galerie</h2>
+            
+            <!-- Carousel -->
+            <div class="carousel-section">
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="carousel-slide">
+                            <img src="/home/luc/amkp/imagini/makeup bucuresti 1.webp" alt="Makeup Bucuresti 1">
+                        
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="/home/luc/amkp/imagini/makeup bucuresti 2.webp" alt="Makeup Bucuresti 2">
+                            
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="/home/luc/amkp/imagini/makeup bucuresti 3.webp" alt="Makeup Bucuresti 3">
+                           
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="/home/luc/amkp/imagini/makeup bucuresti 4.webp" alt="Makeup Bucuresti 4">
+                        
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="/home/luc/amkp/imagini/makeup bucuresti 5.webp" alt="Makeup Bucuresti 5">
+                        
+                        </div>
+                    </div>
+                    <button class="carousel-btn carousel-btn-prev" id="prevBtn">‹</button>
+                    <button class="carousel-btn carousel-btn-next" id="nextBtn">›</button>
+                </div>
+                <div class="carousel-dots" id="carouselDots"></div>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💄</div>
+                    <h3>Machiaj Nuntă</h3>
+                    <p>Machiaj profesional pentru cea mai importantă zi din viața ta. Durabil, elegant și personalizat.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Machiaj Eveniment</h3>
+                    <p>Perfect pentru petreceri, gale, fotografii profesionale și orice eveniment special.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎓</div>
+                    <h3>Cursuri Makeup</h3>
+                    <p>Învață tehnicile profesionale de machiaj de la experți cu experiență în domeniu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="articole" class="bg-light">
+        <div class="container">
+            <h1 class="section-title">Makeup București</h1>
+            
+<article id="Makeup București">
+    <h2>Makeup in București</h2>
+    <div class="article-content">
+        <p>Industria de <strong>makeup București</strong> a devenit în ultimii ani una dintre cele mai dinamice și căutate nișe din zona de beauty. Capitala oferă acces la branduri internaționale, produse profesionale și specialiști cu experiență, atrăgând atât consumatori, cât și viitori profesioniști care își doresc să învețe arta machiajului. Pentru utilizatori, interesul principal este să găsească informații clare despre produse, servicii și opțiuni disponibile în București, iar acest articol își propune să răspundă la aceste nevoi.</p>
+                <div style="text-align: center; margin: 20px 0;">
+            <img src="/home/luc/amkp/imagini/makeup bucuresti.webp" alt="Makeup Bucuresti" style="max-width: 650px; width: 100%; height: auto; border-radius: 10px;">
+        </div>
+        <h3>Diversitatea produselor de makeup București</h3>
+        <p>Unul dintre cele mai mari avantaje pe care le oferă piața locală este diversitatea. În București găsești aproape orice tip de produs, indiferent de preferințe sau buget. Categoriile cele mai căutate includ:</p>
+        <ul>
+            <li><strong>fonduri de ten</strong> disponibile în formule lichide, compacte sau stick</li>
+            <li><strong>palete de farduri</strong> pentru machiaje naturale și de seară</li>
+            <li><strong>rujuri</strong> cu texturi mate, cremoase sau glossy</li>
+            <li><strong>mascara</strong> și produse dedicate îngrijirii sprâncenelor</li>
+            <li><strong>highlightere</strong> și <strong>bronzer</strong> pentru contur și luminozitate</li>
+        </ul>
+        <p>Aceste produse sunt disponibile în magazine fizice, dar și online, ceea ce face ca accesul la ele să fie rapid și simplu. <strong>Makeup București</strong> înseamnă atât varietate, cât și acces la cele mai noi colecții lansate la nivel global.</p>
+
+        <h3>Servicii de makeup București</h3>
+        <p>Pe lângă produse, consumatorii din capitală au la dispoziție o gamă largă de servicii profesionale. În București există atât studiouri dedicate, cât și freelanceri care oferă machiaj personalizat pentru diverse ocazii. Cele mai frecvente servicii sunt:</p>
+        <ul>
+            <li>machiaj de zi, discret și natural</li>
+            <li>machiaj de seară, intens și rezistent</li>
+            <li>machiaj pentru evenimente, inclusiv nunți sau ședințe foto</li>
+            <li>machiaj artistic și editorial</li>
+        </ul>
+        <p><strong>Makeup București</strong> înseamnă servicii adaptate la preferințele clientului, iar personalizarea este un aspect cheie. Specialiștii țin cont de tipul de ten, trăsături și culorile potrivite, oferind un rezultat care arată bine și în realitate, și în fotografii.</p>
+
+        <h3>Fonduri de ten în makeup București</h3>
+        <p>Fondul de ten este baza oricărui machiaj, iar Bucureștiul oferă acces la sute de variante. Există game pentru ten uscat, mixt sau gras, formule cu acoperire ușoară pentru un aspect natural, dar și opțiuni cu acoperire mare pentru evenimente speciale. Brandurile internaționale au magazine proprii în capitală, iar retailerii mari aduc în permanență noutăți.</p>
+        <p>Un aspect important pe piața de <strong>makeup București</strong> este testarea produselor în magazine. Clienții pot verifica textura și nuanța, ceea ce reduce riscul de a face o alegere greșită.</p>
+
+        <h3>Palete de farduri în makeup București</h3>
+        <p>Paletele de farduri sunt printre cele mai căutate produse. În București poți găsi colecții minimaliste cu 4-6 culori, dar și palete complexe cu peste 30 de nuanțe. Ofertele variază de la game accesibile, potrivite pentru uz zilnic, până la branduri premium folosite de artiști profesioniști.</p>
+        <p>Paletele sunt adaptate pentru diverse stiluri: tonuri neutre pentru machiaj de zi, nuanțe intense pentru machiaj de seară, sau variante creative pentru machiaj artistic. <strong>Makeup București</strong> înseamnă și posibilitatea de a găsi produse limitate sau colecții exclusive lansate în capitală.</p>
+
+        <h3>Rujuri și produse pentru buze în București</h3>
+        <p>Rujurile rămân unele dintre cele mai iubite produse. Oferta din București acoperă toate tipurile de finisaje:</p>
+        <ul>
+            <li>ruj mat rezistent la transfer</li>
+            <li>ruj cremos hidratant</li>
+            <li>gloss pentru volum și strălucire</li>
+        </ul>
+        <p>Pentru cei pasionați de <strong>makeup București</strong>, buzele reprezintă un punct central în completarea machiajului. Multe branduri internaționale aduc în capitală nuanțe noi la fiecare sezon, ceea ce înseamnă acces rapid la tendințele globale.</p>
+
+        <h3>Produse pentru sprâncene și mascara</h3>
+        <p>Definirea sprâncenelor și genele lungi rămân priorități pentru clienții din București. Există produse variate: creioane, geluri, farduri și rimeluri adaptate nevoilor diferite. În același timp, mascara este disponibil într-o diversitate impresionantă de formule: alungire, volum, curbare sau rezistență la apă.</p>
+        <p><strong>Makeup București</strong> înseamnă acces la toate aceste opțiuni, dar și la specialiști care pot oferi consultanță pentru alegerea produselor potrivite.</p>
+
+        <h3>Highlighter și bronzer în makeup București</h3>
+        <p>Machiajul modern pune accent pe luminozitate și conturare. În București sunt disponibile highlightere lichide, pudră sau cremă, dar și bronzere care oferă un efect natural. Magazinele de specialitate organizează adesea sesiuni demonstrative unde clienții pot învăța cum să folosească aceste produse.</p>
+        <p>Acest tip de experiență este un alt motiv pentru care <strong>makeup București</strong> rămâne o piață atractivă și dinamică.</p>
+
+        <h3>Academii de makeup București</h3>
+        <p>Pentru cei care doresc să transforme pasiunea pentru frumusețe într-o carieră, academiile de makeup sunt o alegere importantă. București găzduiește școli de renume care oferă cursuri intensive. Participanții învață tehnici profesionale, cum să selecteze produse potrivite și cum să se promoveze în industrie.</p>
+        <p>Cursurile sunt structurate pentru a răspunde cerințelor pieței de <strong>makeup București</strong>, unde concurența este mare, dar și oportunitățile sunt pe măsură.</p>
+
+        <h3>Tendințe makeup București</h3>
+        <p>Tendințele internaționale sunt rapid adoptate în capitală. Cele mai populare includ:</p>
+        <ul>
+            <li>machiaj minimalist cu piele naturală și luminoasă</li>
+            <li>eyeliner grafic pentru accente îndrăznețe</li>
+            <li>buze în nuanțe puternice, în special roșu și burgund</li>
+            <li>sprâncene naturale dar definite</li>
+        </ul>
+        <p><strong>Makeup București</strong> evoluează constant, iar brandurile și specialiștii din oraș sunt mereu conectați la noile direcții din domeniu.</p>
+
+        <h3>Experiența de cumpărare în București</h3>
+        <p>Pentru utilizatori, experiența în magazinele de makeup este la fel de importantă ca produsul în sine. București oferă spații moderne, consultanță personalizată și posibilitatea de a testa produsele înainte de achiziție. În plus, multe branduri organizează evenimente și workshopuri dedicate pasionaților de frumusețe.</p>
+        <p>Astfel, <strong>makeup București</strong> înseamnă nu doar achiziție, ci și educație și inspirație.</p>
+
+        <h3>Cum alegi produse de makeup București</h3>
+        <p>Selecția potrivită depinde de mai mulți factori:</p>
+        <ul>
+            <li>tipul de ten și nuanțele potrivite</li>
+            <li>scopul (machiaj zilnic sau profesional)</li>
+            <li>bugetul disponibil</li>
+            <li>recomandările specialiștilor</li>
+        </ul>
+        <p>Bucureștiul oferă acces rapid la toate aceste resurse, ceea ce simplifică procesul de selecție.</p>
+
+        <h3>Avantajele pieței de makeup București</h3>
+        <p>Capitala este un hub major al industriei de beauty. Principalele avantaje sunt:</p>
+        <ul>
+            <li>acces la branduri internaționale și locale</li>
+            <li>diversitate de produse și servicii</li>
+            <li>specialiști cu experiență</li>
+            <li>academii de renume pentru pregătire profesională</li>
+        </ul>
+        <p>Această combinație face ca piața de <strong>makeup București</strong> să fie una dintre cele mai competitive și atractive din țară.</p>
+
+        <h3>Rolul online-ului în makeup București</h3>
+        <p>Vânzările online au crescut accelerat, iar Bucureștiul este în centrul acestui trend. Brandurile și artiștii folosesc intens mediul digital pentru a promova produse și servicii. Clienții pot comanda rapid fonduri de ten, palete de farduri sau rujuri direct din magazine virtuale, beneficiind de livrare rapidă.</p>
+        <p>Totodată, <strong>makeup București</strong> este promovat prin tutoriale video, postări pe rețele sociale și campanii interactive.</p>
+
+        <p>Piața de <strong>makeup București</strong> reprezintă un spațiu complex și competitiv unde produsele de calitate, serviciile personalizate și accesul la tendințele internaționale se combină pentru a oferi clienților soluții adaptate. De la fonduri de ten și rujuri, până la palete de farduri și produse pentru sprâncene, oferta este impresionantă. În plus, serviciile de makeup, academiile și brandurile prezente în capitală transformă Bucureștiul într-un centru major pentru frumusețe.</p>
+
+        <p>Prin diversitate, calitate și inovație, <strong>makeup București</strong> rămâne alegerea principală pentru consumatori și profesioniști deopotrivă.</p>
+    </div>
+</article>
+<h1 class="section-title">Makeup Artist București</h1>
+            
+<article id="Makeup Artist București">
+    <h2>Makeup Artist București</h2>
+    <div class="article-content">
+        <p>În București, domeniul beauty a crescut semnificativ în ultimii ani, iar rolul unui <strong>makeup artist București</strong> a devenit esențial pentru evenimente speciale, ședințe foto, producție media sau chiar pentru machiaj de zi. Piața este diversă, oferind atât profesioniști cu experiență, cât și artiști la început de drum care investesc în educație și produse de calitate. Alegerea unui specialist în machiaj nu mai este doar o chestiune de trend, ci una legată de rezultate, confort și încredere.</p>
+
+        <p>Un <strong>makeup artist București</strong> nu înseamnă doar aplicarea de produse cosmetice. Este o combinație între tehnică, creativitate și capacitatea de a personaliza machiajul în funcție de fizionomie, tipul de piele și preferințele cliente. Fiecare sesiune de makeup poate fi privită ca o colaborare între client și artist, cu accent pe armonie și detalii.</p>
+
+        <div style="text-align: center; margin: 20px 0;">
+            <img src="/home/luc/amkp/imagini/makeup bucuresti 6.webp" alt="Makeup Bucuresti 6" style="max-width: 650px; width: 100%; height: auto; border-radius: 10px;">
+        </div>
+
+        <h3>Rolul unui makeup artist București</h3>
+        <p>Un profesionist în machiaj aduce mai mult decât un look plăcut vizual. El înțelege textura pielii, particularitățile fiecărui ten și adaptarea produselor astfel încât machiajul să reziste ore întregi.</p>
+        <p>Un <strong>makeup artist București</strong> are rolul de a:</p>
+        <ul>
+            <li>pune în valoare trăsăturile naturale;</li>
+            <li>ascunde imperfecțiunile fără efect de mască;</li>
+            <li>adapta machiajul în funcție de eveniment și lumină.</li>
+        </ul>
+
+        <h3>Experiența și portofoliul</h3>
+        <p>Un <strong>makeup artist București</strong> cu experiență dovedită prezintă un portofoliu variat, care include:</p>
+        <ul>
+            <li>machiaj de mireasă;</li>
+            <li>machiaj pentru evenimente private;</li>
+            <li>machiaj editorial și fashion;</li>
+            <li>machiaj pentru televiziune sau producție video.</li>
+        </ul>
+        <p>Portofoliul reflectă atât diversitatea, cât și capacitatea de adaptare la stiluri diferite. Alegerea unui profesionist ar trebui să se bazeze pe aceste elemente, pentru că ele indică nivelul de pregătire și atenția la detalii.</p>
+
+        <h3>Produse folosite</h3>
+        <p>Calitatea produselor este un factor important atunci când alegi un <strong>makeup artist București</strong>. Brandurile profesionale sunt formulate pentru rezistență, pigmenție puternică și confort pe piele. Produsele bine alese nu încarcă și nu irită tenul, ceea ce înseamnă că machiajul rămâne natural și plăcut ore întregi.</p>
+        <p>Un makeup artist bun știe ce să folosească pentru fiecare tip de piele:</p>
+        <ul>
+            <li>produse hidratante pentru ten uscat;</li>
+            <li>formule mate pentru ten gras;</li>
+            <li>baze de machiaj potrivite pentru ten mixt sau sensibil.</li>
+        </ul>
+
+        <h3>Tehnici moderne</h3>
+        <p>Un <strong>makeup artist București</strong> folosește tehnici moderne pentru a obține rezultate cât mai naturale. Conturarea subtilă, blending-ul perfect și iluminarea strategică sunt elemente esențiale. Accentul se pune pe evidențierea trăsăturilor și pe evitarea excesului.</p>
+        <p>De asemenea, un artist profesionist este mereu la curent cu tendințele. Stilurile de machiaj evoluează constant, iar un specialist știe când să introducă noutăți și când să păstreze un look clasic, atemporal.</p>
+
+        <h3>Machiaj de mireasă</h3>
+        <p>Un capitol aparte este machiajul de mireasă. În București, cererea pentru acest serviciu este foarte mare, iar un <strong>makeup artist București</strong> are responsabilitatea de a crea un look care să reziste întreaga zi. Machiajul de mireasă presupune:</p>
+        <ul>
+            <li>test prealabil pentru stabilirea produselor;</li>
+            <li>adaptare la rochia de mireasă și coafură;</li>
+            <li>rezistență la emoții și lumină puternică.</li>
+        </ul>
+        <p>Machiajul de mireasă trebuie să fie echilibrat, rafinat și confortabil. Un profesionist experimentat va avea întotdeauna soluții pentru a răspunde acestor cerințe.</p>
+
+        <h3>Machiaj pentru evenimente</h3>
+        <p>Pe lângă nunți, în București există cerere constantă pentru machiaj de eveniment. Fie că este vorba despre o petrecere privată sau un eveniment corporate, un <strong>makeup artist București</strong> poate oferi look-uri adaptate contextului. Accentul poate fi pus pe intensitatea culorilor, pe rezistența la dans sau pe lumina artificială.</p>
+
+        <h3>Ședințe foto și producție media</h3>
+        <p>Pentru ședințe foto, machiajul are rolul de a completa conceptul artistic și de a rezista luminii puternice a aparatelor foto sau a reflectoarelor. Un <strong>makeup artist București</strong> care colaborează cu fotografi și agenții de producție are experiență în ajustarea machiajului astfel încât să arate impecabil în imagini.</p>
+        <p>De asemenea, pentru televiziune și producție video, machiajul trebuie să fie adaptat filmărilor HD, unde fiecare detaliu este vizibil. Un profesionist știe ce produse și tehnici să aplice pentru a oferi rezultate perfecte pe cameră.</p>
+
+        <h3>Machiaj de zi și de seară</h3>
+        <ul>
+            <li><strong>machiaj de zi:</strong> natural, lejer, care oferă prospețime;</li>
+            <li><strong>machiaj de seară:</strong> accent pe ochi sau buze, rezistență sporită, finisaj sofisticat.</li>
+        </ul>
+
+        <h3>Personalizare și consultanță</h3>
+        <p>Un avantaj al colaborării cu un <strong>makeup artist București</strong> este consultanța personalizată. Artistul poate recomanda produse pentru rutina zilnică, poate oferi sfaturi despre îngrijirea tenului și poate explica pașii necesari pentru menținerea machiajului pe durata evenimentului.</p>
+
+        <h3>Experiența clientului</h3>
+        <p>În București, piața este competitivă, iar un <strong>makeup artist București</strong> de succes știe că experiența clientului contează la fel de mult ca rezultatul final. De la modul în care este amenajat spațiul de lucru până la comunicarea înainte și după eveniment, totul influențează nivelul de satisfacție.</p>
+
+        <h3>Prețuri și pachete</h3>
+        <p>Un alt aspect important pentru utilizatori este costul serviciilor. Prețurile pentru un <strong>makeup artist București</strong> variază în funcție de experiență, complexitatea machiajului și tipul de eveniment. Mulți artiști oferă pachete speciale pentru mirese sau pentru grupuri, ceea ce poate fi avantajos pentru clienți.</p>
+
+        <h3>Training și cursuri</h3>
+        <p>Mulți <strong>makeup artist București</strong> nu se limitează doar la servicii. Ei oferă și cursuri de auto-machiaj sau training pentru cei care își doresc să devină profesioniști. Aceste cursuri sunt o oportunitate pentru persoanele interesate de domeniu să învețe direct de la specialiști cu experiență.</p>
+
+        <h3>Avantajele colaborării cu un makeup artist București</h3>
+        <ul>
+            <li>machiaj personalizat în funcție de trăsături;</li>
+            <li>produse profesionale, rezistente și sigure;</li>
+            <li>experiență plăcută și rezultate de durată.</li>
+        </ul>
+
+        <p>Un <strong>makeup artist București</strong> nu este doar un furnizor de servicii beauty, ci un partener în crearea unei imagini perfecte pentru orice ocazie. Fie că este vorba despre o nuntă, un eveniment privat, o ședință foto sau chiar un machiaj de zi, aportul unui specialist este vizibil imediat.</p>
+
+        <p>Piața din București oferă o varietate de opțiuni, iar alegerea corectă depinde de experiență, portofoliu, produse folosite și stilul personal al artistului. Investiția într-un profesionist se traduce prin rezultate impecabile și încredere în propria imagine.</p>
+    </div>
+</article>
+<h1 class="section-title">Cursuri Makeup București</h1>
+            
+<article id="Cursuri de Makeup în București">
+    <h2>Cursuri de Makeup în București</h2>
+    <div class="article-content">
+        <p>Piața de <strong>cursuri makeup București</strong> a crescut constant în ultimii ani datorită cererii ridicate pentru specialiști în machiaj și pentru persoane care își doresc să își dezvolte abilități în domeniu. Interesul nu vine doar din partea celor care își doresc o carieră profesională, ci și din partea celor care vor să învețe tehnici corecte pentru uz personal. Un curs bine structurat poate face diferența între o pasiune ocazională și o profesie stabilă.</p>
+        
+        <p>Oferta din capitală este variată și cuprinde atât programe pentru începători, cât și cursuri avansate, dedicate artiștilor care vor să își îmbunătățească stilul și să adauge noi tehnici la portofoliu. <strong>Școala makeup București</strong> și <strong>academie makeup București</strong> sunt termeni des căutați, pentru că mulți își doresc să învețe într-un cadru organizat, cu traineri experimentați și materiale profesionale.</p>
+
+        <div style="text-align: center; margin: 20px 0;">
+            <img src="/home/luc/amkp/imagini/makeup bucuresti 7.webp" alt="Makeup Bucuresti 7" style="max-width: 650px; width: 100%; height: auto; border-radius: 10px;">
+        </div>
+
+        <h3>De ce sunt căutate cursurile de makeup în București</h3>
+        <p>Bucureștiul oferă acces la numeroase școli și academii de renume. Avantajul este că aceste instituții colaborează cu traineri certificați și folosesc produse profesionale, ceea ce garantează un standard ridicat de învățare.</p>
+        <p>Tot mai multe persoane caută:</p>
+        <ul>
+            <li>specializare pentru a deveni makeup artist</li>
+            <li>informații practice pentru un machiaj corect de zi cu zi</li>
+            <li>acreditare recunoscută în industrie</li>
+        </ul>
+        <p>Astfel, <strong>cursuri makeup București</strong> reprezintă o alegere practică pentru oricine dorește să facă un pas înainte în domeniul frumuseții.</p>
+
+        <h3>Structura unui curs de makeup</h3>
+        <p>Un program de învățare este împărțit pe module clare. Cele mai întâlnite includ:</p>
+        <ul>
+            <li>Introducere în cosmetică și igienă</li>
+            <li>Studiu al tipurilor de ten</li>
+            <li>Tehnici de machiaj de zi, de seară și pentru evenimente</li>
+            <li>Corecții și contur facial</li>
+            <li>Aplicarea genelor false și tehnici avansate</li>
+        </ul>
+        <p>Prin parcurgerea acestor etape, cursanții învață să aplice cunoștințele atât pe sine, cât și pe alte persoane. Diferența majoră o face practica intensivă, iar școlile serioase pun accent pe acest aspect.</p>
+
+        <h3>Școala makeup București – avantaje pentru cursanți</h3>
+        <p>O <strong>școală makeup București</strong> oferă acces la un mediu organizat și la traineri cu experiență. Cursanții au posibilitatea de a testa produse profesionale și de a lucra pe modele reale.</p>
+        <p>Avantaje:</p>
+        <ul>
+            <li>feedback personalizat din partea trainerilor</li>
+            <li>portofoliu foto realizat pe parcursul cursurilor</li>
+            <li>certificat de absolvire, uneori recunoscut internațional</li>
+        </ul>
+        <p>Pentru mulți, acesta este primul pas către o carieră. Un certificat obținut într-o academie de profil oferă încredere și recunoaștere pe piața muncii.</p>
+
+        <h3>Academie makeup București – un pas către nivel profesional</h3>
+        <p>O <strong>academie makeup București</strong> oferă mai mult decât noțiuni de bază. Este destinată celor care își doresc o carieră solidă. Accentul se pune pe tehnici complexe, pe diversitate și pe adaptarea machiajului în funcție de cerințele clienților.</p>
+        <p>Academiile includ frecvent și cursuri de specializare precum:</p>
+        <ul>
+            <li>machiaj de mireasă</li>
+            <li>machiaj foto-video</li>
+            <li>tehnici de machiaj fashion pentru prezentări</li>
+            <li>machiaj corector pentru probleme specifice ale pielii</li>
+        </ul>
+        <p>Aceste programe sunt ideale pentru cei care vor să colaboreze cu studiouri foto, televiziuni, saloane de înfrumusețare sau chiar să devină freelanceri.</p>
+
+        <h3>Alegerea corectă a unui curs de makeup în București</h3>
+        <p>Când vine vorba de <strong>cursuri makeup București</strong>, alegerea trebuie făcută ținând cont de obiectivele personale. Unele persoane doresc doar să învețe tehnici pentru machiajul zilnic, în timp ce altele își propun să devină makeup artiști profesioniști.</p>
+        <p>Criterii importante în selecție:</p>
+        <ul>
+            <li>reputația școlii sau academiei</li>
+            <li>experiența trainerilor</li>
+            <li>durata și intensitatea cursului</li>
+            <li>posibilitatea de practică reală</li>
+            <li>tipul certificatului obținut</li>
+        </ul>
+        <p>Un alt aspect de verificat este modul în care școala sprijină absolvenții după finalizarea cursului. Unele oferă recomandări pentru angajare sau includ workshopuri gratuite pentru perfecționare.</p>
+
+        <h3>Experiența practică – cheia învățării eficiente</h3>
+        <p>În makeup, teoria este importantă, dar practica este decisivă. Cele mai bune programe de <strong>școală makeup București</strong> oferă ore extinse de aplicare pe modele, pentru că doar așa se pot fixa abilitățile.</p>
+        <p>Practicarea diferitelor tipuri de machiaj în condiții reale îi ajută pe cursanți să dobândească încredere și să se adapteze la diverse tipuri de ten și trăsături faciale. Acesta este un element esențial atunci când se dorește transformarea pasiunii într-o profesie.</p>
+
+        <h3>Carieră după absolvirea unui curs de makeup</h3>
+        <p>Un absolvent al unei <strong>academie makeup București</strong> are mai multe opțiuni de carieră. Domeniul este divers și în continuă expansiune, iar cererea pentru specialiști rămâne ridicată.</p>
+        <p>Oportunități:</p>
+        <ul>
+            <li>colaborări cu saloane de înfrumusețare</li>
+            <li>activitate independentă ca freelancer</li>
+            <li>colaborări cu fotografi sau studiouri video</li>
+            <li>participarea la evenimente speciale, nunți, prezentări de modă</li>
+        </ul>
+        <p>Flexibilitatea este un avantaj, iar mulți aleg să combine aceste opțiuni pentru a-și diversifica veniturile.</p>
+
+        <h3>De ce București este un centru principal pentru cursuri makeup</h3>
+        <p>Capitala adună cele mai multe școli și academii, ceea ce înseamnă că există concurență și, implicit, calitate mai ridicată a programelor. Trainerii invitați din străinătate, workshopurile de specializare și accesul la produse profesionale sunt factori care atrag cursanții din toată țara.</p>
+        <p>Bucureștiul este și locul unde oportunitățile de carieră sunt mai mari. Evenimentele, producțiile media și numărul ridicat de clienți fac ca investiția într-un <strong>curs makeup București</strong> să fie justificată.</p>
+
+        <p>Un program de <strong>cursuri makeup București</strong> este mai mult decât un simplu hobby. Este o investiție într-o carieră și într-o abilitate utilă pe termen lung. Alegerea unei <strong>școli makeup București</strong> sau a unei <strong>academie makeup București</strong> depinde de obiectivele cursantului, dar oricare dintre variante poate reprezenta primul pas către succes în domeniul frumuseții.</p>
+
+        <p>Cei care își doresc o carieră stabilă în makeup găsesc în București resursele necesare: traineri experimentați, cursuri diversificate și certificări valoroase. Pentru pasionați, aceste cursuri oferă ocazia de a învăța tehnici corecte și de a-și perfecționa abilitățile personale.</p>
+    </div>
+</article>
+
+        </div>
+    </section>
+
+<section id="faq" class="bg-white">
+    <div class="container">
+        <h2 class="section-title">Intrebari si raspunsuri</h2>
+        
+        <div class="faq-container">
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>1. Care sunt cele mai populare saloane de makeup din Bucuresti?</span>
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>In Bucuresti exista numeroase saloane si make-up artisti cunoscuti pentru profesionalism si calitate. Printre cele mai apreciate se numara saloane de lux din zone centrale, dar si studiouri private conduse de make-up artisti renumiti. Popularitatea lor vine din portofoliul bogat, experienta acumulata si utilizarea produselor profesionale. De asemenea, prezenta pe retelele sociale joaca un rol important in atragerea clientelei.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>2. Cat costa un machiaj profesional in Bucuresti?</span>
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Preturile pentru un machiaj profesional variaza in Bucuresti in functie de experienta artistului, produsele folosite si tipul de machiaj dorit. In general, costurile pornesc de la 150-200 lei pentru un machiaj de zi, iar pentru un machiaj de mireasa sau de eveniment pot ajunge la 400-600 lei. Artistii de top pot percepe tarife chiar mai mari, datorita cererii ridicate si reputatiei.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>3. Ce tipuri de machiaj sunt cel mai des solicitate in Bucuresti?</span>
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>In capitala, clientele aleg frecvent machiajul de mireasa, machiajul de ocazie (pentru nunti, botezuri, baluri) si machiajul de seara. De asemenea, machiajul natural, tip „no-makeup makeup”, a devenit foarte popular pentru sedinte foto sau intalniri profesionale. Pentru evenimente speciale, se cauta look-uri glamour, cu accent pe ochi si buze bine definite.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>4. Cum aleg un make-up artist potrivit in Bucuresti?</span>
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Alegerea unui make-up artist potrivit presupune sa analizezi portofoliul online, recenziile clientilor si stilul acestuia. Este recomandat sa cauti pe Instagram sau Facebook, unde majoritatea artistilor posteaza lucrarile lor. Totodata, conteaza disponibilitatea, locatia si comunicarea cu artistul. O proba de machiaj poate fi o idee buna inaintea unui eveniment important.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>5. Care sunt diferentele intre machiajul de zi si cel de seara in Bucuresti?</span>
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Machiajul de zi este realizat intr-un stil mai natural, cu nuante neutre si o acoperire lejera, astfel incat sa fie potrivit pentru birou sau intalniri. In schimb, machiajul de seara este mai intens, cu culori mai puternice, iluminare accentuata si tehnici precum smokey eyes sau contouring mai evident. In Bucuresti, artistii adapteaza aceste stiluri in functie de preferintele cliente.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>6. Ce produse de makeup profesionale se folosesc cel mai des in Bucuresti?</span>
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Artistii de makeup din Bucuresti utilizeaza branduri profesionale precum MAC, Dior, Huda Beauty, Anastasia Beverly Hills, Urban Decay, dar si produse premium precum Charlotte Tilbury sau NARS. Fondurile de ten cu rezistenta mare, iluminatoarele si paletele versatile sunt esentiale pentru a obtine un look impecabil, mai ales in conditii de lumina puternica sau evenimente de lunga durata.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>7. Cum se face programarea la un make-up artist din Bucuresti?</span>
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Programarile se fac, in general, telefonic sau prin mesaje pe retelele sociale. Multi make-up artisti au pagini de Instagram unde posteaza lucrarile lor si lasa date de contact. Pentru evenimente importante, precum nunti, este recomandat sa faci rezervarea cu cateva luni inainte, deoarece artistii renumiti au agenda incarcata, mai ales in sezonul cald.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>8. Este necesara o proba de machiaj inainte de nunta in Bucuresti?</span>
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Da, proba de machiaj este esentiala pentru mirese. Aceasta permite testarea produselor, stabilirea stilului dorit si evitarea eventualelor alergii sau neconcordante de nuanta. In Bucuresti, majoritatea artistilor de top recomanda si includ o sedinta de proba in pachetul pentru mireasa, pentru a garanta ca look-ul final va fi perfect in ziua cea mare.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>9. Cat dureaza un machiaj profesional la un salon din Bucuresti?</span>
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Durata unui machiaj profesional este, in medie, de 60-90 de minute. Timpul poate varia in functie de complexitatea look-ului dorit, tipul de piele si produsele utilizate. Machiajul de mireasa sau cel de ocazie implica mai multe etape – baza, contouring, machiajul ochilor si fixare – ceea ce necesita o atentie sporita din partea artistului.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>10. Cum pot rezista machiajele realizate in Bucuresti la temperaturi ridicate sau evenimente lungi?</span>
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Pentru a asigura rezistenta machiajului, artistii din Bucuresti folosesc produse profesionale cu texturi long-lasting, baze matifiante si spray-uri de fixare. De asemenea, aplicarea in straturi subtiri si tehnica baking sunt folosite pentru a evita estomparea rapida. Rezultatul este un look impecabil, care poate rezista ore intregi, inclusiv la dans, emotii sau caldura.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Care sunt cele mai populare saloane de makeup din Bucuresti?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In Bucuresti exista numeroase saloane si make-up artisti cunoscuti pentru profesionalism si calitate. Printre cele mai apreciate se numara saloane de lux din zone centrale, dar si studiouri private conduse de make-up artisti renumiti."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cat costa un machiaj profesional in Bucuresti?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Preturile pentru un machiaj profesional variaza in Bucuresti in functie de experienta artistului, produsele folosite si tipul de machiaj dorit. In general, costurile pornesc de la 150-200 lei pentru un machiaj de zi, iar pentru un machiaj de mireasa sau de eveniment pot ajunge la 400-600 lei."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ce tipuri de machiaj sunt cel mai des solicitate in Bucuresti?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In capitala, clientele aleg frecvent machiajul de mireasa, machiajul de ocazie si machiajul de seara. De asemenea, machiajul natural tip no-makeup makeup a devenit foarte popular pentru sedinte foto sau intalniri profesionale."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cum aleg un make-up artist potrivit in Bucuresti?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alegerea unui make-up artist potrivit presupune sa analizezi portofoliul online, recenziile clientilor si stilul acestuia. Este recomandat sa cauti pe Instagram sau Facebook unde majoritatea artistilor posteaza lucrarile lor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Care sunt diferentele intre machiajul de zi si cel de seara in Bucuresti?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Machiajul de zi este realizat intr-un stil mai natural, cu nuante neutre si o acoperire lejera. In schimb, machiajul de seara este mai intens, cu culori mai puternice si tehnici precum smokey eyes sau contouring mai evident."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ce produse de makeup profesionale se folosesc cel mai des in Bucuresti?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Artistii de makeup din Bucuresti utilizeaza branduri profesionale precum MAC, Dior, Huda Beauty, Anastasia Beverly Hills, Urban Decay, dar si produse premium precum Charlotte Tilbury sau NARS."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cum se face programarea la un make-up artist din Bucuresti?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Programarile se fac telefonic sau prin mesaje pe retelele sociale. Multi make-up artisti au pagini de Instagram unde posteaza lucrarile lor si lasa date de contact."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Este necesara o proba de machiaj inainte de nunta in Bucuresti?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da, proba de machiaj este esentiala pentru mirese. Aceasta permite testarea produselor, stabilirea stilului dorit si evitarea eventualelor alergii sau neconcordante de nuanta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cat dureaza un machiaj profesional la un salon din Bucuresti?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Durata unui machiaj profesional este in medie de 60-90 de minute. Machiajul de mireasa sau cel de ocazie implica mai multe etape precum baza, contouring, machiajul ochilor si fixare."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cum pot rezista machiajele realizate in Bucuresti la temperaturi ridicate sau evenimente lungi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pentru a asigura rezistenta machiajului, artistii din Bucuresti folosesc produse profesionale long-lasting, baze matifiante si spray-uri de fixare. Aplicarea in straturi subtiri si tehnica baking sunt folosite pentru a evita estomparea rapida."
+      }
+    }
+  ]
+}
+</script>
+
+
+    <section id="contact" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Contactează-ne</h2>
+            <p style="text-align: center; font-size: 1.3rem; color: var(--secondary); margin-bottom: 50px;"></p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>contact@makeupbucuresti.info</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Locație</h3>
+                    <p>București, România</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="tel:+40XXXXXXXXX" class="cta-btn cta-primary">Solicită Ofertă</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h3>Makeup București</h3>
+            <p style="margin-bottom: 20px;">Servicii profesionale de machiaj în București</p>
+            <p>&copy; 2025 Makeup București. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Carousel
+        const track = document.getElementById('carouselTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dotsContainer = document.getElementById('carouselDots');
+        const slides = track.querySelectorAll('.carousel-slide');
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        
+        // Create dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.classList.add('carousel-dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+        
+        const dots = dotsContainer.querySelectorAll('.carousel-dot');
+        
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+        
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+        
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+        
+        // Auto-play carousel
+        let autoplayInterval = setInterval(nextSlide, 5000);
+        
+        // Pause autoplay on hover
+        const carouselContainer = document.querySelector('.carousel-container');
+        carouselContainer.addEventListener('mouseenter', () => {
+            clearInterval(autoplayInterval);
+        });
+        
+        carouselContainer.addEventListener('mouseleave', () => {
+            autoplayInterval = setInterval(nextSlide, 5000);
+        });
+        
+        // Touch support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        carouselContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        carouselContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            if (touchStartX - touchEndX > 50) {
+                nextSlide();
+            }
+            if (touchEndX - touchStartX > 50) {
+                prevSlide();
+            }
+        }
+        
+        // FAQ
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const arrow = question.querySelector('.faq-arrow');
+                
+                answer.classList.toggle('active');
+                arrow.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

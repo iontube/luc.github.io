@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Florentina Stanciu - Make-up & Lami Artist. Servicii profesionale de machiaj și laminare gene în București.">
+    <title>Florentina Stanciu – Make-up & Lami Artist</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Flowbite CSS & JS -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Palette 1 - Fundaluri deschise
+                        cream: {
+                            50: '#fffae7',
+                            100: '#fffadb',
+                            200: '#fffdd0',
+                            300: '#fff7ca',
+                            400: '#f2e6c1',
+                        },
+                        // Palette 2 - Accente
+                        rose: {
+                            50: '#f5efeb',
+                            100: '#e7e0e1',
+                            200: '#e7e0d8',
+                            300: '#d5b69a',
+                            400: '#cfb195',
+                            500: '#c9ab8f',
+                            600: '#c9a686',
+                            700: '#c5a17c',
+                        }
+                    },
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins bg-cream-50 text-gray-800">
+
+    <!-- ============================================
+         NAVBAR - Fixed, Semi-transparent on scroll
+    ============================================= -->
+    <nav id="navbar" class="fixed w-full z-50 top-0 transition-all duration-300">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <!-- Logo/Brand -->
+            <a href="#" class="flex items-center space-x-3">
+                <span class="self-center text-2xl font-playfair font-semibold whitespace-nowrap text-rose-700">Florentina Stanciu</span>
+            </a>
+
+            <!-- Mobile menu button -->
+            <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-rose-700 rounded-lg md:hidden hover:bg-rose-100 focus:outline-none focus:ring-2 focus:ring-rose-200" aria-controls="navbar-default" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+
+            <!-- Menu items -->
+            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
+                    <li>
+                        <a href="#hero" class="block py-2 px-3 text-rose-700 hover:text-rose-900 transition-colors">Acasă</a>
+                    </li>
+                    <li>
+                        <a href="#galerie" class="block py-2 px-3 text-rose-700 hover:text-rose-900 transition-colors">Galerie</a>
+                    </li>
+                    <li>
+                        <a href="#servicii" class="block py-2 px-3 text-rose-700 hover:text-rose-900 transition-colors">Servicii</a>
+                    </li>
+                    <li>
+                        <a href="#despre" class="block py-2 px-3 text-rose-700 hover:text-rose-900 transition-colors">Despre Mine</a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="block py-2 px-3 text-rose-700 hover:text-rose-900 transition-colors">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION - Elegant background with CTA
+    ============================================= -->
+    <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <picture class="absolute inset-0">
+            <!-- WebP for modern browsers -->
+            <source srcset="imagini/hero.webp" type="image/webp">
+            <!-- JPEG fallback for older browsers -->
+            <img src="imagini/hero.jpeg" alt="Florentina Stanciu Make-up Artist" class="w-full h-full object-cover" loading="eager">
+        </picture>
+
+        <!-- Dark Overlay for better text visibility -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <h1 class="font-playfair text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in drop-shadow-2xl">
+                Florentina Stanciu
+            </h1>
+            <p class="font-playfair text-2xl md:text-3xl text-cream-100 mb-4 drop-shadow-lg">
+                Make-up & Lami Artist
+            </p>
+            <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto drop-shadow-lg">
+                Transformă-ți frumusețea naturală într-o artă. Servicii profesionale de machiaj și laminare gene pentru fiecare ocazie specială.
+            </p>
+            <a href="#galerie" class="inline-block bg-rose-600 hover:bg-rose-700 text-white font-medium px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                Vezi mai mult
+            </a>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ============================================
+         GALERIE SECTION - Responsive grid with hover effects
+    ============================================= -->
+    <section id="galerie" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-rose-700 mb-4">
+                    Galerie
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Descoperă transformările realizate cu pasiune și profesionalism. Fiecare machiaj spune o poveste unică.
+                </p>
+            </div>
+
+            <!-- Responsive Gallery Grid - Masonry Style Layout -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[200px]">
+
+                <!-- Gallery Item 1 - Tall portrait -->
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg group cursor-pointer row-span-2 col-span-1">
+                    <picture>
+                        <source srcset="imagini/galerie1.webp" type="image/webp">
+                        <img src="imagini/galerie1.jpeg" alt="Machiaj profesional - Florentina Stanciu" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                    </picture>
+                    <div class="absolute inset-0 bg-rose-900 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                </div>
+
+                <!-- Gallery Item 2 - Wide landscape -->
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg group cursor-pointer col-span-2 row-span-1">
+                    <picture>
+                        <source srcset="imagini/galerie2.webp" type="image/webp">
+                        <img src="imagini/galerie2.jpeg" alt="Machiaj de mireasă - Florentina Stanciu" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" style="object-position: center 30%;">
+                    </picture>
+                    <div class="absolute inset-0 bg-rose-900 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                </div>
+
+                <!-- Gallery Item 3 - Square -->
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg group cursor-pointer row-span-1 col-span-1">
+                    <picture>
+                        <source srcset="imagini/galerie3.webp" type="image/webp">
+                        <img src="imagini/galerie3.jpeg" alt="Laminare gene - Florentina Stanciu" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                    </picture>
+                    <div class="absolute inset-0 bg-rose-900 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                </div>
+
+                <!-- Gallery Item 4 - Square -->
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg group cursor-pointer row-span-1 col-span-1">
+                    <picture>
+                        <source srcset="imagini/galerie4.webp" type="image/webp">
+                        <img src="imagini/galerie4.jpeg" alt="Machiaj ocazii speciale - Florentina Stanciu" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                    </picture>
+                    <div class="absolute inset-0 bg-rose-900 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                </div>
+
+                <!-- Gallery Item 5 - Tall portrait -->
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg group cursor-pointer row-span-2 col-span-1">
+                    <picture>
+                        <source srcset="imagini/galerie5.webp" type="image/webp">
+                        <img src="imagini/galerie5.jpeg" alt="Make-up artist portofoliu - Florentina Stanciu" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                    </picture>
+                    <div class="absolute inset-0 bg-rose-900 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                </div>
+
+                <!-- Gallery Item 6 - Square -->
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg group cursor-pointer row-span-1 col-span-1">
+                    <picture>
+                        <source srcset="imagini/galerie6.webp" type="image/webp">
+                        <img src="imagini/galerie6.jpeg" alt="Transformare machiaj - Florentina Stanciu" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                    </picture>
+                    <div class="absolute inset-0 bg-rose-900 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                </div>
+
+                <!-- Gallery Item 7 - Wide landscape (big feature) -->
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg group cursor-pointer col-span-2 row-span-2 md:col-span-2">
+                    <picture>
+                        <source srcset="imagini/galerie7.webp" type="image/webp">
+                        <img src="imagini/galerie7.jpeg" alt="Machiaj profesional București - Florentina Stanciu" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                    </picture>
+                    <div class="absolute inset-0 bg-rose-900 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                </div>
+
+                <!-- Gallery Item 8 - Tall portrait -->
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg group cursor-pointer row-span-2 col-span-1">
+                    <picture>
+                        <source srcset="imagini/galerie8.webp" type="image/webp">
+                        <img src="imagini/galerie8.jpeg" alt="Lami artist profesionist - Florentina Stanciu" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                    </picture>
+                    <div class="absolute inset-0 bg-rose-900 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SERVICII SECTION - Service cards
+    ============================================= -->
+    <section id="servicii" class="py-20 px-4 bg-cream-50">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-rose-700 mb-4">
+                    Servicii
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Oferim servicii personalizate pentru a evidenția frumusețea ta naturală
+                </p>
+            </div>
+
+            <!-- Services Grid - 3 per row -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Service Card 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-semibold text-rose-700 mb-4 text-center">
+                        Machiaj de Mireasă
+                    </h3>
+                    <p class="text-gray-600 text-center">
+                        Machiaj personalizat pentru ziua ta specială. Include probă de machiaj și produse de lungă durată pentru un look impecabil.
+                    </p>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-semibold text-rose-700 mb-4 text-center">
+                        Laminare Gene
+                    </h3>
+                    <p class="text-gray-600 text-center">
+                        Lifting și laminare gene pentru un look natural și îngrijit. Rezultate care durează până la 6-8 săptămâni.
+                    </p>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-semibold text-rose-700 mb-4 text-center">
+                        Machiaj Ocazii Speciale
+                    </h3>
+                    <p class="text-gray-600 text-center">
+                        Machiaj profesional pentru evenimente, petreceri, ședințe foto sau orice ocazie care necesită un look deosebit.
+                    </p>
+                </div>
+
+                <!-- Service Card 4 - Stilizare Sprâncene -->
+                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-semibold text-rose-700 mb-4 text-center">
+                        Stilizare Sprâncene
+                    </h3>
+                    <p class="text-gray-600 text-center">
+                        Modelarea și stilizarea sprâncenelor pentru forma perfectă care îți evidențiază trăsăturile. Include epilare și definire.
+                    </p>
+                </div>
+
+                <!-- Service Card 5 - Laminare Sprâncene -->
+                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-semibold text-rose-700 mb-4 text-center">
+                        Laminare Sprâncene
+                    </h3>
+                    <p class="text-gray-600 text-center">
+                        Tratament de laminare pentru sprâncene perfect aranjate și definite. Efect de volum și aranjare care durează săptămâni.
+                    </p>
+                </div>
+
+                <!-- Service Card 6 - Cursuri & Workshop-uri -->
+                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-semibold text-rose-700 mb-4 text-center">
+                        Cursuri & Workshop-uri
+                    </h3>
+                    <p class="text-gray-600 text-center">
+                        Învață tehnici profesionale de machiaj prin cursuri personalizate. Pentru începători și avansați.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         DESPRE SECTION - Text + Image
+    ============================================= -->
+    <section id="despre" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                <!-- Image -->
+                <div class="order-2 lg:order-1">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <picture>
+                            <source srcset="imagini/despre.webp" type="image/webp">
+                            <img src="imagini/despre.jpeg" alt="Florentina Stanciu - Make-up & Lami Artist" class="w-full h-full object-cover" loading="lazy">
+                        </picture>
+                        <!-- Decorative element -->
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-rose-200 rounded-full -z-10"></div>
+                        <div class="absolute -top-6 -left-6 w-24 h-24 bg-cream-300 rounded-full -z-10"></div>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="order-1 lg:order-2">
+                    <h2 class="font-playfair text-4xl md:text-5xl font-bold text-rose-700 mb-6">
+                        Despre Mine
+                    </h2>
+                    <div class="space-y-4 text-gray-600 leading-relaxed">
+                        <p>
+                            Bună! Sunt <span class="font-semibold text-rose-700">Florentina Stanciu</span>, make-up artist și specialist în laminare gene cu peste 5 ani de experiență în domeniul frumuseții.
+                        </p>
+                        <p>
+                            Pasiunea mea pentru artă și frumusețe m-a condus pe acest drum minunat, unde fiecare zi înseamnă transformarea și încredere. Cred că machiajul nu înseamnă să schimbi cine ești, ci să evidențiezi frumusețea ta naturală și să te simți extraordinar.
+                        </p>
+                        <p>
+                            Am lucrat cu sute de mirese, am fost prezentă la evenimente speciale și am avut privilegiul să văd zâmbete și emoții autentice. Fiecare client este unic, iar misiunea mea este să creez look-uri personalizate care reflectă personalitatea și stilul fiecăruia.
+                        </p>
+                        <p>
+                            Lucrez cu produse premium și tehnici moderne pentru a asigura rezultate impecabile și de lungă durată. Fie că este vorba de o nuntă de vis, un eveniment important sau pur și simplu dorința de a te simți specială, sunt aici pentru tine.
+                        </p>
+                        <p class="font-playfair text-lg text-rose-600 italic pt-4">
+                            "Frumusețea este putere, iar zâmbetul este sabia ei." – Charles Reade
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CONTACT SECTION - Instagram + Preview
+    ============================================= -->
+    <section id="contact" class="py-20 px-4 bg-gradient-to-br from-cream-100 via-rose-50 to-cream-200">
+        <div class="max-w-4xl mx-auto text-center">
+
+            <!-- Section Header -->
+            <h2 class="font-playfair text-4xl md:text-5xl font-bold text-rose-700 mb-6">
+                Hai să creăm ceva frumos împreună
+            </h2>
+            <p class="text-gray-700 text-lg mb-12 max-w-2xl mx-auto">
+                Pentru colaborări, programări și informații despre servicii, te aștept pe Instagram unde poți vedea cele mai recente lucrări și transformări.
+            </p>
+
+            <!-- Instagram Button -->
+            <a href="https://www.instagram.com/florentina__s__mua" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500 hover:from-purple-600 hover:via-pink-600 hover:to-rose-600 text-white font-medium px-10 py-5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl mb-16">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                <span class="text-lg">Urmărește-mă pe Instagram</span>
+            </a>
+
+            <!-- Instagram Feed Preview -->
+            <div class="mt-12">
+                <h3 class="font-playfair text-2xl font-semibold text-rose-700 mb-8">
+                    Ultimele Lucrări
+                </h3>
+
+                <!-- Instagram Embed Container - CONFIGURARE NECESARĂ -->
+                <div id="instagram-feed" class="instagram-feed-container">
+                    <!--
+                    ==========================================
+                    INSTRUCȚIUNI PENTRU FEED INSTAGRAM GRATUIT
+                    ==========================================
+
+                    Opțiunea 1: SnapWidget (Gratuit cu watermark mic)
+                    ------------------------------------------------
+                    1. Mergi pe: https://snapwidget.com/
+                    2. Click pe "Create Widget" → Instagram → Grid
+                    3. Conectează contul Instagram: florentina__s__mua
+                    4. Personalizează:
+                       - Layout: Grid
+                       - Posts: 4
+                       - Columns: 4
+                       - Theme: Light
+                       - Responsive: Yes
+                    5. Click "Get Widget"
+                    6. Copiază codul JavaScript generat
+                    7. Lipește codul aici (înlocuiește tot acest comentariu)
+
+                    Opțiunea 2: Behold.so (Gratuit 100%)
+                    -------------------------------------
+                    1. Mergi pe: https://behold.so/
+                    2. Sign up gratuit
+                    3. Conectează Instagram: florentina__s__mua
+                    4. Creează feed (Grid layout, 4 posturi)
+                    5. Copiază "Embed Code"
+                    6. Lipește aici
+
+                    Opțiunea 3: InstaShow (Gratuit trial)
+                    --------------------------------------
+                    1. Mergi pe: https://instashow.co/
+                    2. Free trial (fără card)
+                    3. Conectează Instagram
+                    4. Embed code → lipește aici
+
+                    PÂNĂ CONFIGUREZI UN WIDGET, ARATĂ PLACEHOLDER-UL DE MAI JOS:
+                    -->
+
+                    <!-- Placeholder temporar - înlocuiește cu widget-ul ales -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="text-center mb-6">
+                            <svg class="w-20 h-20 mx-auto mb-4 text-rose-400" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                            <h4 class="text-xl font-playfair font-semibold text-gray-700 mb-2">
+                                Instagram Feed - Configurare Necesară
+                            </h4>
+                            <p class="text-gray-600 mb-6 max-w-lg mx-auto">
+                                Pentru a afișa automat postările Instagram, urmează pașii din comentariile HTML de mai sus sau verifică fișierul <code class="bg-rose-50 px-2 py-1 rounded text-rose-700">INSTAGRAM_EMBED_GUIDE.md</code>
+                            </p>
+                            <a href="https://www.instagram.com/florentina__s__mua" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500 hover:from-purple-600 hover:via-pink-600 hover:to-rose-600 text-white font-medium px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                                Vezi toate postările pe Instagram
+                            </a>
+                        </div>
+
+                        <!-- Grid Preview -->
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                            <div class="aspect-square bg-gradient-to-br from-purple-100 to-pink-100 rounded-lg flex items-center justify-center">
+                                <span class="text-rose-300 text-4xl">📸</span>
+                            </div>
+                            <div class="aspect-square bg-gradient-to-br from-pink-100 to-rose-100 rounded-lg flex items-center justify-center">
+                                <span class="text-rose-300 text-4xl">💄</span>
+                            </div>
+                            <div class="aspect-square bg-gradient-to-br from-rose-100 to-purple-100 rounded-lg flex items-center justify-center hidden md:flex">
+                                <span class="text-rose-300 text-4xl">✨</span>
+                            </div>
+                            <div class="aspect-square bg-gradient-to-br from-purple-100 to-rose-100 rounded-lg flex items-center justify-center hidden md:flex">
+                                <span class="text-rose-300 text-4xl">💅</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--
+                    După ce ai configurat widget-ul, acest div de mai sus poate fi șters
+                    și înlocuit cu codul de embed de la serviciul ales
+                    -->
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER - Simple copyright
+    ============================================= -->
+    <footer class="bg-rose-900 text-white py-8 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center">
+                <p class="font-playfair text-2xl font-semibold mb-2">Florentina Stanciu</p>
+                <p class="text-rose-200 mb-4">Make-up & Lami Artist</p>
+                <div class="border-t border-rose-700 pt-6 mt-6">
+                    <p class="text-sm text-rose-200">
+                        &copy; 2025 Florentina Stanciu. Toate drepturile rezervate.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Flowbite JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,326 @@
+/* ============================================
+   CUSTOM STYLES FOR FLORENTINA STANCIU WEBSITE
+   Additional styling beyond Tailwind/Flowbite
+   ============================================ */
+
+/* ============================================
+   GENERAL STYLES & UTILITIES
+   ============================================ */
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* ============================================
+   NAVBAR STYLES - Solid background, better visibility
+   ============================================ */
+#navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(197, 161, 124, 0.15);
+}
+
+#navbar.scrolled {
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(197, 161, 124, 0.25);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+/* Fade in animation for hero */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Scroll reveal animation */
+@keyframes scrollReveal {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scroll-reveal {
+    opacity: 0;
+    animation: scrollReveal 0.8s ease-out forwards;
+}
+
+/* ============================================
+   GALLERY STYLES
+   ============================================ */
+
+/* Smooth transitions for gallery items */
+.gallery-item {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(197, 161, 124, 0.3);
+}
+
+/* Gallery image overlay effect */
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(197, 161, 124, 0.4));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.gallery-item:hover::before {
+    opacity: 1;
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fffae7;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c9a686;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #c5a17c;
+}
+
+/* ============================================
+   RESPONSIVE TYPOGRAPHY
+   ============================================ */
+@media (max-width: 640px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+/* ============================================
+   BUTTON HOVER EFFECTS
+   ============================================ */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* ============================================
+   SECTION SPACING & BACKGROUNDS
+   ============================================ */
+section {
+    position: relative;
+}
+
+/* Decorative background patterns */
+.pattern-dots {
+    background-image: radial-gradient(circle, #d5b69a 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.1;
+}
+
+/* ============================================
+   CARD HOVER EFFECTS
+   ============================================ */
+.service-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover {
+    box-shadow: 0 25px 50px -12px rgba(197, 161, 124, 0.25);
+}
+
+/* ============================================
+   MOBILE MENU STYLES
+   ============================================ */
+@media (max-width: 768px) {
+    #navbar-default {
+        background-color: #ffffff;
+        margin-top: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 10px 30px rgba(197, 161, 124, 0.25);
+        padding: 1rem;
+    }
+
+    #navbar-default ul {
+        background-color: #ffffff;
+    }
+
+    #navbar-default a {
+        color: #c5a17c !important;
+        font-weight: 500;
+        padding: 0.75rem 1rem !important;
+        border-radius: 0.5rem;
+    }
+
+    #navbar-default a:hover {
+        background-color: #f5efeb;
+        color: #c9a686 !important;
+    }
+}
+
+/* ============================================
+   LOADING ANIMATIONS
+   ============================================ */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.shimmer {
+    background: linear-gradient(
+        to right,
+        #f5efeb 0%,
+        #e7e0d8 20%,
+        #f5efeb 40%,
+        #f5efeb 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* ============================================
+   SMOOTH TRANSITIONS
+   ============================================ */
+a, button, .transition-element {
+    transition: all 0.3s ease;
+}
+
+/* ============================================
+   FOCUS STATES FOR ACCESSIBILITY
+   ============================================ */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid #c9a686;
+    outline-offset: 2px;
+}
+
+/* ============================================
+   IMAGE OPTIMIZATION
+   ============================================ */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Prevent layout shift while images load */
+.aspect-ratio-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.aspect-ratio-box::before {
+    content: '';
+    display: block;
+    padding-top: var(--aspect-ratio, 100%);
+}
+
+.aspect-ratio-box > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+    nav, footer {
+        display: none;
+    }
+
+    section {
+        page-break-inside: avoid;
+    }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Gradient text */
+.gradient-text {
+    background: linear-gradient(135deg, #c9a686 0%, #d5b69a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Glass morphism effect */
+.glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Shadow styles */
+.shadow-elegant {
+    box-shadow: 0 10px 40px rgba(197, 161, 124, 0.15);
+}
+
+.shadow-elegant-hover:hover {
+    box-shadow: 0 20px 60px rgba(197, 161, 124, 0.25);
+}

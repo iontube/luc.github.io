@@ -155,8 +155,8 @@
             <!-- Responsive Gallery Grid - Masonry Style Layout -->
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[200px]">
 
-                <!-- Gallery Item 1 - Tall portrait -->
-                <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg group cursor-pointer row-span-2 col-span-1">
+                <!-- Gallery Item 1 - Mobile: square, Desktop: tall -->
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg group cursor-pointer row-span-1 md:row-span-2 col-span-1">
                     <picture>
                         <source srcset="imagini/galerie1.webp" type="image/webp">
                         <img src="imagini/galerie1.jpeg" alt="Machiaj profesional - Florentina Stanciu" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
@@ -164,8 +164,8 @@
                     <div class="absolute inset-0 bg-rose-900 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"></div>
                 </div>
 
-                <!-- Gallery Item 2 - Wide landscape -->
-                <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg group cursor-pointer col-span-2 row-span-1">
+                <!-- Gallery Item 2 - Mobile: square, Desktop: wide -->
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg group cursor-pointer col-span-1 md:col-span-2 row-span-1">
                     <picture>
                         <source srcset="imagini/galerie2.webp" type="image/webp">
                         <img src="imagini/galerie2.jpeg" alt="Machiaj de mireasă - Florentina Stanciu" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" style="object-position: center 30%;">
@@ -173,7 +173,7 @@
                     <div class="absolute inset-0 bg-rose-900 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"></div>
                 </div>
 
-                <!-- Gallery Item 3 - Square -->
+                <!-- Gallery Item 3 - Square on all devices -->
                 <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg group cursor-pointer row-span-1 col-span-1">
                     <picture>
                         <source srcset="imagini/galerie3.webp" type="image/webp">
@@ -182,7 +182,7 @@
                     <div class="absolute inset-0 bg-rose-900 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"></div>
                 </div>
 
-                <!-- Gallery Item 4 - Square -->
+                <!-- Gallery Item 4 - Square on all devices -->
                 <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg group cursor-pointer row-span-1 col-span-1">
                     <picture>
                         <source srcset="imagini/galerie4.webp" type="image/webp">
@@ -191,8 +191,8 @@
                     <div class="absolute inset-0 bg-rose-900 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"></div>
                 </div>
 
-                <!-- Gallery Item 5 - Tall portrait -->
-                <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg group cursor-pointer row-span-2 col-span-1">
+                <!-- Gallery Item 5 - Mobile: square, Desktop: tall -->
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg group cursor-pointer row-span-1 md:row-span-2 col-span-1">
                     <picture>
                         <source srcset="imagini/galerie5.webp" type="image/webp">
                         <img src="imagini/galerie5.jpeg" alt="Make-up artist portofoliu - Florentina Stanciu" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
@@ -200,7 +200,7 @@
                     <div class="absolute inset-0 bg-rose-900 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"></div>
                 </div>
 
-                <!-- Gallery Item 6 - Square -->
+                <!-- Gallery Item 6 - Square on all devices -->
                 <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg group cursor-pointer row-span-1 col-span-1">
                     <picture>
                         <source srcset="imagini/galerie6.webp" type="image/webp">
@@ -209,8 +209,8 @@
                     <div class="absolute inset-0 bg-rose-900 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"></div>
                 </div>
 
-                <!-- Gallery Item 7 - Wide landscape (big feature) -->
-                <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg group cursor-pointer col-span-2 row-span-2 md:col-span-2">
+                <!-- Gallery Item 7 - Mobile: wide, Desktop: big feature -->
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg group cursor-pointer col-span-2 row-span-1 md:row-span-2">
                     <picture>
                         <source srcset="imagini/galerie7.webp" type="image/webp">
                         <img src="imagini/galerie7.jpeg" alt="Machiaj profesional București - Florentina Stanciu" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
@@ -218,8 +218,17 @@
                     <div class="absolute inset-0 bg-rose-900 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"></div>
                 </div>
 
-                <!-- Gallery Item 8 - Tall portrait -->
-                <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg group cursor-pointer row-span-2 col-span-1">
+                <!-- Gallery Item 8 - Mobile: square, Desktop: tall -->
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg group cursor-pointer row-span-1 md:row-span-2 col-span-1 hidden md:block">
+                    <picture>
+                        <source srcset="imagini/galerie8.webp" type="image/webp">
+                        <img src="imagini/galerie8.jpeg" alt="Lami artist profesionist - Florentina Stanciu" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                    </picture>
+                    <div class="absolute inset-0 bg-rose-900 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                </div>
+
+                <!-- Gallery Item 8 - Mobile version (taller) -->
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-lg group cursor-pointer row-span-2 col-span-2 md:hidden">
                     <picture>
                         <source srcset="imagini/galerie8.webp" type="image/webp">
                         <img src="imagini/galerie8.jpeg" alt="Lami artist profesionist - Florentina Stanciu" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">

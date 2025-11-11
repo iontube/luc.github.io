@@ -1,0 +1,384 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { sampleArticles } from '../data/sampleData';
+import { marked } from 'marked';
+import { capitalizeFirst } from '../utils/textUtils';
+import '../styles/article.css';
+
+// Configurare marked
+marked.setOptions({
+  breaks: true,
+  gfm: true,
+  headerIds: false,
+  mangle: false,
+});
+
+export async function getStaticPaths() {
+  // Import articole generate
+  let generatedArticles = [];
+  try {
+    const generated = await import('../data/generatedArticles');
+    generatedArticles = generated.generatedArticles || [];
+  } catch (e) {
+    // Fișierul nu există încă
+  }
+
+  // Import articole keywords (noi)
+  let keywordArticles = [];
+  try {
+    const fs = await import('fs');
+    const path = await import('path');
+    const indexPath = path.join(process.cwd(), 'data', 'keyword-articles', 'index.json');
+    if (fs.existsSync(indexPath)) {
+      const content = fs.readFileSync(indexPath, 'utf-8');
+      keywordArticles = JSON.parse(content);
+    }
+  } catch (e) {
+    // Fișierul nu există încă
+  }
+
+  // Import articole CSV (noi din cats.csv)
+  let csvArticles = [];
+  try {
+    const fs = await import('fs');
+    const path = await import('path');
+    const indexPath = path.join(process.cwd(), 'data', 'csv-articles', 'index.json');
+    if (fs.existsSync(indexPath)) {
+      const content = fs.readFileSync(indexPath, 'utf-8');
+      csvArticles = JSON.parse(content);
+    }
+  } catch (e) {
+    // Fișierul nu există încă
+  }
+
+  const allArticles = [...generatedArticles, ...keywordArticles, ...csvArticles, ...sampleArticles];
+
+  return allArticles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article, allArticles }
+  }));
+}
+
+const { article, allArticles } = Astro.props;
+
+const formatDate = (date: Date | string) => {
+  const dateObj = typeof date === 'string' ? new Date(date) : date;
+  return new Intl.DateTimeFormat('ro-RO', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  }).format(dateObj);
+};
+
+// Convertește Markdown la HTML
+const contentHtml = await marked.parse(article.content || '');
+---
+
+<Layout title={`${article.title} | TechGadget`} description={article.description}>
+  <article class="bg-white">
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white py-12">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Breadcrumb -->
+        <nav class="mb-6 text-sm opacity-90">
+          <ol class="flex items-center space-x-2">
+            <li><a href="/" class="hover:underline">Acasa</a></li>
+            <li>/</li>
+            <li><a href="/categorii" class="hover:underline">Categorii</a></li>
+            {article.mainCategorySlug && article.mainCategory && (
+              <>
+                <li>/</li>
+                <li><a href={`/categorie/${article.mainCategorySlug}`} class="hover:underline">{article.mainCategory}</a></li>
+              </>
+            )}
+            {article.subCategorySlug && article.subCategory && (
+              <>
+                <li>/</li>
+                <li><a href={`/categorie/${article.mainCategorySlug}/${article.subCategorySlug}`} class="hover:underline">{article.subCategory}</a></li>
+              </>
+            )}
+            {/* Fallback pentru articole vechi cu structura veche */}
+            {!article.mainCategorySlug && article.categoryId && (
+              <>
+                <li>/</li>
+                <li><a href={`/categorie/${article.categoryId}`} class="hover:underline">{article.categoryName || article.category}</a></li>
+              </>
+            )}
+            <li>/</li>
+            <li class="opacity-75 truncate max-w-xs">{article.title}</li>
+          </ol>
+        </nav>
+
+        <!-- Title -->
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+          {capitalizeFirst(article.title)}
+        </h1>
+
+        <!-- Meta Info -->
+        <div class="flex flex-wrap items-center gap-4 text-sm opacity-90">
+          <time datetime={typeof article.publishedAt === 'string' ? article.publishedAt : article.publishedAt.toISOString()}>
+            {formatDate(article.publishedAt)}
+          </time>
+          {article.readingTime && (
+            <>
+              <span>•</span>
+              <span class="flex items-center gap-1">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                {article.readingTime} min citire
+              </span>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Featured Image or SVG -->
+      {article.imageUrl ? (
+        <div class="mb-12 rounded-xl overflow-hidden shadow-lg">
+          <img
+            src={article.imageUrl}
+            alt={article.title}
+            class="w-full h-auto"
+            loading="eager"
+          />
+        </div>
+      ) : article.heroSvg && (
+        <div class="mb-12 rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-gray-50 to-gray-100 p-8 flex items-center justify-center border border-gray-200">
+          <div class="w-full max-w-2xl" set:html={article.heroSvg}></div>
+        </div>
+      )}
+
+      <!-- Article Content -->
+      <div class="article-content mb-12">
+        <div set:html={contentHtml} />
+      </div>
+
+      <!-- CTA Buttons (după conținut, înainte de recomandări) -->
+      {(article.categoryUrl || article.searchUrl) && (
+        <div class="my-12 p-8 bg-gradient-to-r from-[var(--color-bg-accent)] to-blue-50 rounded-xl border-2 border-[var(--color-primary)]/20">
+          <h3 class="text-2xl font-bold text-[var(--color-text-primary)] mb-4 text-center">
+            Gaseste cele mai bune oferte
+          </h3>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            {article.categoryUrl && (
+              <a
+                href={article.categoryUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center px-8 py-4 bg-[var(--color-primary)] text-white font-semibold rounded-lg hover:bg-[var(--color-primary-dark)] transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              >
+                <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                Verifica preturi
+              </a>
+            )}
+            {article.searchUrl && (
+              <a
+                href={article.searchUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center px-8 py-4 bg-[var(--color-accent)] text-white font-semibold rounded-lg hover:bg-orange-600 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              >
+                <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                Verifica oferte
+              </a>
+            )}
+          </div>
+        </div>
+      )}
+
+      <!-- Recomandari de Cumparare Section -->
+      {article.affiliateLinks && article.affiliateLinks.length > 0 && (
+        <div class="my-12 bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+          <div class="bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white p-6">
+            <h2 class="text-2xl font-bold flex items-center gap-2">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              </svg>
+              Recomandarile noastre
+            </h2>
+            <p class="mt-2 opacity-90">
+              Produsele pe care le recomandam, cu cele mai bune rapoarte calitate-pret
+            </p>
+          </div>
+          <div class="p-6 space-y-4">
+            {article.affiliateLinks.map((link, index) => (
+              <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors border border-gray-200">
+                <div class="flex-grow pr-4">
+                  <div class="flex items-start gap-3">
+                    <span class="flex-shrink-0 w-8 h-8 bg-[var(--color-primary)] text-white rounded-full flex items-center justify-center font-bold text-sm">
+                      {index + 1}
+                    </span>
+                    <div>
+                      <h3 class="font-bold text-[var(--color-text-primary)] mb-1">
+                        {link.productName}
+                      </h3>
+                      {link.description && (
+                        <p class="text-sm text-[var(--color-text-secondary)]">
+                          {link.description}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4">
+                  {link.price && (
+                    <span class="font-bold text-[var(--color-primary)] text-lg whitespace-nowrap">
+                      {link.price}
+                    </span>
+                  )}
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="px-6 py-3 bg-[var(--color-accent)] text-white font-semibold rounded-lg hover:bg-orange-600 transition-all whitespace-nowrap shadow-md hover:shadow-lg"
+                  >
+                    Vezi Oferta
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Tags -->
+      {article.tags && article.tags.length > 0 && (
+        <div class="my-12 pt-8 border-t border-gray-200">
+          <h3 class="text-lg font-semibold text-[var(--color-text-primary)] mb-4">
+            Tag-uri:
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {article.tags.map((tag) => (
+              <span class="px-4 py-2 bg-gray-100 text-[var(--color-text-secondary)] rounded-lg text-sm font-medium">
+                #{tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </article>
+</Layout>
+
+<script>
+  // Detectează și marchează automat produsele pentru styling consistent
+  document.addEventListener('DOMContentLoaded', () => {
+    const content = document.querySelector('.article-content');
+    if (!content) return;
+
+    // Găsește toate H3-urile din secțiunea "Top ... în 2025"
+    const h3Elements = Array.from(content.querySelectorAll('h3'));
+
+    h3Elements.forEach((h3) => {
+      // Verifică dacă H3 este în secțiunea "Întrebări frecvente" sau "FAQ"
+      let prevEl = h3.previousElementSibling;
+      let isInFAQ = false;
+
+      // Caută H2 anterior pentru a verifica dacă suntem în secțiunea FAQ
+      while (prevEl) {
+        if (prevEl.tagName === 'H2') {
+          const h2Text = prevEl.textContent.toLowerCase();
+          if (h2Text.includes('intrebari frecvente') || h2Text.includes('faq')) {
+            isInFAQ = true;
+          }
+          break; // Stop la primul H2 găsit
+        }
+        prevEl = prevEl.previousElementSibling;
+      }
+
+      // Exclude întrebările din FAQ
+      if (isInFAQ) return;
+
+      // Verifică dacă H3 este urmat de un paragraf (descriere produs)
+      const nextEl = h3.nextElementSibling;
+      if (!nextEl || nextEl.tagName !== 'P') return;
+
+      // Verifică dacă paragraful NU conține strong la început (= descriere produs)
+      const firstChild = nextEl.firstChild;
+      const hasStrongFirst = firstChild && firstChild.tagName === 'STRONG';
+      if (hasStrongFirst) return;
+
+      // Acesta e un produs! Creează card-ul
+      const card = document.createElement('div');
+      card.className = 'product-card';
+
+      // Colectează toate elementele produsului
+      const productElements = [h3, nextEl]; // H3 + descriere
+      let currentEl = nextEl.nextElementSibling;
+
+      // Colectează până găsim următorul H2/H3, SVG ilustrativ, sau sfârșitul
+      while (currentEl && !['H2', 'H3'].includes(currentEl.tagName)) {
+        // Stop dacă găsim SVG ilustrativ sau tabel
+        if (currentEl.classList.contains('article-illustration') ||
+            currentEl.tagName === 'TABLE' ||
+            currentEl.tagName === 'SVG') {
+          break;
+        }
+        productElements.push(currentEl);
+        currentEl = currentEl.nextElementSibling;
+      }
+
+      // DEBUG: Log pentru a vedea ce elemente am găsit
+      console.log('Product:', h3.textContent);
+
+      // Marchează Avantaje/Dezavantaje
+      for (let i = 0; i < productElements.length - 1; i++) {
+        const el = productElements[i];
+        if (el.tagName === 'P') {
+          const text = el.textContent.trim();
+          const nextListEl = productElements[i + 1];
+
+          if (nextListEl && nextListEl.tagName === 'UL') {
+            if (text.includes('Dezavantaje') || text.includes('dezavantaje')) {
+              console.log('  → Marchez Dezavantaje');
+              nextListEl.classList.add('disadvantages');
+            } else if (text.includes('Avantaje') || text.includes('avantaje')) {
+              console.log('  → Marchez Avantaje (default green check)');
+            }
+          }
+        }
+      }
+
+      // Identifică secțiunea CTA (ultimele 2 elemente: p + ul cu linkuri)
+      const lastElements = productElements.slice(-2);
+      if (lastElements.length === 2 &&
+          lastElements[0].tagName === 'P' &&
+          lastElements[1].tagName === 'UL') {
+        // Creează wrapper pentru CTA
+        const ctaWrapper = document.createElement('div');
+        ctaWrapper.className = 'product-card-cta';
+
+        // Clonează elementele CTA
+        ctaWrapper.appendChild(lastElements[0].cloneNode(true));
+        ctaWrapper.appendChild(lastElements[1].cloneNode(true));
+
+        // Inserează card-ul în DOM
+        h3.parentNode.insertBefore(card, h3);
+
+        // Mută toate elementele în card, EXCEPT ultimele 2 (CTA)
+        for (let i = 0; i < productElements.length - 2; i++) {
+          card.appendChild(productElements[i]);
+        }
+
+        // Adaugă CTA wrapper
+        card.appendChild(ctaWrapper);
+
+        // Șterge elementele CTA originale
+        lastElements[0].remove();
+        lastElements[1].remove();
+      } else {
+        // Card simplu fără CTA special
+        h3.parentNode.insertBefore(card, h3);
+        productElements.forEach(el => card.appendChild(el));
+      }
+    });
+  });
+</script>

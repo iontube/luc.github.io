@@ -1,0 +1,215 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+
+export async function getStaticPaths() {
+  const fs = await import('fs');
+  const path = await import('path');
+
+  // Categoriile principale
+  const mainCategories = [
+    { slug: 'tehnologie-gadgeturi', name: 'Tehnologie & Gadgeturi' },
+    { slug: 'electrocasnice-casa', name: 'Electrocasnice & Casa' },
+    { slug: 'beauty-ingrijire', name: 'Beauty & Ingrijire' },
+    { slug: 'auto-accesorii', name: 'Auto & Accesorii' },
+    { slug: 'fashion-haine', name: 'Fashion & Haine' },
+    { slug: 'fitness-sanatate', name: 'Fitness & Sanatate' },
+    { slug: 'copii-jucarii', name: 'Copii & Jucarii' },
+    { slug: 'animale-companie', name: 'Animale de companie' },
+    { slug: 'bricolaj-gradina', name: 'Bricolaj & Gradina' }
+  ];
+
+  // Import articole CSV
+  let csvArticles = [];
+  try {
+    const indexPath = path.join(process.cwd(), 'data', 'csv-articles', 'index.json');
+    if (fs.existsSync(indexPath)) {
+      const content = fs.readFileSync(indexPath, 'utf-8');
+      csvArticles = JSON.parse(content);
+    }
+  } catch (e) {}
+
+  const paths = [];
+
+  // Generează pagini pentru categorii principale
+  for (const mainCat of mainCategories) {
+    const articles = csvArticles.filter(a => a.mainCategorySlug === mainCat.slug);
+
+    // Extrage sub-categorii unice
+    const subCategoriesMap = new Map();
+    articles.forEach(article => {
+      if (article.subCategorySlug && !subCategoriesMap.has(article.subCategorySlug)) {
+        subCategoriesMap.set(article.subCategorySlug, {
+          slug: article.subCategorySlug,
+          name: article.subCategory
+        });
+      }
+    });
+
+    const subCategories = Array.from(subCategoriesMap.values());
+
+    // Pagină categorie principală
+    paths.push({
+      params: { slug: mainCat.slug },
+      props: {
+        type: 'main',
+        mainCategory: mainCat,
+        articles,
+        subCategories
+      }
+    });
+
+    // Pagini sub-categorii
+    for (const subCat of subCategories) {
+      const subArticles = articles.filter(a => a.subCategorySlug === subCat.slug);
+
+      paths.push({
+        params: { slug: `${mainCat.slug}/${subCat.slug}` },
+        props: {
+          type: 'sub',
+          mainCategory: mainCat,
+          subCategory: subCat,
+          articles: subArticles,
+          allSubCategories: subCategories
+        }
+      });
+    }
+  }
+
+  return paths;
+}
+
+const { type, mainCategory, subCategory, articles, subCategories, allSubCategories } = Astro.props;
+
+const pageTitle = type === 'main'
+  ? `${mainCategory.name} - Articole si Recenzii | TechGadget`
+  : `${subCategory.name} - ${mainCategory.name} | TechGadget`;
+
+const pageDescription = type === 'main'
+  ? `Descopera cele mai bune articole de cumparare si recenzii pentru ${mainCategory.name}. Articole detaliate cu recomandari de produse si sfaturi de alegere.`
+  : `Articole detaliate despre ${subCategory.name} din categoria ${mainCategory.name}. Recomandari de produse si sfaturi practice.`;
+
+// Sortează articolele după dată
+const sortedArticles = articles.sort((a, b) => {
+  const dateA = typeof a.publishedAt === 'string' ? new Date(a.publishedAt) : a.publishedAt;
+  const dateB = typeof b.publishedAt === 'string' ? new Date(b.publishedAt) : b.publishedAt;
+  return dateB.getTime() - dateA.getTime();
+});
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <div class="bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb -->
+      <nav class="mb-6 text-sm opacity-90">
+        <ol class="flex items-center space-x-2">
+          <li><a href="/" class="hover:underline">Acasa</a></li>
+          <li>/</li>
+          <li><a href="/categorii" class="hover:underline">Categorii</a></li>
+          <li>/</li>
+          <li><a href={`/categorie/${mainCategory.slug}`} class="hover:underline">{mainCategory.name}</a></li>
+          {type === 'sub' && (
+            <>
+              <li>/</li>
+              <li class="font-semibold">{subCategory.name}</li>
+            </>
+          )}
+          {type === 'main' && (
+            <li class="font-semibold opacity-75">Toate articolele</li>
+          )}
+        </ol>
+      </nav>
+
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        {type === 'main' ? mainCategory.name : subCategory.name}
+      </h1>
+      <p class="text-xl opacity-90 mb-6">
+        {type === 'main'
+          ? 'Articole complete de cumparare si recomandari de produse'
+          : `Articole despre ${subCategory.name}`
+        }
+      </p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    {/* Sub-categorii pentru pagina principală */}
+    {type === 'main' && subCategories && subCategories.length > 0 && (
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold text-[var(--color-text-primary)] mb-6">
+          Sub-categorii
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {subCategories.map(subCat => (
+            <a
+              href={`/categorie/${mainCategory.slug}/${subCat.slug}`}
+              class="p-4 bg-white rounded-lg border border-gray-200 hover:border-[var(--color-primary)] hover:shadow-md transition-all"
+            >
+              <h3 class="font-semibold text-[var(--color-text-primary)] text-sm">
+                {subCat.name}
+              </h3>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    {sortedArticles.length > 0 ? (
+      <>
+        <div class="mb-8">
+          <h2 class="text-2xl font-bold text-[var(--color-text-primary)] mb-2">
+            {sortedArticles.length} {sortedArticles.length === 1 ? 'Articol' : 'Articole'}
+          </h2>
+          <p class="text-[var(--color-text-secondary)]">
+            Articole detaliate cu recomandari de produse si sfaturi practice
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {sortedArticles.map((article) => (
+            <ArticleCard article={article} />
+          ))}
+        </div>
+      </>
+    ) : (
+      <div class="text-center py-12">
+        <div class="text-6xl mb-4">📝</div>
+        <h2 class="text-2xl font-bold text-[var(--color-text-primary)] mb-2">
+          In curand
+        </h2>
+        <p class="text-[var(--color-text-secondary)] mb-6">
+          Lucram la articole complete pentru aceasta categorie
+        </p>
+        <a
+          href="/categorii"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-primary)] text-white font-semibold rounded-lg hover:bg-[var(--color-primary-dark)] transition-all"
+        >
+          Exploreaza alte categorii
+        </a>
+      </div>
+    )}
+
+    {/* Alte Sub-categorii (pentru pagini sub-categorie) */}
+    {type === 'sub' && allSubCategories && allSubCategories.length > 1 && (
+      <div class="mt-16 pt-12 border-t border-gray-200">
+        <h2 class="text-2xl font-bold text-[var(--color-text-primary)] mb-6">
+          Alte Sub-categorii din {mainCategory.name}
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {allSubCategories
+            .filter(subCat => subCat.slug !== subCategory.slug)
+            .map(subCat => (
+              <a
+                href={`/categorie/${mainCategory.slug}/${subCat.slug}`}
+                class="p-4 bg-white rounded-lg border border-gray-200 hover:border-[var(--color-primary)] hover:shadow-md transition-all"
+              >
+                <h3 class="font-semibold text-[var(--color-text-primary)] text-sm">
+                  {subCat.name}
+                </h3>
+              </a>
+            ))}
+        </div>
+      </div>
+    )}
+  </div>
+</Layout>

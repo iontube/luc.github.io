@@ -1,0 +1,125 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'TechGadget Blog - Review-uri si Articole Tehnologie',
+  description = 'Cele mai noi review-uri de gadget-uri, articole de cumparare si comparatii pentru tehnologia de ultima ora.'
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+
+    <!-- ProfitShare Affiliate Script -->
+    <script type="text/javascript" is:inline>
+    (function(){
+      var bsa = document.createElement("script");
+         bsa.type = "text/javascript";
+         bsa.async = true;
+         bsa.src = "//l.profitshare.ro/files_shared/lps/js/ZmA/dH.js?v=1762549806";
+      (document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(bsa);
+    })();
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col bg-[var(--color-bg-primary)]">
+    <header class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-200">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex-shrink-0">
+            <a href="/" class="flex items-center gap-2">
+              <div class="w-8 h-8 bg-[var(--color-primary)] rounded-lg flex items-center justify-center">
+                <span class="text-white font-bold text-lg">T</span>
+              </div>
+              <span class="text-xl font-bold text-[var(--color-text-primary)]">
+                TechGadget
+              </span>
+            </a>
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="/" class="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors font-medium">
+              Acasa
+            </a>
+            <a href="/categorii" class="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors font-medium">
+              Categorii
+            </a>
+          </div>
+          <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-[var(--color-text-secondary)] hover:bg-gray-100">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden pb-4 space-y-2">
+          <a href="/" class="block py-2 px-3 text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-gray-50 rounded-md transition-colors">
+            Acasa
+          </a>
+          <a href="/categorii" class="block py-2 px-3 text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-gray-50 rounded-md transition-colors">
+            Categorii
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <footer class="bg-[var(--color-bg-dark)] text-gray-300 mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="md:col-span-2">
+            <div class="flex items-center gap-2 mb-4">
+              <div class="w-8 h-8 bg-[var(--color-primary)] rounded-lg flex items-center justify-center">
+                <span class="text-white font-bold text-lg">T</span>
+              </div>
+              <span class="text-xl font-bold text-white">TechGadget</span>
+            </div>
+            <p class="text-sm text-gray-400 max-w-md">
+              Articole profesionale de cumparare si review-uri detaliate pentru tehnologie.
+              Ajutam mii de utilizatori sa aleaga produsele potrivite.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white mb-4">Navigare</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/" class="hover:text-[var(--color-accent)] transition-colors">Acasa</a></li>
+              <li><a href="/categorii" class="hover:text-[var(--color-accent)] transition-colors">Categorii</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white mb-4">Legal</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/politica-cookies" class="hover:text-[var(--color-accent)] transition-colors">Politica Cookies</a></li>
+              <li><a href="/termeni" class="hover:text-[var(--color-accent)] transition-colors">Termeni si Conditii</a></li>
+              <li><a href="/confidentialitate" class="hover:text-[var(--color-accent)] transition-colors">Confidentialitate</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+          <p>&copy; {new Date().getFullYear()} TechGadget. Toate drepturile rezervate.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      mobileMenuBtn?.addEventListener('click', () => {
+        mobileMenu?.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>

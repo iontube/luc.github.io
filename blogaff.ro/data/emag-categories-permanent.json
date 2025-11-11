@@ -1,0 +1,205 @@
+[
+  {
+    "name": "Telefoane & Tablete",
+    "url": "https://www.emag.ro/telefoane-tablete/c",
+    "subcategories": [
+      { "name": "Telefoane mobile", "url": "https://www.emag.ro/telefoane/c" },
+      { "name": "Smartphone-uri", "url": "https://www.emag.ro/telefoane-mobile/c" },
+      { "name": "Tablete", "url": "https://www.emag.ro/tablete/c" },
+      { "name": "Smartwatch", "url": "https://www.emag.ro/smartwatch/c" },
+      { "name": "Căști audio", "url": "https://www.emag.ro/casti-audio/c" },
+      { "name": "Huse telefoane", "url": "https://www.emag.ro/huse-telefoane/c" },
+      { "name": "Folii protecție", "url": "https://www.emag.ro/folii-protectie/c" },
+      { "name": "Încărcătoare", "url": "https://www.emag.ro/incarcatoare/c" }
+    ]
+  },
+  {
+    "name": "Laptopuri & IT",
+    "url": "https://www.emag.ro/laptopuri-it/c",
+    "subcategories": [
+      { "name": "Laptopuri", "url": "https://www.emag.ro/laptopuri/c" },
+      { "name": "Desktop PC", "url": "https://www.emag.ro/desktop-pc/c" },
+      { "name": "Monitoare", "url": "https://www.emag.ro/monitoare/c" },
+      { "name": "Imprimante", "url": "https://www.emag.ro/imprimante/c" },
+      { "name": "Componente PC", "url": "https://www.emag.ro/componente-pc/c" },
+      { "name": "Plăci video", "url": "https://www.emag.ro/placi-video/c" },
+      { "name": "Procesoare", "url": "https://www.emag.ro/procesoare/c" },
+      { "name": "Memorii RAM", "url": "https://www.emag.ro/memorii-ram/c" },
+      { "name": "SSD-uri", "url": "https://www.emag.ro/ssd/c" },
+      { "name": "Tastaturi", "url": "https://www.emag.ro/tastaturi/c" },
+      { "name": "Mouse-uri", "url": "https://www.emag.ro/mouse-uri/c" }
+    ]
+  },
+  {
+    "name": "TV & Audio-Video",
+    "url": "https://www.emag.ro/tv-audio-video/c",
+    "subcategories": [
+      { "name": "Televizoare", "url": "https://www.emag.ro/televizoare/c" },
+      { "name": "Soundbar-uri", "url": "https://www.emag.ro/soundbar-uri/c" },
+      { "name": "Sisteme audio", "url": "https://www.emag.ro/sisteme-audio/c" },
+      { "name": "Proiectoare", "url": "https://www.emag.ro/proiectoare/c" },
+      { "name": "Aparate foto", "url": "https://www.emag.ro/aparate-foto/c" }
+    ]
+  },
+  {
+    "name": "Gaming",
+    "url": "https://www.emag.ro/gaming/c",
+    "subcategories": [
+      { "name": "Console gaming", "url": "https://www.emag.ro/console-gaming/c" },
+      { "name": "PlayStation 5", "url": "https://www.emag.ro/playstation-5/c" },
+      { "name": "Xbox", "url": "https://www.emag.ro/xbox/c" },
+      { "name": "Nintendo", "url": "https://www.emag.ro/nintendo/c" },
+      { "name": "Jocuri video", "url": "https://www.emag.ro/jocuri-video/c" },
+      { "name": "Accesorii gaming", "url": "https://www.emag.ro/accesorii-gaming/c" },
+      { "name": "Scaune gaming", "url": "https://www.emag.ro/scaune-gaming/c" }
+    ]
+  },
+  {
+    "name": "Electrocasnice Mari",
+    "url": "https://www.emag.ro/electrocasnice-mari/c",
+    "subcategories": [
+      { "name": "Frigidere", "url": "https://www.emag.ro/frigidere/c" },
+      { "name": "Combine frigorifice", "url": "https://www.emag.ro/combine-frigorifice/c" },
+      { "name": "Congelatoare", "url": "https://www.emag.ro/congelatoare/c" },
+      { "name": "Mașini de spălat rufe", "url": "https://www.emag.ro/masini-de-spalat-rufe/c" },
+      { "name": "Mașini de spălat vase", "url": "https://www.emag.ro/masini-de-spalat-vase/c" },
+      { "name": "Uscătoare de rufe", "url": "https://www.emag.ro/uscatoare-de-rufe/c" },
+      { "name": "Cuptoare", "url": "https://www.emag.ro/cuptoare/c" },
+      { "name": "Aragazuri", "url": "https://www.emag.ro/aragazuri/c" },
+      { "name": "Plite", "url": "https://www.emag.ro/plite/c" },
+      { "name": "Cuptoare cu microunde", "url": "https://www.emag.ro/cuptoare-cu-microunde/c" },
+      { "name": "Hote", "url": "https://www.emag.ro/hote/c" }
+    ]
+  },
+  {
+    "name": "Electrocasnice Mici",
+    "url": "https://www.emag.ro/electrocasnice-mici/c",
+    "subcategories": [
+      { "name": "Aspiratoare", "url": "https://www.emag.ro/aspiratoare/c" },
+      { "name": "Robot aspirator", "url": "https://www.emag.ro/robot-aspirator/c" },
+      { "name": "Espressoare", "url": "https://www.emag.ro/espressoare/c" },
+      { "name": "Cafetiere", "url": "https://www.emag.ro/cafetiere/c" },
+      { "name": "Mixere", "url": "https://www.emag.ro/mixere/c" },
+      { "name": "Blendere", "url": "https://www.emag.ro/blendere/c" },
+      { "name": "Friteuze cu aer cald", "url": "https://www.emag.ro/friteuze-cu-aer-cald/c" },
+      { "name": "Multicooker", "url": "https://www.emag.ro/multicooker/c" },
+      { "name": "Grătare electrice", "url": "https://www.emag.ro/gratare-electrice/c" },
+      { "name": "Prăjitoare pâine", "url": "https://www.emag.ro/prajitoare-paine/c" },
+      { "name": "Fiare de călcat", "url": "https://www.emag.ro/fiare-de-calcat/c" },
+      { "name": "Stații de călcat", "url": "https://www.emag.ro/statii-de-calcat/c" }
+    ]
+  },
+  {
+    "name": "Climatizare & Încălzire",
+    "url": "https://www.emag.ro/climatizare-incalzire/c",
+    "subcategories": [
+      { "name": "Aer condiționat", "url": "https://www.emag.ro/aer-conditionat/c" },
+      { "name": "Calorifere electrice", "url": "https://www.emag.ro/calorifere-electrice/c" },
+      { "name": "Convectoare", "url": "https://www.emag.ro/convectoare/c" },
+      { "name": "Radiatoare cu ulei", "url": "https://www.emag.ro/radiatoare-cu-ulei/c" },
+      { "name": "Ventilatoare", "url": "https://www.emag.ro/ventilatoare/c" }
+    ]
+  },
+  {
+    "name": "Îngrijire Personală",
+    "url": "https://www.emag.ro/ingrijire-personala/c",
+    "subcategories": [
+      { "name": "Epilatoare", "url": "https://www.emag.ro/epilatoare/c" },
+      { "name": "Aparate de ras", "url": "https://www.emag.ro/aparate-de-ras/c" },
+      { "name": "Trimmere", "url": "https://www.emag.ro/trimmere/c" },
+      { "name": "Uscătoare de păr", "url": "https://www.emag.ro/uscatoare-de-par/c" },
+      { "name": "Plăci de păr", "url": "https://www.emag.ro/placi-de-par/c" },
+      { "name": "Ondulatoare", "url": "https://www.emag.ro/ondulatoare/c" },
+      { "name": "Periuțe de dinți electrice", "url": "https://www.emag.ro/periute-de-dinti-electrice/c" }
+    ]
+  },
+  {
+    "name": "Mobilă",
+    "url": "https://www.emag.ro/mobila/c",
+    "subcategories": [
+      { "name": "Scaune birou", "url": "https://www.emag.ro/scaune-birou/c" },
+      { "name": "Birouri", "url": "https://www.emag.ro/birouri/c" },
+      { "name": "Dulapuri", "url": "https://www.emag.ro/dulapuri/c" },
+      { "name": "Paturi", "url": "https://www.emag.ro/paturi/c" },
+      { "name": "Saltele", "url": "https://www.emag.ro/saltele/c" }
+    ]
+  },
+  {
+    "name": "Casă & Grădină",
+    "url": "https://www.emag.ro/casa-gradina/c",
+    "subcategories": [
+      { "name": "Utilaje tuns gazon", "url": "https://www.emag.ro/masini-de-tuns-iarba/c" },
+      { "name": "Aparate de spalat cu presiune", "url": "https://www.emag.ro/aparate-de-spalat-cu-presiune/c" },
+      { "name": "Unelte de gradinarit", "url": "https://www.emag.ro/unelte-de-gradinarit/c" },
+      { "name": "Agricultura", "url": "https://www.emag.ro/agricultura/c" },
+      { "name": "Pompe si hidrofoare", "url": "https://www.emag.ro/pompe-si-hidrofoare/c" },
+      { "name": "Mobilier de gradina", "url": "https://www.emag.ro/mobilier-de-gradina/c" },
+      { "name": "Balansoare si hamace", "url": "https://www.emag.ro/balansoare-si-hamace/c" },
+      { "name": "Umbrele si pavilioane", "url": "https://www.emag.ro/umbrele-si-pavilioane/c" },
+      { "name": "Gratare & Accesorii", "url": "https://www.emag.ro/gratare/c" },
+      { "name": "Decoratiuni si iluminat exterior", "url": "https://www.emag.ro/iluminat-exterior/c" },
+      { "name": "Plante si ghivece", "url": "https://www.emag.ro/plante-si-ghivece/c" },
+      { "name": "Scule electrice", "url": "https://www.emag.ro/unelte-electrice/c" },
+      { "name": "Masini de gaurit si rotopercutoare", "url": "https://www.emag.ro/masini-de-gaurit/c" },
+      { "name": "Generatoare si sudura", "url": "https://www.emag.ro/generatoare/c" },
+      { "name": "Depozitare si organizare", "url": "https://www.emag.ro/depozitare-organizare/c" },
+      { "name": "Scule de mana", "url": "https://www.emag.ro/scule-de-mana/c" },
+      { "name": "Mese de calcat si uscatoare", "url": "https://www.emag.ro/mese-de-calcat/c" },
+      { "name": "Seturi de curatenie si mopuri", "url": "https://www.emag.ro/seturi-de-curatenie/c" },
+      { "name": "Vase pentru gatit", "url": "https://www.emag.ro/vase-pentru-gatit/c" },
+      { "name": "Servirea mesei", "url": "https://www.emag.ro/servire-masa/c" },
+      { "name": "Perne & Pilote", "url": "https://www.emag.ro/perne-pilote/c" },
+      { "name": "Covoare", "url": "https://www.emag.ro/covoare/c" },
+      { "name": "Lenjerii de pat", "url": "https://www.emag.ro/lenjerii-de-pat/c" },
+      { "name": "Mobila bucatarie si chiuvete", "url": "https://www.emag.ro/mobila-bucatarie/c" },
+      { "name": "Mobila living", "url": "https://www.emag.ro/mobila-living/c" },
+      { "name": "Mobila dormitor & Saltele", "url": "https://www.emag.ro/mobila-dormitor/c" },
+      { "name": "Mobila birou", "url": "https://www.emag.ro/mobila-birou/c" },
+      { "name": "Mobila hol", "url": "https://www.emag.ro/mobila-hol/c" },
+      { "name": "Mobilier si oglinzi baie", "url": "https://www.emag.ro/mobilier-baie/c" },
+      { "name": "Baterii sanitare", "url": "https://www.emag.ro/baterii-sanitare/c" },
+      { "name": "Coloane si seturi de dus", "url": "https://www.emag.ro/dus/c" },
+      { "name": "Sisteme solare", "url": "https://www.emag.ro/sisteme-solare/c" },
+      { "name": "Boilere", "url": "https://www.emag.ro/boilere/c" },
+      { "name": "Centrale termice", "url": "https://www.emag.ro/centrale-termice/c" },
+      { "name": "Radiatoare", "url": "https://www.emag.ro/radiatoare/c" },
+      { "name": "Becuri si Benzi LED", "url": "https://www.emag.ro/becuri/c" },
+      { "name": "Corpuri de iluminat", "url": "https://www.emag.ro/corpuri-de-iluminat/c" },
+      { "name": "Prelungitoare", "url": "https://www.emag.ro/prelungitoare/c" },
+      { "name": "Decoratiuni", "url": "https://www.emag.ro/decoratiuni/c" },
+      { "name": "Utilaje pentru constructii", "url": "https://www.emag.ro/utilaje-constructii/c" },
+      { "name": "Vopsea & Tencuieli", "url": "https://www.emag.ro/vopsea/c" }
+    ]
+  },
+  {
+    "name": "Auto-Moto",
+    "url": "https://www.emag.ro/auto-moto/c",
+    "subcategories": [
+      { "name": "Anvelope", "url": "https://www.emag.ro/anvelope/c" },
+      { "name": "Accesorii auto", "url": "https://www.emag.ro/accesorii-auto/c" },
+      { "name": "Camera auto DVR", "url": "https://www.emag.ro/camera-auto-dvr/c" },
+      { "name": "GPS auto", "url": "https://www.emag.ro/gps-auto/c" }
+    ]
+  },
+  {
+    "name": "Jucării & Copii",
+    "url": "https://www.emag.ro/jucarii-copii/c",
+    "subcategories": [
+      { "name": "Jucării", "url": "https://www.emag.ro/jucarii/c" },
+      { "name": "LEGO", "url": "https://www.emag.ro/lego/c" },
+      { "name": "Cărucioare copii", "url": "https://www.emag.ro/carucioare-copii/c" },
+      { "name": "Scaune auto copii", "url": "https://www.emag.ro/scaune-auto-copii/c" },
+      { "name": "Scutece", "url": "https://www.emag.ro/scutece/c" }
+    ]
+  },
+  {
+    "name": "Sport & Outdoor",
+    "url": "https://www.emag.ro/sport-outdoor/c",
+    "subcategories": [
+      { "name": "Biciclete", "url": "https://www.emag.ro/biciclete/c" },
+      { "name": "Trotinete electrice", "url": "https://www.emag.ro/trotinete-electrice/c" },
+      { "name": "Benzi de alergare", "url": "https://www.emag.ro/benzi-de-alergare/c" },
+      { "name": "Biciclete fitness", "url": "https://www.emag.ro/biciclete-fitness/c" }
+    ]
+  }
+]

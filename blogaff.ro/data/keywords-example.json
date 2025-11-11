@@ -1,0 +1,32 @@
+[
+  {
+    "keyword": "cele mai bune smartphone-uri 2025",
+    "category": "smartphone",
+    "tags": ["smartphone", "review", "2025", "ghid cumpărare"],
+    "searchVolume": 5400
+  },
+  {
+    "keyword": "laptop programare 2025",
+    "category": "laptopuri",
+    "tags": ["laptop", "programare", "development", "2025"],
+    "searchVolume": 3200
+  },
+  {
+    "keyword": "căști wireless noise cancelling",
+    "category": "audio",
+    "tags": ["căști", "wireless", "noise cancelling", "review"],
+    "searchVolume": 8100
+  },
+  {
+    "keyword": "accesorii macbook pro m3",
+    "category": "accesorii",
+    "tags": ["accesorii", "macbook", "apple", "m3"],
+    "searchVolume": 2900
+  },
+  {
+    "keyword": "smartphone gaming sub 2000 lei",
+    "category": "smartphone",
+    "tags": ["smartphone", "gaming", "budget", "review"],
+    "searchVolume": 1800
+  }
+]

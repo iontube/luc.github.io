@@ -1,0 +1,186 @@
+{
+  "electrocasnice": {
+    "incalzire": {
+      "name": "Încălzire",
+      "description": "Calorifere, radiatoare, convectoare, seminee, centrale termice",
+      "emagUrl": "https://www.emag.ro/climatizare-incalzire/c",
+      "keywords": ["calorifer", "radiator", "convector", "încălzitor", "sobă", "semineu", "centrala termica", "centrala", "incalzire"]
+    },
+    "frigidere": {
+      "name": "Frigidere și congelatoare",
+      "description": "Frigidere, combine frigorifice, congelatoare",
+      "emagUrl": "https://www.emag.ro/frigidere/c",
+      "keywords": ["frigider", "combina frigorifica", "congelator", "lada frigorifica"]
+    },
+    "masini-de-spalat": {
+      "name": "Mașini de spălat",
+      "description": "Mașini de spălat rufe și vase",
+      "emagUrl": "https://www.emag.ro/masini-de-spalat-rufe/c",
+      "keywords": ["masina de spalat", "uscator", "spalat rufe", "masina de spalat vase"]
+    },
+    "aspiratoare": {
+      "name": "Aspiratoare",
+      "description": "Aspiratoare, robot de aspirat",
+      "emagUrl": "https://www.emag.ro/aspiratoare/c",
+      "keywords": ["aspirator", "robot aspirator", "curatenie"]
+    },
+    "gatit": {
+      "name": "Aparate de gătit",
+      "description": "Cuptoare, plite, aragazuri, microunde",
+      "emagUrl": "https://www.emag.ro/electrocasnice-mici/c",
+      "keywords": ["cuptor", "aragaz", "plita", "microunde", "multicooker", "slow cooker", "friteuza", "gratar electric"]
+    },
+    "mic-dejun": {
+      "name": "Aparate pentru mic dejun",
+      "description": "Espressoare, mixere, blendere, prajitoare",
+      "emagUrl": "https://www.emag.ro/espressoare/c",
+      "keywords": ["espressor", "cafea", "mixer", "blender", "prajitor", "toaster", "aparat sandwich"]
+    },
+    "aer-conditionat": {
+      "name": "Aer condiționat",
+      "description": "Aparate de aer condiționat",
+      "emagUrl": "https://www.emag.ro/aer-conditionat/c",
+      "keywords": ["aer conditionat", "climatizare", "racire"]
+    }
+  },
+  "tech": {
+    "laptopuri": {
+      "name": "Laptopuri",
+      "description": "Laptopuri și notebook-uri",
+      "emagUrl": "https://www.emag.ro/laptopuri/c",
+      "keywords": ["laptop", "notebook", "ultrabook", "macbook"]
+    },
+    "telefoane": {
+      "name": "Telefoane mobile",
+      "description": "Smartphone-uri și telefoane mobile",
+      "emagUrl": "https://www.emag.ro/telefoane/c",
+      "keywords": ["telefon", "smartphone", "iphone", "samsung galaxy"]
+    },
+    "tablete": {
+      "name": "Tablete",
+      "description": "Tablete și iPad-uri",
+      "emagUrl": "https://www.emag.ro/tablete/c",
+      "keywords": ["tableta", "ipad", "tablet"]
+    },
+    "tv": {
+      "name": "TV & Audio",
+      "description": "Televizoare și sisteme audio",
+      "emagUrl": "https://www.emag.ro/televizoare/c",
+      "keywords": ["televizor", "tv", "soundbar", "boxe", "home cinema"]
+    },
+    "pc-componente": {
+      "name": "PC & Componente",
+      "description": "Calculatoare și componente PC",
+      "emagUrl": "https://www.emag.ro/componente-pc/c",
+      "keywords": ["calculator", "desktop", "pc", "placa video", "procesor", "memorie ram", "ssd"]
+    },
+    "accesorii-telefon": {
+      "name": "Accesorii telefoane",
+      "description": "Huse, folii, încărcătoare",
+      "emagUrl": "https://www.emag.ro/huse-telefoane/c",
+      "keywords": ["husa", "folie", "incarcator", "casti", "handsfree"]
+    }
+  },
+  "gaming": {
+    "console": {
+      "name": "Console gaming",
+      "description": "PlayStation, Xbox, Nintendo",
+      "emagUrl": "https://www.emag.ro/console-gaming/c",
+      "keywords": ["playstation", "xbox", "nintendo", "consola", "ps5", "ps4"]
+    },
+    "jocuri": {
+      "name": "Jocuri",
+      "description": "Jocuri video",
+      "emagUrl": "https://www.emag.ro/jocuri-video/c",
+      "keywords": ["joc", "game", "fifa", "gta", "call of duty"]
+    },
+    "accesorii-gaming": {
+      "name": "Accesorii gaming",
+      "description": "Controllere, manete, headset-uri",
+      "emagUrl": "https://www.emag.ro/accesorii-gaming/c",
+      "keywords": ["controller", "maneta", "headset gaming", "tastatura gaming", "mouse gaming", "scaun gaming"]
+    }
+  },
+  "copii": {
+    "jucarii": {
+      "name": "Jucării",
+      "description": "Jucării pentru copii",
+      "emagUrl": "https://www.emag.ro/jucarii/c",
+      "keywords": ["jucarie", "lego", "papusa", "masinuta"]
+    },
+    "carucioare": {
+      "name": "Cărucioare și scaune auto",
+      "description": "Cărucioare pentru bebeluși",
+      "emagUrl": "https://www.emag.ro/carucioare-copii/c",
+      "keywords": ["carucior", "scaun auto", "patut"]
+    },
+    "imbracaminte-copii": {
+      "name": "Îmbrăcăminte copii",
+      "description": "Haine pentru copii",
+      "emagUrl": "https://www.emag.ro/imbracaminte-copii/c",
+      "keywords": ["haine copii", "pantofi copii", "imbracaminte copii"]
+    }
+  },
+  "beauty": {
+    "ingrijire-par": {
+      "name": "Îngrijire păr",
+      "description": "Uscătoare, plăci de păr, ondulator",
+      "emagUrl": "https://www.emag.ro/uscatoare-de-par/c",
+      "keywords": ["uscator par", "placa de par", "ondulator", "perie electrica"]
+    },
+    "epilare": {
+      "name": "Epilare și bărbierit",
+      "description": "Epilatoare, aparate de ras",
+      "emagUrl": "https://www.emag.ro/epilatoare/c",
+      "keywords": ["epilator", "aparat de ras", "trimmer", "barbierit"]
+    },
+    "ingrijire-corp": {
+      "name": "Îngrijire corporală",
+      "description": "Periuțe electrice, dus",
+      "emagUrl": "https://www.emag.ro/ingrijire-personala/c",
+      "keywords": ["periuta electrica", "dus", "masaj"]
+    }
+  },
+  "casa-gradina": {
+    "mobila": {
+      "name": "Mobilă",
+      "description": "Mobilier pentru casă",
+      "emagUrl": "https://www.emag.ro/mobila/c",
+      "keywords": ["mobila", "scaun", "masa", "dulap", "biblioteca"]
+    },
+    "unelte": {
+      "name": "Unelte și scule",
+      "description": "Unelte electrice și manuale",
+      "emagUrl": "https://www.emag.ro/unelte-electrice/c",
+      "keywords": ["bormasina", "fierbator", "flex", "polizor", "scule"]
+    },
+    "gradinarit": {
+      "name": "Grădinărit",
+      "description": "Unelte de grădină",
+      "emagUrl": "https://www.emag.ro/gradina/c",
+      "keywords": ["masina de tuns iarba", "motocoasa", "foarfeca", "gradinarit"]
+    }
+  },
+  "sport": {
+    "fitness": {
+      "name": "Fitness",
+      "description": "Aparate fitness",
+      "emagUrl": "https://www.emag.ro/fitness/c",
+      "keywords": ["banda de alergare", "bicicleta fitness", "gantere", "fitness"]
+    },
+    "biciclete": {
+      "name": "Biciclete",
+      "description": "Biciclete și accesorii",
+      "emagUrl": "https://www.emag.ro/biciclete/c",
+      "keywords": ["bicicleta", "mountainbike", "triciclu"]
+    }
+  },
+  "auto-moto": {
+    "accesorii-auto": {
+      "name": "Accesorii auto",
+      "description": "Accesorii și piese auto",
+      "emagUrl": "https://www.emag.ro/accesorii-auto/c",
+      "keywords": ["accesorii auto", "dvr", "camera auto", "anvelope", "ulei motor"]
+    }
+  }
+}

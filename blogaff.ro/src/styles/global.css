@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  /* Paleta Corporate/Business - Stil Ahrefs */
+  --color-primary: #0d47a1;        /* Navy blue principal */
+  --color-primary-dark: #01579b;   /* Navy blue închis pentru hover */
+  --color-primary-light: #1976d2;  /* Navy blue deschis */
+  --color-secondary: #546e7a;      /* Blue-grey secundar */
+  --color-accent: #ff6b35;         /* Accent portocaliu pentru CTA-uri */
+  --color-success: #2e7d32;        /* Verde pentru succes */
+
+  /* Text colors */
+  --color-text-primary: #1a1a2e;   /* Aproape negru pentru titluri */
+  --color-text-secondary: #37474f; /* Blue-grey pentru text normal */
+  --color-text-muted: #78909c;     /* Blue-grey mai deschis pentru text secundar */
+
+  /* Background colors */
+  --color-bg-base: #f5f7fa;        /* Gri foarte deschis */
+  --color-bg-surface: #ffffff;
+  --color-bg-accent: #e3f2fd;      /* Blue-50 */
+  --color-bg-dark: #1a1a2e;        /* Background întunecat pentru footer/hero */
+
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--color-bg-base)] text-[var(--color-text-primary)] antialiased;
+    font-family: var(--font-sans);
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "blogaff.ro",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "extract-keywords": "tsx scripts/extractKeywords.ts",
+    "generate-article": "tsx scripts/generateArticle.ts",
+    "process-keywords": "tsx scripts/processAllKeywords.ts",
+    "generate-all": "tsx scripts/generateAllArticles.ts",
+    "import-articles": "tsx scripts/importArticles.ts",
+    "scrape-emag": "tsx scripts/scrapeEmagCategories.ts",
+    "scrape-emag-full": "tsx scripts/scrapeEmagCategories.ts --with-subcategories",
+    "affiliate-links": "tsx scripts/manageAffiliateLinks.ts",
+    "process-emag-categories": "tsx scripts/processEmagCategories.ts",
+    "generate-category-articles": "tsx scripts/generateCategoryArticles.ts",
+    "generate-subtags": "tsx scripts/generateSubtags.ts",
+    "generate-keywords": "tsx scripts/generateKeywords.ts",
+    "generate-keyword-articles": "tsx scripts/generateKeywordArticles.ts"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@tailwindcss/vite": "^4.1.17",
+    "astro": "^5.15.4",
+    "axios": "^1.13.2",
+    "cheerio": "^1.1.2",
+    "csv-parse": "^6.1.0",
+    "dotenv": "^17.2.3",
+    "jsonwebtoken": "^9.0.2",
+    "kling-sdk": "^1.0.0",
+    "marked": "^17.0.0",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4.1.17"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "tsx": "^4.20.6"
+  }
+}

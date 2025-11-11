@@ -1,0 +1,1099 @@
+[
+  {
+    "name": "Telefoane & Tablete",
+    "url": "https://www.emag.ro/telefoane-tablete/c",
+    "subcategories": []
+  },
+  {
+    "name": "Laptopuri & IT",
+    "url": "https://www.emag.ro/laptopuri-it/c",
+    "subcategories": []
+  },
+  {
+    "name": "TV & Audio-Video",
+    "url": "https://www.emag.ro/tv-audio-video/c",
+    "subcategories": []
+  },
+  {
+    "name": "Gaming",
+    "url": "https://www.emag.ro/gaming/c",
+    "subcategories": []
+  },
+  {
+    "name": "Electrocasnice Mari",
+    "url": "https://www.emag.ro/electrocasnice-mari/c",
+    "subcategories": []
+  },
+  {
+    "name": "Electrocasnice Mici",
+    "url": "https://www.emag.ro/electrocasnice-mici/c",
+    "subcategories": [
+      {
+        "name": "Cosul meu",
+        "url": "https://www.emag.ro/cart/products?ref=cart"
+      },
+      {
+        "name": "Card eMAG",
+        "url": "https://www.emag.ro/card-emag?ref=hdr_card-emag"
+      },
+      {
+        "name": "Roboti de bucatarie",
+        "url": "https://www.emag.ro/roboti-bucatarie/c?tree_ref=0&ref=cat_tree_314"
+      },
+      {
+        "name": "Mixere",
+        "url": "https://www.emag.ro/mixere/c?tree_ref=0&ref=cat_tree_385"
+      },
+      {
+        "name": "Blendere & Tocatoare",
+        "url": "https://www.emag.ro/blendere----tocatoare/c?tree_ref=0&ref=cat_tree_313"
+      },
+      {
+        "name": "Masini de tocat",
+        "url": "https://www.emag.ro/masini-tocat/c?tree_ref=0&ref=cat_tree_532"
+      },
+      {
+        "name": "Feliatoare",
+        "url": "https://www.emag.ro/feliatoare/c?tree_ref=0&ref=cat_tree_620"
+      },
+      {
+        "name": "Accesorii electrocasnice mici",
+        "url": "https://www.emag.ro/accesorii-piese-electrocasnice-bucatarie/c?tree_ref=0&ref=cat_tree_1343"
+      },
+      {
+        "name": "Storcatoare",
+        "url": "https://www.emag.ro/storcatoare/c?tree_ref=0&ref=cat_tree_384"
+      },
+      {
+        "name": "Fierbatoare",
+        "url": "https://www.emag.ro/fierbatoare/c?tree_ref=0&ref=cat_tree_423"
+      },
+      {
+        "name": "Masini de paine",
+        "url": "https://www.emag.ro/masini-paine/c?tree_ref=0&ref=cat_tree_534"
+      },
+      {
+        "name": "Prajitoare de paine",
+        "url": "https://www.emag.ro/prajitoare/c?tree_ref=0&ref=cat_tree_383"
+      },
+      {
+        "name": "Sandwich-maker",
+        "url": "https://www.emag.ro/sandwich-maker/c?tree_ref=0&ref=cat_tree_622"
+      },
+      {
+        "name": "Friteuze",
+        "url": "https://www.emag.ro/friteuze/c?tree_ref=0&ref=cat_tree_382"
+      },
+      {
+        "name": "Multicooker",
+        "url": "https://www.emag.ro/multicooker/c?tree_ref=0&ref=cat_tree_2333"
+      },
+      {
+        "name": "Gratare electrice",
+        "url": "https://www.emag.ro/gratare-electrice/c?tree_ref=0&ref=cat_tree_386"
+      },
+      {
+        "name": "Aparate de gatit cu aburi & Deshidratoare",
+        "url": "https://www.emag.ro/aparate-gatit-aburi-deshidratoare/c?tree_ref=0&ref=cat_tree_381"
+      },
+      {
+        "name": "Cuptoare electrice",
+        "url": "https://www.emag.ro/cuptoare-electrice/c?tree_ref=0&ref=cat_tree_535"
+      },
+      {
+        "name": "Aparate de preparat desert",
+        "url": "https://www.emag.ro/aparate-preparat-desert/c?tree_ref=0&ref=cat_tree_626"
+      },
+      {
+        "name": "Cantare de bucatarie",
+        "url": "https://www.emag.ro/cantare-bucatarie/c?tree_ref=0&ref=cat_tree_533"
+      },
+      {
+        "name": "Aparate de vidat",
+        "url": "https://www.emag.ro/aparate-vidat/c?tree_ref=0&ref=cat_tree_548"
+      },
+      {
+        "name": "Multicooker",
+        "url": "https://www.emag.ro/multicooker/c?ref=subcat_0_0"
+      },
+      {
+        "name": "Friteuze",
+        "url": "https://www.emag.ro/friteuze/c?ref=subcat_0_1"
+      },
+      {
+        "name": "Cuptoare electrice",
+        "url": "https://www.emag.ro/cuptoare-electrice/c?ref=subcat_0_2"
+      },
+      {
+        "name": "Masini de paine",
+        "url": "https://www.emag.ro/masini-paine/c?ref=subcat_0_3"
+      },
+      {
+        "name": "Storcatoare",
+        "url": "https://www.emag.ro/storcatoare/c?ref=subcat_3_0"
+      },
+      {
+        "name": "Prajitoare de paine",
+        "url": "https://www.emag.ro/prajitoare/c?ref=subcat_3_1"
+      },
+      {
+        "name": "Sandwich-maker",
+        "url": "https://www.emag.ro/sandwich-maker/c?ref=subcat_3_2"
+      },
+      {
+        "name": "Fierbatoare",
+        "url": "https://www.emag.ro/fierbatoare/c?ref=subcat_3_3"
+      },
+      {
+        "name": "Roboti de bucatarie",
+        "url": "https://www.emag.ro/roboti-bucatarie/c"
+      },
+      {
+        "name": "Mixere",
+        "url": "https://www.emag.ro/mixere/c"
+      },
+      {
+        "name": "Blendere & Tocatoare",
+        "url": "https://www.emag.ro/blendere----tocatoare/c"
+      },
+      {
+        "name": "Masini de tocat",
+        "url": "https://www.emag.ro/masini-tocat/c"
+      },
+      {
+        "name": "Feliatoare",
+        "url": "https://www.emag.ro/feliatoare/c"
+      },
+      {
+        "name": "Accesorii electrocasnice mici",
+        "url": "https://www.emag.ro/accesorii-piese-electrocasnice-bucatarie/c"
+      },
+      {
+        "name": "Storcatoare",
+        "url": "https://www.emag.ro/storcatoare/c"
+      },
+      {
+        "name": "Fierbatoare",
+        "url": "https://www.emag.ro/fierbatoare/c"
+      },
+      {
+        "name": "Masini de paine",
+        "url": "https://www.emag.ro/masini-paine/c"
+      },
+      {
+        "name": "Prajitoare de paine",
+        "url": "https://www.emag.ro/prajitoare/c"
+      },
+      {
+        "name": "Sandwich-maker",
+        "url": "https://www.emag.ro/sandwich-maker/c"
+      },
+      {
+        "name": "Friteuze",
+        "url": "https://www.emag.ro/friteuze/c"
+      },
+      {
+        "name": "Multicooker",
+        "url": "https://www.emag.ro/multicooker/c"
+      },
+      {
+        "name": "Gratare electrice",
+        "url": "https://www.emag.ro/gratare-electrice/c"
+      },
+      {
+        "name": "Aparate de gatit cu aburi & Deshidratoare",
+        "url": "https://www.emag.ro/aparate-gatit-aburi-deshidratoare/c"
+      },
+      {
+        "name": "Cuptoare electrice",
+        "url": "https://www.emag.ro/cuptoare-electrice/c"
+      },
+      {
+        "name": "Aparate de preparat desert",
+        "url": "https://www.emag.ro/aparate-preparat-desert/c"
+      },
+      {
+        "name": "Cantare de bucatarie",
+        "url": "https://www.emag.ro/cantare-bucatarie/c"
+      },
+      {
+        "name": "Aparate de vidat",
+        "url": "https://www.emag.ro/aparate-vidat/c"
+      },
+      {
+        "name": "Cafea si Ceai",
+        "url": "https://www.emag.ro/cafea-ceai/sd"
+      },
+      {
+        "name": "Climatizare & sisteme de incalzire",
+        "url": "https://www.emag.ro/climatizare-sisteme-incalzire/sd"
+      },
+      {
+        "name": "Garantii si service",
+        "url": "https://www.emag.ro/help/categorie/garantii-si-service/?ref=footer_1_5"
+      },
+      {
+        "name": "Contul meu la eMAG",
+        "url": "https://www.emag.ro/help/categorie/comenzi-si-livrare/informatii-despre-contul-tau/?ref=footer_2_1"
+      },
+      {
+        "name": "eMAG Corporate",
+        "url": "https://www.emag.ro/corporate?ref=footer_2_3"
+      },
+      {
+        "name": "Contact",
+        "url": "https://www.emag.ro/help/contact/?ref=footer_3_2"
+      },
+      {
+        "name": "Anunturi rechemare produse",
+        "url": "https://www.emag.ro/help/categorie/comenzi-si-livrare/anunturi-rechemare-produse/?ref=footer_3_3"
+      },
+      {
+        "name": "Conditii generale privind furnizarea serviciilor postale",
+        "url": "https://www.emag.ro/help/conditii-generale-privind-furnizarea-serviciilor-postale/?ref=footer_3_4"
+      },
+      {
+        "name": "PROTECŢIA CONSUMATORILOR - A.N.P.C. – SAL (Solutionarea Alternativa a Litigiilor)",
+        "url": "https://anpc.ro/ce-este-sal/?ref=footer_3_5"
+      },
+      {
+        "name": "Solutionarea Online a litigiilor",
+        "url": "https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO?ref=footer_4_5"
+      }
+    ]
+  },
+  {
+    "name": "Climatizare & Încălzire",
+    "url": "https://www.emag.ro/climatizare-incalzire/c",
+    "subcategories": []
+  },
+  {
+    "name": "Îngrijire Personală",
+    "url": "https://www.emag.ro/ingrijire-personala/c",
+    "subcategories": [
+      {
+        "name": "Cosul meu",
+        "url": "https://www.emag.ro/cart/products?ref=cart"
+      },
+      {
+        "name": "Card eMAG",
+        "url": "https://www.emag.ro/card-emag?ref=hdr_card-emag"
+      },
+      {
+        "name": "Cosmetice & Produse ingrijire personala",
+        "url": "https://www.emag.ro/cosmetice-produse-ingrijire-personala/sd?ref=bc"
+      },
+      {
+        "name": "Masti pentru ten si gomaje",
+        "url": "https://www.emag.ro/masti-pentru-ten-gomaje/c?tree_ref=0&ref=cat_tree_1320"
+      },
+      {
+        "name": "Creme de fata",
+        "url": "https://www.emag.ro/creme-fata/c?tree_ref=0&ref=cat_tree_1367"
+      },
+      {
+        "name": "Produse demachiere si curatare",
+        "url": "https://www.emag.ro/produse-demachiere-curatare/c?tree_ref=0&ref=cat_tree_1362"
+      },
+      {
+        "name": "Servetele si dischete demachiante",
+        "url": "https://www.emag.ro/servetele-dischete-demachiante/c?tree_ref=0&ref=cat_tree_2441"
+      },
+      {
+        "name": "Tratamente si seruri pentru ten",
+        "url": "https://www.emag.ro/tratamente-seruri-ten/c?tree_ref=0&ref=cat_tree_1363"
+      },
+      {
+        "name": "Uleiuri cosmetice",
+        "url": "https://www.emag.ro/uleiuri-cosmetice/c?tree_ref=0&ref=cat_tree_1371"
+      },
+      {
+        "name": "Spuma si gel de ras",
+        "url": "https://www.emag.ro/spuma-gel-ras/c?tree_ref=0&ref=cat_tree_1364"
+      },
+      {
+        "name": "After shave",
+        "url": "https://www.emag.ro/after-shave/c?tree_ref=0&ref=cat_tree_1365"
+      },
+      {
+        "name": "Aparate de ras clasice",
+        "url": "https://www.emag.ro/aparate-ras-clasice/c?tree_ref=0&ref=cat_tree_1333"
+      },
+      {
+        "name": "Accesorii aparate de ras clasice",
+        "url": "https://www.emag.ro/accesorii-aparate-ras-clasice/c?tree_ref=0&ref=cat_tree_1312"
+      },
+      {
+        "name": "Geluri de dus",
+        "url": "https://www.emag.ro/geluri-dus/c?tree_ref=0&ref=cat_tree_119"
+      },
+      {
+        "name": "Sapunuri",
+        "url": "https://www.emag.ro/sapunuri/c?tree_ref=0&ref=cat_tree_1370"
+      },
+      {
+        "name": "Spuma si saruri de baie",
+        "url": "https://www.emag.ro/spuma-saruri-baie/c?tree_ref=0&ref=cat_tree_2489"
+      },
+      {
+        "name": "Gel antibacterian si igienizant",
+        "url": "https://www.emag.ro/gel-antibacterian-igenizant/c?tree_ref=0&ref=cat_tree_1319"
+      },
+      {
+        "name": "Servetele umede antibacteriene pentru maini",
+        "url": "https://www.emag.ro/servetele-umede-antibacteriene-maini/c?tree_ref=0&ref=cat_tree_3549"
+      },
+      {
+        "name": "Lotiuni si creme de corp",
+        "url": "https://www.emag.ro/lotiuni-creme-corp/c?tree_ref=0&ref=cat_tree_1372"
+      },
+      {
+        "name": "Tratamente ingrijire corp",
+        "url": "https://www.emag.ro/tratamente-ingrijire-corp/c?tree_ref=0&ref=cat_tree_1373"
+      },
+      {
+        "name": "Deodorante si antiperspirante",
+        "url": "https://www.emag.ro/deodorante-antiperspirante/c?tree_ref=0&ref=cat_tree_1369"
+      },
+      {
+        "name": "Ceara, benzi si creme depilatoare",
+        "url": "https://www.emag.ro/ceara-benzi-creme-depilatoare/c?tree_ref=0&ref=cat_tree_1376"
+      },
+      {
+        "name": "Accesorii depilare",
+        "url": "https://www.emag.ro/accesorii-depilare/c?tree_ref=0&ref=cat_tree_3416"
+      },
+      {
+        "name": "Plasturi",
+        "url": "https://www.emag.ro/plasturi/c?tree_ref=0&ref=cat_tree_810"
+      },
+      {
+        "name": "Bureti de baie",
+        "url": "https://www.emag.ro/bureti-baie/c?tree_ref=0&ref=cat_tree_1526"
+      },
+      {
+        "name": "Accesorii echipamente tatuat",
+        "url": "https://www.emag.ro/accesorii-echipamente-tatuat/c?tree_ref=0&ref=cat_tree_3451"
+      },
+      {
+        "name": "Echipament tatuaje",
+        "url": "https://www.emag.ro/echipament-tatuaje/c?tree_ref=0&ref=cat_tree_3450"
+      },
+      {
+        "name": "Tatuaje temporare",
+        "url": "https://www.emag.ro/tatuaje-temporare/c?tree_ref=0&ref=cat_tree_3085"
+      },
+      {
+        "name": "Sapun dezinfectant",
+        "url": "https://www.emag.ro/sapun-dezinfectant/c?tree_ref=0&ref=cat_tree_3547"
+      },
+      {
+        "name": "Sampon de par",
+        "url": "https://www.emag.ro/sampon-par/c?tree_ref=0&ref=cat_tree_1379"
+      },
+      {
+        "name": "Tratamente si masca de par",
+        "url": "https://www.emag.ro/tratamente-masca-par/c?tree_ref=0&ref=cat_tree_1380"
+      },
+      {
+        "name": "Accesorii tuns si vopsit",
+        "url": "https://www.emag.ro/accesorii-tuns-vopsit/c?tree_ref=0&ref=cat_tree_1433"
+      },
+      {
+        "name": "Vopsea de par si oxidant",
+        "url": "https://www.emag.ro/vopsea-par-oxidant/c?tree_ref=0&ref=cat_tree_1381"
+      },
+      {
+        "name": "Fixativ si spuma de par",
+        "url": "https://www.emag.ro/fixativ-spuma-par/c?tree_ref=0&ref=cat_tree_1382"
+      },
+      {
+        "name": "Perii de par si piepteni",
+        "url": "https://www.emag.ro/perii-par-piepteni/c?tree_ref=0&ref=cat_tree_1378"
+      },
+      {
+        "name": "Balsam de par",
+        "url": "https://www.emag.ro/balsam-par/c?tree_ref=0&ref=cat_tree_1116"
+      },
+      {
+        "name": "Ceara de par si gel",
+        "url": "https://www.emag.ro/ceara-par-gel/c?tree_ref=0&ref=cat_tree_2506"
+      },
+      {
+        "name": "Foarfece de tuns",
+        "url": "https://www.emag.ro/foarfece-tuns/c?tree_ref=0&ref=cat_tree_1518"
+      },
+      {
+        "name": "Produse ingrijire barba si mustata",
+        "url": "https://www.emag.ro/produse-ingrijire-barba-mustata/c?tree_ref=0&ref=cat_tree_3420"
+      },
+      {
+        "name": "Prezervative",
+        "url": "https://www.emag.ro/prezervative/c?tree_ref=0&ref=cat_tree_2286"
+      },
+      {
+        "name": "Lubrifianti",
+        "url": "https://www.emag.ro/lubrifianti/c?tree_ref=0&ref=cat_tree_218"
+      },
+      {
+        "name": "Geluri si deodorante igiena intima",
+        "url": "https://www.emag.ro/geluri-deodorante-igiena-intima/c?tree_ref=0&ref=cat_tree_1374"
+      },
+      {
+        "name": "Tampoane si absorbante",
+        "url": "https://www.emag.ro/tampoane-absorbante/c?tree_ref=0&ref=cat_tree_1375"
+      },
+      {
+        "name": "Servetele igiena intima",
+        "url": "https://www.emag.ro/servetele-igiena-intima/c?tree_ref=0&ref=cat_tree_3419"
+      },
+      {
+        "name": "Produse incontinenta",
+        "url": "https://www.emag.ro/produse-incontinenta/c?tree_ref=0&ref=cat_tree_3901"
+      },
+      {
+        "name": "Produse autobronzante",
+        "url": "https://www.emag.ro/produse-autobronzante/c?tree_ref=0&ref=cat_tree_321"
+      },
+      {
+        "name": "Produse cu protectie solara",
+        "url": "https://www.emag.ro/produse-protectie-solara/c?tree_ref=0&ref=cat_tree_1062"
+      },
+      {
+        "name": "Produse dupa plaja",
+        "url": "https://www.emag.ro/produse-dupa-plaja/c?tree_ref=0&ref=cat_tree_2555"
+      },
+      {
+        "name": "Accesorii ingrijire picioare",
+        "url": "https://www.emag.ro/accesorii-machiaj/c?ref=cross_sell_138"
+      },
+      {
+        "name": "Creme si lotiuni picioare",
+        "url": "https://www.emag.ro/lotiuni-creme-corp/c?ref=cross_sell_139"
+      },
+      {
+        "name": "Produse depilatoare",
+        "url": "https://www.emag.ro/ceara-benzi-creme-depilatoare/c?ref=cross_sell_142"
+      },
+      {
+        "name": "Periute de dinti clasice & Ata dentara",
+        "url": "https://www.emag.ro/periute-dinti-clasice/c?ref=cross_sell_147"
+      },
+      {
+        "name": "Pasta de dinti & Apa de gura",
+        "url": "https://www.emag.ro/pasta-de-dinti/c?ref=cross_sell_148"
+      },
+      {
+        "name": "Masti pentru ten si gomaje",
+        "url": "https://www.emag.ro/masti-pentru-ten-gomaje/c"
+      },
+      {
+        "name": "Creme de fata",
+        "url": "https://www.emag.ro/creme-fata/c"
+      },
+      {
+        "name": "Produse demachiere si curatare",
+        "url": "https://www.emag.ro/produse-demachiere-curatare/c"
+      },
+      {
+        "name": "Servetele si dischete demachiante",
+        "url": "https://www.emag.ro/servetele-dischete-demachiante/c"
+      },
+      {
+        "name": "Tratamente si seruri pentru ten",
+        "url": "https://www.emag.ro/tratamente-seruri-ten/c"
+      },
+      {
+        "name": "Uleiuri cosmetice",
+        "url": "https://www.emag.ro/uleiuri-cosmetice/c"
+      },
+      {
+        "name": "Spuma si gel de ras",
+        "url": "https://www.emag.ro/spuma-gel-ras/c"
+      },
+      {
+        "name": "After shave",
+        "url": "https://www.emag.ro/after-shave/c"
+      },
+      {
+        "name": "Aparate de ras clasice",
+        "url": "https://www.emag.ro/aparate-ras-clasice/c"
+      },
+      {
+        "name": "Accesorii aparate de ras clasice",
+        "url": "https://www.emag.ro/accesorii-aparate-ras-clasice/c"
+      },
+      {
+        "name": "Geluri de dus",
+        "url": "https://www.emag.ro/geluri-dus/c"
+      },
+      {
+        "name": "Sapunuri",
+        "url": "https://www.emag.ro/sapunuri/c"
+      },
+      {
+        "name": "Spuma si saruri de baie",
+        "url": "https://www.emag.ro/spuma-saruri-baie/c"
+      },
+      {
+        "name": "Gel antibacterian si igienizant",
+        "url": "https://www.emag.ro/gel-antibacterian-igenizant/c"
+      },
+      {
+        "name": "Servetele umede antibacteriene pentru maini",
+        "url": "https://www.emag.ro/servetele-umede-antibacteriene-maini/c"
+      },
+      {
+        "name": "Lotiuni si creme de corp",
+        "url": "https://www.emag.ro/lotiuni-creme-corp/c"
+      },
+      {
+        "name": "Tratamente ingrijire corp",
+        "url": "https://www.emag.ro/tratamente-ingrijire-corp/c"
+      },
+      {
+        "name": "Deodorante si antiperspirante",
+        "url": "https://www.emag.ro/deodorante-antiperspirante/c"
+      },
+      {
+        "name": "Ceara, benzi si creme depilatoare",
+        "url": "https://www.emag.ro/ceara-benzi-creme-depilatoare/c"
+      },
+      {
+        "name": "Accesorii depilare",
+        "url": "https://www.emag.ro/accesorii-depilare/c"
+      },
+      {
+        "name": "Plasturi",
+        "url": "https://www.emag.ro/plasturi/c"
+      },
+      {
+        "name": "Bureti de baie",
+        "url": "https://www.emag.ro/bureti-baie/c"
+      },
+      {
+        "name": "Accesorii echipamente tatuat",
+        "url": "https://www.emag.ro/accesorii-echipamente-tatuat/c"
+      },
+      {
+        "name": "Echipament tatuaje",
+        "url": "https://www.emag.ro/echipament-tatuaje/c"
+      },
+      {
+        "name": "Tatuaje temporare",
+        "url": "https://www.emag.ro/tatuaje-temporare/c"
+      },
+      {
+        "name": "Sapun dezinfectant",
+        "url": "https://www.emag.ro/sapun-dezinfectant/c"
+      },
+      {
+        "name": "Sampon de par",
+        "url": "https://www.emag.ro/sampon-par/c"
+      },
+      {
+        "name": "Tratamente si masca de par",
+        "url": "https://www.emag.ro/tratamente-masca-par/c"
+      },
+      {
+        "name": "Accesorii tuns si vopsit",
+        "url": "https://www.emag.ro/accesorii-tuns-vopsit/c"
+      },
+      {
+        "name": "Vopsea de par si oxidant",
+        "url": "https://www.emag.ro/vopsea-par-oxidant/c"
+      },
+      {
+        "name": "Fixativ si spuma de par",
+        "url": "https://www.emag.ro/fixativ-spuma-par/c"
+      },
+      {
+        "name": "Perii de par si piepteni",
+        "url": "https://www.emag.ro/perii-par-piepteni/c"
+      },
+      {
+        "name": "Balsam de par",
+        "url": "https://www.emag.ro/balsam-par/c"
+      },
+      {
+        "name": "Ceara de par si gel",
+        "url": "https://www.emag.ro/ceara-par-gel/c"
+      },
+      {
+        "name": "Foarfece de tuns",
+        "url": "https://www.emag.ro/foarfece-tuns/c"
+      },
+      {
+        "name": "Produse ingrijire barba si mustata",
+        "url": "https://www.emag.ro/produse-ingrijire-barba-mustata/c"
+      },
+      {
+        "name": "Prezervative",
+        "url": "https://www.emag.ro/prezervative/c"
+      },
+      {
+        "name": "Lubrifianti",
+        "url": "https://www.emag.ro/lubrifianti/c"
+      },
+      {
+        "name": "Geluri si deodorante igiena intima",
+        "url": "https://www.emag.ro/geluri-deodorante-igiena-intima/c"
+      },
+      {
+        "name": "Tampoane si absorbante",
+        "url": "https://www.emag.ro/tampoane-absorbante/c"
+      },
+      {
+        "name": "Servetele igiena intima",
+        "url": "https://www.emag.ro/servetele-igiena-intima/c"
+      },
+      {
+        "name": "Produse incontinenta",
+        "url": "https://www.emag.ro/produse-incontinenta/c"
+      },
+      {
+        "name": "Produse autobronzante",
+        "url": "https://www.emag.ro/produse-autobronzante/c"
+      },
+      {
+        "name": "Produse cu protectie solara",
+        "url": "https://www.emag.ro/produse-protectie-solara/c"
+      },
+      {
+        "name": "Produse dupa plaja",
+        "url": "https://www.emag.ro/produse-dupa-plaja/c"
+      },
+      {
+        "name": "Cosmetice profesionale",
+        "url": "https://www.emag.ro/cosmetice-profesionale/sd"
+      },
+      {
+        "name": "Garantii si service",
+        "url": "https://www.emag.ro/help/categorie/garantii-si-service/?ref=footer_1_5"
+      },
+      {
+        "name": "Contul meu la eMAG",
+        "url": "https://www.emag.ro/help/categorie/comenzi-si-livrare/informatii-despre-contul-tau/?ref=footer_2_1"
+      },
+      {
+        "name": "eMAG Corporate",
+        "url": "https://www.emag.ro/corporate?ref=footer_2_3"
+      },
+      {
+        "name": "Contact",
+        "url": "https://www.emag.ro/help/contact/?ref=footer_3_2"
+      },
+      {
+        "name": "Anunturi rechemare produse",
+        "url": "https://www.emag.ro/help/categorie/comenzi-si-livrare/anunturi-rechemare-produse/?ref=footer_3_3"
+      },
+      {
+        "name": "Conditii generale privind furnizarea serviciilor postale",
+        "url": "https://www.emag.ro/help/conditii-generale-privind-furnizarea-serviciilor-postale/?ref=footer_3_4"
+      },
+      {
+        "name": "PROTECŢIA CONSUMATORILOR - A.N.P.C. – SAL (Solutionarea Alternativa a Litigiilor)",
+        "url": "https://anpc.ro/ce-este-sal/?ref=footer_3_5"
+      },
+      {
+        "name": "Solutionarea Online a litigiilor",
+        "url": "https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO?ref=footer_4_5"
+      }
+    ]
+  },
+  {
+    "name": "Casa, Gradina & Bricolaj",
+    "url": "https://www.emag.ro/casa-si-gradina/c",
+    "subcategories": []
+  },
+  {
+    "name": "Mobilă",
+    "url": "https://www.emag.ro/mobila/c",
+    "subcategories": []
+  },
+  {
+    "name": "Auto-Moto",
+    "url": "https://www.emag.ro/auto-moto/c",
+    "subcategories": []
+  },
+  {
+    "name": "Jucării & Copii",
+    "url": "https://www.emag.ro/jucarii-copii/c",
+    "subcategories": [
+      {
+        "name": "Cosul meu",
+        "url": "https://www.emag.ro/cart/products?ref=cart"
+      },
+      {
+        "name": "Card eMAG",
+        "url": "https://www.emag.ro/card-emag?ref=hdr_card-emag"
+      },
+      {
+        "name": "Figurine",
+        "url": "https://www.emag.ro/figurine/c?tree_ref=0&ref=cat_tree_807"
+      },
+      {
+        "name": "Seturi de constructie",
+        "url": "https://www.emag.ro/seturi-constructie/c?tree_ref=0&ref=cat_tree_829"
+      },
+      {
+        "name": "Cuburi si caramizi",
+        "url": "https://www.emag.ro/cuburi-caramizi/c?tree_ref=0&ref=cat_tree_831"
+      },
+      {
+        "name": "Masinute",
+        "url": "https://www.emag.ro/masinute/c?tree_ref=0&ref=cat_tree_835"
+      },
+      {
+        "name": "Motociclete de jucarie",
+        "url": "https://www.emag.ro/motociclete-jucarie/c?tree_ref=0&ref=cat_tree_834"
+      },
+      {
+        "name": "Barci cu telecomanda",
+        "url": "https://www.emag.ro/barci-telecomanda/c?tree_ref=0&ref=cat_tree_836"
+      },
+      {
+        "name": "Utilaje constructie de jucarie",
+        "url": "https://www.emag.ro/utilaje-constructie-jucarie/c?tree_ref=0&ref=cat_tree_812"
+      },
+      {
+        "name": "Elicoptere, avioane si nave de jucarie",
+        "url": "https://www.emag.ro/elicoptere-avioane-nave-jucarie/c?tree_ref=0&ref=cat_tree_825"
+      },
+      {
+        "name": "Trenulete de jucarie",
+        "url": "https://www.emag.ro/trenulete-jucarie/c?tree_ref=0&ref=cat_tree_813"
+      },
+      {
+        "name": "Roboti de jucarie",
+        "url": "https://www.emag.ro/roboti-jucarie/c?tree_ref=0&ref=cat_tree_863"
+      },
+      {
+        "name": "Papusi",
+        "url": "https://www.emag.ro/papusi/c?tree_ref=0&ref=cat_tree_860"
+      },
+      {
+        "name": "Carucioare papusi si accesorii",
+        "url": "https://www.emag.ro/carucioare-papusi-accesorii/c?tree_ref=0&ref=cat_tree_806"
+      },
+      {
+        "name": "Casute de papusi si mobilier",
+        "url": "https://www.emag.ro/casute-de-papusi-mobilier/c?tree_ref=0&ref=cat_tree_1130"
+      },
+      {
+        "name": "Jucarii de plus",
+        "url": "https://www.emag.ro/jucarii-plus/c?tree_ref=0&ref=cat_tree_801"
+      },
+      {
+        "name": "Instrumente muzicale de jucarie",
+        "url": "https://www.emag.ro/instrumente-muzicale-jucarie/c?tree_ref=0&ref=cat_tree_849"
+      },
+      {
+        "name": "Arme de jucarie",
+        "url": "https://www.emag.ro/arme-de-jucarie-1/c?tree_ref=0&ref=cat_tree_2862"
+      },
+      {
+        "name": "Frumusete, bijuterii si accesorii fetite",
+        "url": "https://www.emag.ro/frumusete-bijuterii-accesorii-fetite/c?tree_ref=0&ref=cat_tree_2863"
+      },
+      {
+        "name": "Masti si costume copii",
+        "url": "https://www.emag.ro/masti-costume-copii/c?tree_ref=0&ref=cat_tree_2864"
+      },
+      {
+        "name": "Bucatarii copii",
+        "url": "https://www.emag.ro/bucatarii-copii/c?tree_ref=0&ref=cat_tree_851"
+      },
+      {
+        "name": "Seturi de curatenie copii si accesorii",
+        "url": "https://www.emag.ro/seturi-curatenie-copii-accesorii/c?tree_ref=0&ref=cat_tree_850"
+      },
+      {
+        "name": "Ateliere si bancuri de lucru",
+        "url": "https://www.emag.ro/ateliere-bancuri-lucru/c?tree_ref=0&ref=cat_tree_853"
+      },
+      {
+        "name": "Set joaca doctor",
+        "url": "https://www.emag.ro/set-joaca-doctor/c?tree_ref=0&ref=cat_tree_852"
+      },
+      {
+        "name": "Set joaca supermarket",
+        "url": "https://www.emag.ro/set-joaca-supermarket/c?tree_ref=0&ref=cat_tree_2865"
+      },
+      {
+        "name": "Set joaca gradinarit",
+        "url": "https://www.emag.ro/set-joaca-gradinarit/c?tree_ref=0&ref=cat_tree_2866"
+      },
+      {
+        "name": "Jocuri de societate",
+        "url": "https://www.emag.ro/jocuri-societate/c?tree_ref=0&ref=cat_tree_861"
+      },
+      {
+        "name": "Puzzle",
+        "url": "https://www.emag.ro/puzzle/c?tree_ref=0&ref=cat_tree_816"
+      },
+      {
+        "name": "Vehicule copii",
+        "url": "https://www.emag.ro/masinute-vehicule-copii/c?ref=cross_sell_94"
+      },
+      {
+        "name": "Biciclete copii",
+        "url": "https://www.emag.ro/biciclete-copii/c?ref=cross_sell_95"
+      },
+      {
+        "name": "Triciclete",
+        "url": "https://www.emag.ro/triciclete/c?ref=cross_sell_96"
+      },
+      {
+        "name": "Trotinete copii",
+        "url": "https://www.emag.ro/trotinete-copii/c?ref=cross_sell_97"
+      },
+      {
+        "name": "vezi toata oferta",
+        "url": "https://www.emag.ro/jucarii-interactive-bebelusi-new/c?ref=segm_0_other"
+      },
+      {
+        "name": "Papusi",
+        "url": "https://www.emag.ro/papusi/c?ref=subcat_1_0"
+      },
+      {
+        "name": "Carucioare papusi si accesorii",
+        "url": "https://www.emag.ro/carucioare-papusi-accesorii/c?ref=subcat_1_1"
+      },
+      {
+        "name": "Casute de papusi si mobilier",
+        "url": "https://www.emag.ro/casute-de-papusi-mobilier/c?ref=subcat_1_2"
+      },
+      {
+        "name": "Jucarii de plus",
+        "url": "https://www.emag.ro/jucarii-plus/c?ref=subcat_1_3"
+      },
+      {
+        "name": "Masinute",
+        "url": "https://www.emag.ro/masinute/c?ref=subcat_2_0"
+      },
+      {
+        "name": "Elicoptere, avioane si nave de jucarie",
+        "url": "https://www.emag.ro/elicoptere-avioane-nave-jucarie/c?ref=subcat_2_1"
+      },
+      {
+        "name": "Utilaje constructie de jucarie",
+        "url": "https://www.emag.ro/utilaje-constructie-jucarie/c?ref=subcat_2_2"
+      },
+      {
+        "name": "Roboti de jucarie",
+        "url": "https://www.emag.ro/roboti-jucarie/c?ref=subcat_2_3"
+      },
+      {
+        "name": "Figurine",
+        "url": "https://www.emag.ro/figurine/c?ref=subcat_2_4"
+      },
+      {
+        "name": "Bucatarii copii",
+        "url": "https://www.emag.ro/bucatarii-copii/c?ref=subcat_3_0"
+      },
+      {
+        "name": "Seturi de curatenie copii si accesorii",
+        "url": "https://www.emag.ro/seturi-curatenie-copii-accesorii/c?ref=subcat_3_1"
+      },
+      {
+        "name": "Ateliere si bancuri de lucru",
+        "url": "https://www.emag.ro/ateliere-bancuri-lucru/c?ref=subcat_3_2"
+      },
+      {
+        "name": "Set joaca doctor",
+        "url": "https://www.emag.ro/set-joaca-doctor/c?ref=subcat_3_3"
+      },
+      {
+        "name": "Seturi pictura si desen",
+        "url": "https://www.emag.ro/seturi-pictura-desen/c?ref=subcat_4_0"
+      },
+      {
+        "name": "Seturi de artizanat",
+        "url": "https://www.emag.ro/seturi-artizanat/c?ref=subcat_4_1"
+      },
+      {
+        "name": "Pasta, lut si nisip modelabil",
+        "url": "https://www.emag.ro/pasta-lut-nisip-modelabil/c?ref=subcat_4_2"
+      },
+      {
+        "name": "Jucarii colectie",
+        "url": "https://www.emag.ro/jucarii-colectii/c?ref=subcat_4_3"
+      },
+      {
+        "name": "Puzzle",
+        "url": "https://www.emag.ro/puzzle/c?ref=subcat_4_4"
+      },
+      {
+        "name": "Jocuri de societate",
+        "url": "https://www.emag.ro/jocuri-societate/c?ref=subcat_4_5"
+      },
+      {
+        "name": "Aeromodele",
+        "url": "https://www.emag.ro/aeromodele/c?ref=subcat_4_6"
+      },
+      {
+        "name": "Figurine pentru jocuri video",
+        "url": "https://www.emag.ro/figurine-pentru-jocuri-video/c?ref=subcat_4_7"
+      },
+      {
+        "name": "Figurine",
+        "url": "https://www.emag.ro/figurine/c"
+      },
+      {
+        "name": "Seturi de constructie",
+        "url": "https://www.emag.ro/seturi-constructie/c"
+      },
+      {
+        "name": "Cuburi si caramizi",
+        "url": "https://www.emag.ro/cuburi-caramizi/c"
+      },
+      {
+        "name": "Masinute",
+        "url": "https://www.emag.ro/masinute/c"
+      },
+      {
+        "name": "Motociclete de jucarie",
+        "url": "https://www.emag.ro/motociclete-jucarie/c"
+      },
+      {
+        "name": "Barci cu telecomanda",
+        "url": "https://www.emag.ro/barci-telecomanda/c"
+      },
+      {
+        "name": "Utilaje constructie de jucarie",
+        "url": "https://www.emag.ro/utilaje-constructie-jucarie/c"
+      },
+      {
+        "name": "Elicoptere, avioane si nave de jucarie",
+        "url": "https://www.emag.ro/elicoptere-avioane-nave-jucarie/c"
+      },
+      {
+        "name": "Trenulete de jucarie",
+        "url": "https://www.emag.ro/trenulete-jucarie/c"
+      },
+      {
+        "name": "Roboti de jucarie",
+        "url": "https://www.emag.ro/roboti-jucarie/c"
+      },
+      {
+        "name": "Papusi",
+        "url": "https://www.emag.ro/papusi/c"
+      },
+      {
+        "name": "Carucioare papusi si accesorii",
+        "url": "https://www.emag.ro/carucioare-papusi-accesorii/c"
+      },
+      {
+        "name": "Casute de papusi si mobilier",
+        "url": "https://www.emag.ro/casute-de-papusi-mobilier/c"
+      },
+      {
+        "name": "Jucarii de plus",
+        "url": "https://www.emag.ro/jucarii-plus/c"
+      },
+      {
+        "name": "Instrumente muzicale de jucarie",
+        "url": "https://www.emag.ro/instrumente-muzicale-jucarie/c"
+      },
+      {
+        "name": "Arme de jucarie",
+        "url": "https://www.emag.ro/arme-de-jucarie-1/c"
+      },
+      {
+        "name": "Frumusete, bijuterii si accesorii fetite",
+        "url": "https://www.emag.ro/frumusete-bijuterii-accesorii-fetite/c"
+      },
+      {
+        "name": "Masti si costume copii",
+        "url": "https://www.emag.ro/masti-costume-copii/c"
+      },
+      {
+        "name": "Bucatarii copii",
+        "url": "https://www.emag.ro/bucatarii-copii/c"
+      },
+      {
+        "name": "Seturi de curatenie copii si accesorii",
+        "url": "https://www.emag.ro/seturi-curatenie-copii-accesorii/c"
+      },
+      {
+        "name": "Ateliere si bancuri de lucru",
+        "url": "https://www.emag.ro/ateliere-bancuri-lucru/c"
+      },
+      {
+        "name": "Set joaca doctor",
+        "url": "https://www.emag.ro/set-joaca-doctor/c"
+      },
+      {
+        "name": "Set joaca supermarket",
+        "url": "https://www.emag.ro/set-joaca-supermarket/c"
+      },
+      {
+        "name": "Set joaca gradinarit",
+        "url": "https://www.emag.ro/set-joaca-gradinarit/c"
+      },
+      {
+        "name": "Jocuri de societate",
+        "url": "https://www.emag.ro/jocuri-societate/c"
+      },
+      {
+        "name": "Puzzle",
+        "url": "https://www.emag.ro/puzzle/c"
+      },
+      {
+        "name": "Igiena si ingrijire",
+        "url": "https://www.emag.ro/cosmetica-ingrijire-copii/sd"
+      },
+      {
+        "name": "Camera copilului",
+        "url": "https://www.emag.ro/camera-copilului/sd"
+      },
+      {
+        "name": "Carucioare si articole transport",
+        "url": "https://www.emag.ro/carucioare-articole-transport/sd"
+      },
+      {
+        "name": "Garantii si service",
+        "url": "https://www.emag.ro/help/categorie/garantii-si-service/?ref=footer_1_5"
+      },
+      {
+        "name": "Contul meu la eMAG",
+        "url": "https://www.emag.ro/help/categorie/comenzi-si-livrare/informatii-despre-contul-tau/?ref=footer_2_1"
+      },
+      {
+        "name": "eMAG Corporate",
+        "url": "https://www.emag.ro/corporate?ref=footer_2_3"
+      },
+      {
+        "name": "Contact",
+        "url": "https://www.emag.ro/help/contact/?ref=footer_3_2"
+      },
+      {
+        "name": "Anunturi rechemare produse",
+        "url": "https://www.emag.ro/help/categorie/comenzi-si-livrare/anunturi-rechemare-produse/?ref=footer_3_3"
+      },
+      {
+        "name": "Conditii generale privind furnizarea serviciilor postale",
+        "url": "https://www.emag.ro/help/conditii-generale-privind-furnizarea-serviciilor-postale/?ref=footer_3_4"
+      },
+      {
+        "name": "PROTECŢIA CONSUMATORILOR - A.N.P.C. – SAL (Solutionarea Alternativa a Litigiilor)",
+        "url": "https://anpc.ro/ce-este-sal/?ref=footer_3_5"
+      },
+      {
+        "name": "Solutionarea Online a litigiilor",
+        "url": "https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO?ref=footer_4_5"
+      }
+    ]
+  },
+  {
+    "name": "Sport & Outdoor",
+    "url": "https://www.emag.ro/sport-outdoor/c",
+    "subcategories": []
+  },
+  {
+    "name": "Modă & Frumusețe",
+    "url": "https://www.emag.ro/moda/c",
+    "subcategories": []
+  }
+]

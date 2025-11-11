@@ -1,0 +1,444 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { sampleArticles } from '../../data/sampleData';
+import { marked } from 'marked';
+import { capitalizeFirst } from '../../utils/textUtils';
+
+// Configurare marked pentru spații corecte
+marked.setOptions({
+  breaks: true,
+  gfm: true,
+  headerIds: false,
+  mangle: false,
+});
+
+export async function getStaticPaths() {
+  // Import articole generate
+  let generatedArticles = [];
+  try {
+    const generated = await import('../../data/generatedArticles');
+    generatedArticles = generated.generatedArticles || [];
+  } catch (e) {
+    // Fișierul nu există încă
+  }
+
+  // Import articole keywords (noi)
+  let keywordArticles = [];
+  try {
+    const fs = await import('fs');
+    const path = await import('path');
+    const indexPath = path.join(process.cwd(), 'data', 'keyword-articles', 'index.json');
+    if (fs.existsSync(indexPath)) {
+      const content = fs.readFileSync(indexPath, 'utf-8');
+      keywordArticles = JSON.parse(content);
+    }
+  } catch (e) {
+    // Fișierul nu există încă
+  }
+
+  const allArticles = [...generatedArticles, ...keywordArticles, ...sampleArticles];
+
+  return allArticles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article, allArticles }
+  }));
+}
+
+const { article, allArticles } = Astro.props;
+
+const formatDate = (date: Date | string) => {
+  const dateObj = typeof date === 'string' ? new Date(date) : date;
+  return new Intl.DateTimeFormat('ro-RO', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  }).format(dateObj);
+};
+
+// Convertește Markdown la HTML
+const contentHtml = await marked.parse(article.content || '');
+---
+
+<Layout title={`${article.title} | TechGadget Blog`} description={article.description}>
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Breadcrumb -->
+    <nav class="mb-8 text-sm">
+      <ol class="flex items-center space-x-2 text-[var(--color-text-muted)]">
+        <li><a href="/" class="hover:text-[var(--color-primary)]">Acasă</a></li>
+        <li>/</li>
+        {typeof article.category === 'string' ? (
+          <>
+            <li><a href="/categorii-emag" class="hover:text-[var(--color-primary)]">Categorii eMAG</a></li>
+            <li>/</li>
+          </>
+        ) : (
+          <>
+            <li><a href={`/categorii/${article.category.slug}`} class="hover:text-[var(--color-primary)]">{article.category.name}</a></li>
+            <li>/</li>
+          </>
+        )}
+        <li class="text-[var(--color-text-secondary)]">{article.title}</li>
+      </ol>
+    </nav>
+
+    <!-- Category Badge -->
+    <div class="mb-4">
+      {typeof article.category === 'string' ? (
+        <a
+          href="/categorii-emag"
+          class="inline-block px-4 py-2 bg-[var(--color-primary)]/10 text-[var(--color-primary)] text-sm font-semibold rounded-full hover:bg-[var(--color-primary)]/20 transition-colors"
+        >
+          {article.categoryId ? article.categoryId.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') : 'Produse'}
+        </a>
+      ) : (
+        <a
+          href={`/categorii/${article.category.slug}`}
+          class="inline-block px-4 py-2 bg-[var(--color-primary)]/10 text-[var(--color-primary)] text-sm font-semibold rounded-full hover:bg-[var(--color-primary)]/20 transition-colors"
+        >
+          {article.category.name}
+        </a>
+      )}
+    </div>
+
+    <!-- Title -->
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--color-text-primary)] mb-4 leading-tight">
+      {capitalizeFirst(article.title)}
+    </h1>
+
+    <!-- Meta Info -->
+    <div class="flex flex-wrap items-center gap-4 mb-8 text-sm text-[var(--color-text-muted)]">
+      <time datetime={typeof article.publishedAt === 'string' ? article.publishedAt : article.publishedAt.toISOString()}>
+        {formatDate(article.publishedAt)}
+      </time>
+      {article.readingTime && (
+        <>
+          <span>•</span>
+          <span class="flex items-center gap-1">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            {article.readingTime} min citire
+          </span>
+        </>
+      )}
+    </div>
+
+    <!-- Featured Image or SVG -->
+    {article.heroSvg ? (
+      <div class="mb-12 rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-stone-50 to-stone-100 p-8 flex items-center justify-center">
+        <div class="w-full max-w-2xl" set:html={article.heroSvg}></div>
+      </div>
+    ) : article.imageUrl && (
+      <div class="mb-12 rounded-xl overflow-hidden shadow-lg">
+        <img
+          src={article.imageUrl}
+          alt={article.title}
+          class="w-full h-auto"
+        />
+      </div>
+    )}
+
+    <!-- Article Content -->
+    <div class="text-xl text-[var(--color-text-secondary)] mb-10 leading-relaxed font-light">
+      {article.description}
+    </div>
+
+    <div class="article-content mb-12">
+      <div set:html={contentHtml} />
+    </div>
+
+    <!-- Affiliate Links Section -->
+    {article.affiliateLinks && article.affiliateLinks.length > 0 && (
+      <div class="bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl p-6 md:p-8 mb-12 border border-orange-200">
+        <h2 class="text-2xl font-bold text-[var(--color-text-primary)] mb-4">
+          🛒 Recomandări de Cumpărare
+        </h2>
+        <p class="text-[var(--color-text-secondary)] mb-6">
+          Produsele recomandate în acest articol, cu cele mai bune prețuri:
+        </p>
+        <div class="space-y-4">
+          {article.affiliateLinks.map((link) => (
+            <div class="bg-white rounded-lg p-4 flex items-center justify-between gap-4 shadow-sm hover:shadow-md transition-shadow">
+              <div class="flex-grow">
+                <h3 class="font-semibold text-[var(--color-text-primary)] mb-1">
+                  {link.productName}
+                </h3>
+                {link.description && (
+                  <p class="text-sm text-[var(--color-text-secondary)]">
+                    {link.description}
+                  </p>
+                )}
+              </div>
+              <div class="flex items-center gap-4">
+                {link.price && (
+                  <span class="font-bold text-[var(--color-primary)] text-lg whitespace-nowrap">
+                    {link.price}
+                  </span>
+                )}
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  class="px-6 py-2 bg-[var(--color-primary)] text-white font-semibold rounded-lg hover:bg-[var(--color-primary-dark)] transition-colors whitespace-nowrap"
+                >
+                  Vezi Oferta
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- Tags -->
+    <div class="mb-12">
+      <h3 class="text-lg font-semibold text-[var(--color-text-primary)] mb-4">
+        Tag-uri:
+      </h3>
+      <div class="flex flex-wrap gap-2">
+        {article.tags.map((tag) => (
+          <a
+            href={`/tag/${tag}`}
+            class="px-4 py-2 bg-stone-100 text-[var(--color-text-secondary)] rounded-lg hover:bg-stone-200 transition-colors text-sm"
+          >
+            #{tag}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Share Section -->
+    <div class="border-t border-stone-200 pt-8 mb-12">
+      <h3 class="text-lg font-semibold text-[var(--color-text-primary)] mb-4">
+        Distribuie acest articol:
+      </h3>
+      <div class="flex gap-3">
+        <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+          Facebook
+        </button>
+        <button class="px-4 py-2 bg-sky-500 text-white rounded-lg hover:bg-sky-600 transition-colors text-sm font-medium">
+          Twitter
+        </button>
+        <button class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm font-medium">
+          WhatsApp
+        </button>
+      </div>
+    </div>
+
+    <!-- Related Articles -->
+    <div class="border-t border-stone-200 pt-12">
+      <h3 class="text-2xl font-bold text-[var(--color-text-primary)] mb-6">
+        Articole Similare
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {allArticles
+          .filter((a) => {
+            if (a.slug === article.slug) return false;
+            const articleCategory = typeof article.category === 'string' ? article.category : article.category.slug;
+            const aCategory = typeof a.category === 'string' ? a.category : a.category.slug;
+            return articleCategory === aCategory;
+          })
+          .slice(0, 2)
+          .map((relatedArticle) => (
+            <a
+              href={`/articole/${relatedArticle.slug}`}
+              class="group bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-stone-200"
+            >
+              {relatedArticle.imageUrl && (
+                <div class="aspect-video overflow-hidden bg-stone-200">
+                  <img
+                    src={relatedArticle.imageUrl}
+                    alt={relatedArticle.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                </div>
+              )}
+              <div class="p-4">
+                <h4 class="font-semibold text-[var(--color-text-primary)] group-hover:text-[var(--color-primary)] transition-colors mb-2">
+                  {relatedArticle.title}
+                </h4>
+                <p class="text-sm text-[var(--color-text-secondary)] line-clamp-2">
+                  {relatedArticle.description}
+                </p>
+              </div>
+            </a>
+          ))}
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style is:global>
+  /* Base typography - Ahrefs style */
+  .article-content {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #333;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  }
+
+  /* Headings - clean and bold */
+  .article-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: #000;
+    line-height: 1.3;
+  }
+
+  .article-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: #000;
+    line-height: 1.4;
+  }
+
+  /* Paragraphs - readable */
+  .article-content p {
+    margin-bottom: 1.5rem;
+    color: #333;
+    line-height: 1.7;
+  }
+
+  /* Bold text */
+  .article-content strong {
+    font-weight: 700;
+    color: #000;
+  }
+
+  /* Lists - simple and clean */
+  .article-content ul,
+  .article-content ol {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+  }
+
+  .article-content li {
+    margin-bottom: 0.5rem;
+    color: #333;
+    line-height: 1.7;
+  }
+
+  .article-content ul li {
+    list-style-type: disc;
+  }
+
+  .article-content ol li {
+    list-style-type: decimal;
+  }
+
+  /* Links - simple underline */
+  .article-content a {
+    color: #ff7a59;
+    text-decoration: none;
+    border-bottom: 1px solid #ff7a59;
+  }
+
+  .article-content a:hover {
+    color: #ff5a39;
+    border-bottom-color: #ff5a39;
+  }
+
+  /* Tables - minimal and clean */
+  .article-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 0.9375rem;
+  }
+
+  .article-content th {
+    background-color: #f8f9fa;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 700;
+    color: #000;
+    border-bottom: 2px solid #e9ecef;
+    font-size: 0.875rem;
+  }
+
+  .article-content td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e9ecef;
+    color: #333;
+  }
+
+  .article-content tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* Blockquotes - simple */
+  .article-content blockquote {
+    border-left: 3px solid #ff7a59;
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    color: #555;
+  }
+
+  /* Code - minimal */
+  .article-content code {
+    background-color: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+    font-family: 'SF Mono', Monaco, Consolas, monospace;
+    color: #d73a49;
+  }
+
+  .article-content pre {
+    background-color: #f5f5f5;
+    color: #24292e;
+    padding: 1.25rem;
+    border-radius: 0.375rem;
+    overflow-x: auto;
+    margin: 2rem 0;
+    border: 1px solid #e1e4e8;
+  }
+
+  .article-content pre code {
+    background-color: transparent;
+    padding: 0;
+    color: inherit;
+  }
+
+  /* Images - simple */
+  .article-content img {
+    max-width: 100%;
+    height: auto;
+    margin: 2rem 0;
+  }
+
+  /* Horizontal rule */
+  .article-content hr {
+    border: none;
+    border-top: 1px solid #e9ecef;
+    margin: 3rem 0;
+  }
+
+  /* Product sections - subtle separation */
+  .article-content h3 + p strong {
+    color: #ff7a59;
+    font-size: 1.125rem;
+  }
+
+  /* Spacing between products */
+  .article-content h2 + h3 {
+    margin-top: 2rem;
+  }
+
+  .article-content h3:not(:first-of-type) {
+    padding-top: 2rem;
+    border-top: 1px solid #f0f0f0;
+    margin-top: 3rem;
+  }
+
+  /* First H3 after H2 doesn't need border */
+  .article-content h2 + h3:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+</style>

@@ -1,0 +1,149 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const fs = await import('fs');
+const path = await import('path');
+
+// Categoriile principale (9 categorii mari)
+const mainCategories = [
+  {
+    slug: 'tehnologie-gadgeturi',
+    name: 'Tehnologie & Gadgeturi',
+    description: 'Ultimele tehnologii si gadgeturi pentru casa si birou',
+    icon: '💻'
+  },
+  {
+    slug: 'electrocasnice-casa',
+    name: 'Electrocasnice & Casa',
+    description: 'Electrocasnice si echipamente pentru casa',
+    icon: '🏠'
+  },
+  {
+    slug: 'beauty-ingrijire',
+    name: 'Beauty & Ingrijire',
+    description: 'Produse de beauty si ingrijire personala',
+    icon: '💄'
+  },
+  {
+    slug: 'auto-accesorii',
+    name: 'Auto & Accesorii',
+    description: 'Produse si accesorii auto',
+    icon: '🚗'
+  },
+  {
+    slug: 'fashion-haine',
+    name: 'Fashion & Haine',
+    description: 'Haine, incaltaminte si accesorii fashion',
+    icon: '👔'
+  },
+  {
+    slug: 'fitness-sanatate',
+    name: 'Fitness & Sanatate',
+    description: 'Echipamente fitness si produse pentru sanatate',
+    icon: '💪'
+  },
+  {
+    slug: 'copii-jucarii',
+    name: 'Copii & Jucarii',
+    description: 'Jucarii si produse pentru copii',
+    icon: '🧸'
+  },
+  {
+    slug: 'animale-companie',
+    name: 'Animale de companie',
+    description: 'Produse pentru animale de companie',
+    icon: '🐾'
+  },
+  {
+    slug: 'bricolaj-gradina',
+    name: 'Bricolaj & Gradina',
+    description: 'Unelte si echipamente pentru bricolaj si gradina',
+    icon: '🔨'
+  }
+];
+
+// Import articole pentru a număra câte articole sunt per categorie
+let csvArticles = [];
+try {
+  const indexPath = path.join(process.cwd(), 'data', 'csv-articles', 'index.json');
+  if (fs.existsSync(indexPath)) {
+    const content = fs.readFileSync(indexPath, 'utf-8');
+    csvArticles = JSON.parse(content);
+  }
+} catch (e) {}
+
+// Numără articolele pentru fiecare categorie principală
+const categoriesWithCount = mainCategories.map(cat => {
+  const articleCount = csvArticles.filter(a => a.mainCategorySlug === cat.slug).length;
+  return {
+    ...cat,
+    articleCount
+  };
+});
+---
+
+<Layout title="Categorii de Produse - Articole si Recenzii | TechGadget" description="Exploreaza toate categoriile noastre de produse. Articole detaliate de cumparare, recenzii si recomandari pentru fiecare categorie.">
+  <div class="bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb -->
+      <nav class="mb-6 text-sm opacity-90">
+        <ol class="flex items-center space-x-2">
+          <li><a href="/" class="hover:underline">Acasa</a></li>
+          <li>/</li>
+          <li class="font-semibold">Categorii</li>
+        </ol>
+      </nav>
+
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        Toate Categoriile
+      </h1>
+      <p class="text-xl opacity-90">
+        Exploreaza articolele noastre organizate pe categorii
+      </p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="mb-8">
+      <p class="text-[var(--color-text-secondary)]">
+        {categoriesWithCount.length} categorii disponibile
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {categoriesWithCount.map(category => (
+        <a
+          href={`/categorie/${category.slug}`}
+          class="group bg-white rounded-xl border border-gray-200 hover:border-[var(--color-primary)] hover:shadow-lg transition-all overflow-hidden"
+        >
+          <div class="p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-4xl">{category.icon}</span>
+              <h2 class="text-xl font-bold text-[var(--color-text-primary)] group-hover:text-[var(--color-primary)] transition-colors">
+                {category.name}
+              </h2>
+            </div>
+            <p class="text-sm text-[var(--color-text-secondary)] mb-4">
+              {category.description}
+            </p>
+            {category.articleCount > 0 ? (
+              <p class="text-sm text-[var(--color-text-secondary)] mb-4">
+                {category.articleCount} {category.articleCount === 1 ? 'articol disponibil' : 'articole disponibile'}
+              </p>
+            ) : (
+              <p class="text-sm text-[var(--color-text-secondary)] mb-4">
+                In curand
+              </p>
+            )}
+            <div class="flex items-center gap-2 text-[var(--color-primary)] text-sm font-semibold">
+              Vezi articole
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Layout>

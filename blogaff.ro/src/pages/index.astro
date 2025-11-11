@@ -1,0 +1,157 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { sampleArticles, categories } from '../data/sampleData';
+
+// Import articole generate (dacă exist)
+let generatedArticles = [];
+try {
+  const generated = await import('../data/generatedArticles');
+  generatedArticles = generated.generatedArticles || [];
+} catch (e) {
+  // Fișierul nu există încă
+}
+
+// Import articole keywords (noi)
+let keywordArticles = [];
+try {
+  const fs = await import('fs');
+  const path = await import('path');
+  const indexPath = path.join(process.cwd(), 'data', 'keyword-articles', 'index.json');
+  if (fs.existsSync(indexPath)) {
+    const content = fs.readFileSync(indexPath, 'utf-8');
+    keywordArticles = JSON.parse(content);
+  }
+} catch (e) {
+  // Fișierul nu există încă
+}
+
+// Import articole CSV (din cats.csv)
+let csvArticles = [];
+try {
+  const fs = await import('fs');
+  const path = await import('path');
+  const indexPath = path.join(process.cwd(), 'data', 'csv-articles', 'index.json');
+  if (fs.existsSync(indexPath)) {
+    const content = fs.readFileSync(indexPath, 'utf-8');
+    csvArticles = JSON.parse(content);
+  }
+} catch (e) {
+  // Fișierul nu există încă
+}
+
+const allArticles = [...csvArticles, ...keywordArticles, ...generatedArticles, ...sampleArticles].slice(0, 12);
+---
+
+<Layout>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-[var(--color-primary)] via-[var(--color-primary-dark)] to-[var(--color-bg-dark)] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+      <div class="max-w-3xl">
+        <div class="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6">
+          <span class="text-sm font-semibold">Articole Profesionale de Cumparare</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          Alege Produsele Potrivite cu Incredere
+        </h1>
+        <p class="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed">
+          Review-uri detaliate, comparatii obiective si recomandari bazate pe testare reala.
+          Tot ce trebuie sa stii pentru decizii de cumparare inteligente.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="#articole"
+            class="inline-flex items-center justify-center px-8 py-4 bg-[var(--color-accent)] text-white font-semibold rounded-lg hover:bg-orange-600 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Vezi Articolele
+          </a>
+          <a
+            href="/categorii"
+            class="inline-flex items-center justify-center px-8 py-4 bg-white text-[var(--color-primary)] font-semibold rounded-lg hover:bg-gray-100 transition-all shadow-lg"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+            </svg>
+            Toate Categoriile
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="bg-white border-y border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-2">1800+</div>
+          <div class="text-sm text-[var(--color-text-secondary)]">Categorii Produse</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-2">9000+</div>
+          <div class="text-sm text-[var(--color-text-secondary)]">Articole Detaliate</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-2">100%</div>
+          <div class="text-sm text-[var(--color-text-secondary)]">Review-uri Obiective</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-2">2025</div>
+          <div class="text-sm text-[var(--color-text-secondary)]">Actualizat Constant</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles Section -->
+  <section id="articole" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <div class="flex justify-between items-center mb-8">
+      <h2 class="text-2xl md:text-3xl font-bold text-[var(--color-text-primary)]">
+        Articole Recente
+      </h2>
+      <a
+        href="/articole"
+        class="text-[var(--color-primary)] hover:text-[var(--color-primary-dark)] font-semibold text-sm md:text-base"
+      >
+        Vezi toate →
+      </a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      {allArticles.map((article) => (
+        <ArticleCard article={article} />
+      ))}
+    </div>
+    {generatedArticles.length > 0 && (
+      <p class="text-center mt-8 text-[var(--color-text-muted)] text-sm">
+        Afisand {allArticles.length} articole ({generatedArticles.length} generate automat)
+      </p>
+    )}
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-gradient-to-r from-[var(--color-bg-accent)] to-blue-100 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-[var(--color-text-primary)] mb-4">
+          Gaseste Produsul Perfect pentru Tine
+        </h2>
+        <p class="text-lg text-[var(--color-text-secondary)] mb-8">
+          Peste 9,000 de articole detaliate te ajuta sa faci alegerea potrivita.
+          Compara, analizeaza si cumpara cu incredere.
+        </p>
+        <a
+          href="/categorii"
+          class="inline-flex items-center justify-center px-8 py-4 bg-[var(--color-accent)] text-white font-semibold rounded-lg hover:bg-orange-600 transition-all shadow-lg hover:shadow-xl text-lg"
+        >
+          <svg class="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          Exploreaza Toate Categoriile
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

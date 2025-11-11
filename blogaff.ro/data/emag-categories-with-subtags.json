@@ -1,0 +1,30 @@
+[
+  {
+    "id": "absorbant-umiditate",
+    "name": "Absorbant Umiditate",
+    "url": "https://www.emag.ro/absorbant-umiditate/c",
+    "hasArticle": false,
+    "subtags": [
+      "ieftin",
+      "profesional",
+      "performant",
+      "compact",
+      "premium"
+    ],
+    "isPlural": false
+  },
+  {
+    "id": "acces-point-uri",
+    "name": "Acces Point Uri",
+    "url": "https://www.emag.ro/acces-point-uri/c",
+    "hasArticle": false,
+    "subtags": [
+      "pentru acasă",
+      "pentru birouri",
+      "cu Wi-Fi 6",
+      "mesh Wi-Fi",
+      "ieftine"
+    ],
+    "isPlural": true
+  }
+]
